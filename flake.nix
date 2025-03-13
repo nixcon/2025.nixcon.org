@@ -1,5 +1,5 @@
 {
-  description = "Nixcon 2024 Website";
+  description = "Nixcon 2025 Website";
 
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
 
@@ -26,12 +26,10 @@
 
       # Provide some binary packages for selected system types.
       packages = forAllSystems (system: {
-        nixcon-2024-website = nixpkgs.legacyPackages.${system}.callPackage ./default.nix {
+        default = nixpkgs.legacyPackages.${system}.callPackage ./default.nix {
           pkgs = nixpkgsFor.${system};
           inherit version;
         };
       });
-
-      defaultPackage = forAllSystems (system: self.packages.${system}.nixcon-2024-website);
     };
 }

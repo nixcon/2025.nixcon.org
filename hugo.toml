@@ -1,5 +1,5 @@
-baseURL = 'https://2024.nixcon.org/'
+baseURL = 'https://2025.nixcon.org/'
 languageCode = 'en-us'
-title = 'NixCon 2024'
-theme = 'nixcon-2024'
+title = 'NixCon 2025'
+theme = 'nixcon-2025'
 disableKinds = ["taxonomy", "RSS"]

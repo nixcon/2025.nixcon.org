@@ -17,7 +17,7 @@ Switzerland.
 
 # Tickets
 
-The ticket sale is open. They are available on: https://tickets.nixcon.org/TODO/. You are expected to buy a ticket to attend the event. Speakers and organizers are expected to buy their tickets as well.
+The ticket sale is not yet open. <!-- They are available on: https://tickets.nixcon.org/TODO/. --> You are expected to buy a ticket to attend the event. Speakers and organizers are expected to buy their tickets as well.
 
 <!--
 In order to make this a community-driven NixCon without sponsors, we have adopted a more dynamic pricing model.

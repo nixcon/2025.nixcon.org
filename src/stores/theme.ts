@@ -27,9 +27,9 @@ export const colorSchemes: Record<ThemeName, { backgroundColor: number[], lavaCo
 
 const themes: ThemeName[] = ['Lambda Nix', 'Nix Blue', 'Lava', 'Ocean', 'Acid'];
 
-// Get initial theme from localStorage or default to 'Lava'
+// Get initial theme from localStorage or default to 'Lambda Nix'
 const savedTheme = localStorage.getItem('theme') as ThemeName;
-const initialTheme: ThemeName = themes.includes(savedTheme) ? savedTheme : 'Lava';
+const initialTheme: ThemeName = themes.includes(savedTheme) ? savedTheme : 'Lambda Nix';
 
 const [currentTheme, setCurrentTheme] = createSignal<ThemeName>(initialTheme);
 

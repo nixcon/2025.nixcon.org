@@ -9,4 +9,5 @@ export default defineConfig({
     tailwindcss(),
     glslPlugin(),
   ],
+  base: "/nix-con-2025",
 })

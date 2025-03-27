@@ -134,7 +134,7 @@ void main() {
   col = col * 0.5;
   
   // Generate noise with extremely decreased scale (extremely large pattern)
-  float noiseScale = 1.11; // Decreased by 1000% from 11.11
+  float noiseScale = 0.7; // Decreased by 1000% from 11.11
   float noiseValue = noise(gl_FragCoord.xy / noiseScale + uTime * 0.01);
   
   // Add a second layer of noise for more detail
@@ -154,7 +154,7 @@ void main() {
   );
   
   // Blend noise with the final color - increased strength for more visibility
-  float noiseStrength = 0.08; // Increased strength to make it more noticeable
+  float noiseStrength = 0.06; // Increased strength to make it more noticeable
   finalColor = mix(finalColor, finalColor * (1.0 - noiseStrength) + vec3(noiseValue) * noiseStrength, 0.95);
   
   gl_FragColor = vec4(finalColor, 1.0);

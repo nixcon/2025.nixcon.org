@@ -14,7 +14,16 @@ function App() {
         {/* Hero section */}
         <section class="flex flex-col gap-5 items-center py-20 pt-40">
           <h1 class="font-bold text-6xl lg:text-8xl font-serif text-white">NixCon 2025</h1>
-          <p class="text-3xl">📍 Rapperswil-Jona, 🇨🇭</p>
+          <div class="flex flex-col gap-2 items-center text-2xl">
+            <p class="flex items-center gap-2">
+              <span class="text-3xl">🗺️</span>
+              Rapperswil-Jona, Switzerland
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-3xl">🗓️</span>
+              September 15-17, 2025
+            </p>
+          </div>
 
           <nav class="flex flex-wrap gap-6 mt-8 font-bold text-xl">
             <a href="#location" class="hover:text-gray-300 transition-colors">Location</a>

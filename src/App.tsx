@@ -15,7 +15,8 @@ function App() {
       <div class="fixed inset-0 flex text-white">
         <section class="m-auto flex flex-col gap-5 justify-center items-center">
           <h1 class="font-bold text-6xl lg:text-8xl font-serif text-white">NixCon 2025</h1>
-          <h2 class="text-3xl">📍 Rapperswil-Jona, 🇨🇭</h2>
+          <p class="text-3xl">📍 Rapperswil-Jona, 🇨🇭</p>
+          <p class="mt-20">stay tuned</p>
         </section>
       </div>
     </>

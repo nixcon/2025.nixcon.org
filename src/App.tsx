@@ -1,6 +1,29 @@
 import { startLavaAnimation } from "./lava/app"
 import { createEffect } from 'solid-js';
 import { useThemeStore, colorSchemes } from './stores/theme';
+import { JSX } from "solid-js";
+
+// Content section component
+interface ContentSectionProps {
+  id: string;
+  title: string;
+  children: JSX.Element;
+}
+
+function ContentSection(props: ContentSectionProps) {
+  return (
+    <section id={props.id} class="group">
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 md:p-8 
+                  transition-all duration-300 hover:bg-white/15 hover:shadow-xl hover:scale-[1.02]">
+        <div class="flex flex-col items-center gap-5">
+          <h2 class="text-4xl font-bold font-serif">{props.title}</h2>
+          {props.children}
+          <span class="text-4xl opacity-60 font-bold">~</span>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function App() {
   const { currentTheme, cycleTheme } = useThemeStore();
@@ -29,7 +52,7 @@ function App() {
         {/* Hero section */}
         <section class="flex flex-col gap-5 items-center py-12 pt-24 md:py-20 md:pt-40 px-4">
           <h1 class="font-bold text-5xl md:text-6xl lg:text-8xl font-serif text-white text-center">NixCon 2025</h1>
-          <div class="flex flex-col gap-2 items-center text-lg md:text-2xl">
+          <div class="flex flex-col gap-2 items-center text-lg md:text-2xl font-bold tracking-tight">
             <p class="flex items-center gap-2">
               <span class="text-2xl md:text-3xl">🗺️</span>
               Rapperswil-Jona, Switzerland
@@ -52,41 +75,29 @@ function App() {
 
         {/* Content sections */}
         <div class="w-full max-w-md mx-auto space-y-20 md:space-y-32 pb-16 px-4">
-          <section id="location" class="flex flex-col items-center gap-5">
-            <h2 class="text-4xl font-bold font-serif">Location</h2>
+          <ContentSection id="location" title="Location">
             <p class="text-center">Join us in Rapperswil-Jona, Switzerland for NixCon 2025!</p>
-            <span class="text-4xl opacity-60 font-bold">~</span>
-          </section>
+          </ContentSection>
 
-          <section id="tickets" class="flex flex-col items-center gap-5">
-            <h2 class="text-4xl font-bold font-serif">Tickets</h2>
+          <ContentSection id="tickets" title="Tickets">
             <p class="text-center">Ticket information coming soon!</p>
-            <span class="text-4xl opacity-60 font-bold">~</span>
-          </section>
+          </ContentSection>
 
-          <section id="coc" class="flex flex-col items-center gap-5">
-            <h2 class="text-4xl font-bold font-serif">Code of Conduct</h2>
+          <ContentSection id="coc" title="Code of Conduct">
             <p class="text-center">Our community guidelines and code of conduct will be available soon.</p>
-            <span class="text-4xl opacity-60 font-bold">~</span>
-          </section>
+          </ContentSection>
 
-          <section id="faq" class="flex flex-col items-center gap-5">
-            <h2 class="text-4xl font-bold font-serif">FAQ</h2>
+          <ContentSection id="faq" title="FAQ">
             <p class="text-center">Frequently asked questions will be posted here.</p>
-            <span class="text-4xl opacity-60 font-bold">~</span>
-          </section>
+          </ContentSection>
 
-          <section id="chat" class="flex flex-col items-center gap-5">
-            <h2 class="text-4xl font-bold font-serif">Chat</h2>
+          <ContentSection id="chat" title="Chat">
             <p class="text-center">Join our community chat to connect with other attendees!</p>
-            <span class="text-4xl opacity-60 font-bold">~</span>
-          </section>
+          </ContentSection>
 
-          <section id="schedule" class="flex flex-col items-center gap-5">
-            <h2 class="text-4xl font-bold font-serif">Schedule</h2>
+          <ContentSection id="schedule" title="Schedule">
             <p class="text-center">Conference schedule will be announced soon.</p>
-            <span class="text-4xl opacity-60 font-bold">~</span>
-          </section>
+          </ContentSection>
         </div>
 
 

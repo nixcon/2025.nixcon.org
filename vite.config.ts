@@ -9,5 +9,5 @@ export default defineConfig({
     tailwindcss(),
     glslPlugin(),
   ],
-  base: "/nix-con-2025",
+  base: "/nix-con-2025", // Cache test
 })

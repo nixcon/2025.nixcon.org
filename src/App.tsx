@@ -37,34 +37,40 @@ function App() {
 
         {/* Content sections */}
         <div class="w-full max-w-md mx-auto space-y-32 pb-16">
-          <section id="location" class="flex flex-col items-center">
-            <h2 class="text-4xl font-bold font-serif mb-8">Location</h2>
+          <section id="location" class="flex flex-col items-center gap-5">
+            <h2 class="text-4xl font-bold font-serif">Location</h2>
             <p class="text-center">Join us in Rapperswil-Jona, Switzerland for NixCon 2025!</p>
+            <span class="text-4xl opacity-60 font-bold">~</span>
           </section>
 
-          <section id="tickets" class="flex flex-col items-center">
-            <h2 class="text-4xl font-bold font-serif mb-8">Tickets</h2>
+          <section id="tickets" class="flex flex-col items-center gap-5">
+            <h2 class="text-4xl font-bold font-serif">Tickets</h2>
             <p class="text-center">Ticket information coming soon!</p>
+            <span class="text-4xl opacity-60 font-bold">~</span>
           </section>
 
-          <section id="coc" class="flex flex-col items-center">
-            <h2 class="text-4xl font-bold font-serif mb-8">Code of Conduct</h2>
+          <section id="coc" class="flex flex-col items-center gap-5">
+            <h2 class="text-4xl font-bold font-serif">Code of Conduct</h2>
             <p class="text-center">Our community guidelines and code of conduct will be available soon.</p>
+            <span class="text-4xl opacity-60 font-bold">~</span>
           </section>
 
-          <section id="faq" class="flex flex-col items-center">
-            <h2 class="text-4xl font-bold font-serif mb-8">FAQ</h2>
+          <section id="faq" class="flex flex-col items-center gap-5">
+            <h2 class="text-4xl font-bold font-serif">FAQ</h2>
             <p class="text-center">Frequently asked questions will be posted here.</p>
+            <span class="text-4xl opacity-60 font-bold">~</span>
           </section>
 
-          <section id="chat" class="flex flex-col items-center">
-            <h2 class="text-4xl font-bold font-serif mb-8">Chat</h2>
+          <section id="chat" class="flex flex-col items-center gap-5">
+            <h2 class="text-4xl font-bold font-serif">Chat</h2>
             <p class="text-center">Join our community chat to connect with other attendees!</p>
+            <span class="text-4xl opacity-60 font-bold">~</span>
           </section>
 
-          <section id="schedule" class="flex flex-col items-center">
-            <h2 class="text-4xl font-bold font-serif mb-8">Schedule</h2>
+          <section id="schedule" class="flex flex-col items-center gap-5">
+            <h2 class="text-4xl font-bold font-serif">Schedule</h2>
             <p class="text-center">Conference schedule will be announced soon.</p>
+            <span class="text-4xl opacity-60 font-bold">~</span>
           </section>
         </div>
 

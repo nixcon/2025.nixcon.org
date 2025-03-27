@@ -7,3 +7,29 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @config "../tailwind.config.js";
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: "LibreBaskerville";
+  src: url("/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf") format("truetype"),
+    url("/fonts/LibreBaskerville/LibreBaskerville-Bold.ttf") format("truetype"),
+    url("/fonts/LibreBaskerville/LibreBaskerville-Italic.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "WorkSans";
+  src: url("/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: italic;
+  font-family: "WorkSans";
+  src: url("/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}

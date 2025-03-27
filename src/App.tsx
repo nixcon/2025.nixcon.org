@@ -12,20 +12,20 @@ function App() {
       {/* Content */}
       <div class="relative min-h-screen text-white">
         {/* Hero section */}
-        <section class="flex flex-col gap-5 items-center py-20 pt-40">
-          <h1 class="font-bold text-6xl lg:text-8xl font-serif text-white">NixCon 2025</h1>
-          <div class="flex flex-col gap-2 items-center text-2xl">
+        <section class="flex flex-col gap-5 items-center py-12 pt-24 md:py-20 md:pt-40 px-4">
+          <h1 class="font-bold text-5xl md:text-6xl lg:text-8xl font-serif text-white text-center">NixCon 2025</h1>
+          <div class="flex flex-col gap-2 items-center text-lg md:text-2xl">
             <p class="flex items-center gap-2">
-              <span class="text-3xl">🗺️</span>
+              <span class="text-2xl md:text-3xl">🗺️</span>
               Rapperswil-Jona, Switzerland
             </p>
             <p class="flex items-center gap-2">
-              <span class="text-3xl">🗓️</span>
+              <span class="text-2xl md:text-3xl">🗓️</span>
               September 15-17, 2025
             </p>
           </div>
 
-          <nav class="flex flex-wrap gap-6 mt-8 font-bold text-xl">
+          <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-bold text-lg md:text-xl px-2">
             <a href="#location" class="hover:text-gray-300 transition-colors">Location</a>
             <a href="#tickets" class="hover:text-gray-300 transition-colors">Tickets</a>
             <a href="#coc" class="hover:text-gray-300 transition-colors">CoC</a>
@@ -36,7 +36,7 @@ function App() {
         </section>
 
         {/* Content sections */}
-        <div class="w-full max-w-md mx-auto space-y-32 pb-16">
+        <div class="w-full max-w-md mx-auto space-y-20 md:space-y-32 pb-16 px-4">
           <section id="location" class="flex flex-col items-center gap-5">
             <h2 class="text-4xl font-bold font-serif">Location</h2>
             <p class="text-center">Join us in Rapperswil-Jona, Switzerland for NixCon 2025!</p>

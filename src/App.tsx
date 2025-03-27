@@ -1,14 +1,12 @@
-import { main } from "./lava/app"
+import { startLavaAnimation } from "./lava/app"
 import { createEffect } from 'solid-js';
 
 function App() {
-  createEffect(() => {
-    main()
-  })
+  createEffect(() => startLavaAnimation())
 
   return (
     <>
-      {/* Background */}
+      {/* Background. Mounting point for lava animation */}
       <canvas id="background" class="fixed inset-0 w-screen h-screen" />
 
       {/* Content */}

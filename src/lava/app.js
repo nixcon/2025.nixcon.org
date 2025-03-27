@@ -3,7 +3,15 @@ import * as TWGL from 'twgl.js';
 import vertexShader from './glsl/vertex.glsl';
 import fragmentShader from './glsl/fragment.glsl';
 
-export function main() {
+/**
+ * Initializes and starts a WebGL-based lava animation in the background canvas.
+ * The animation uses spherical coordinates to position the camera and renders
+ * a full-screen quad with custom shaders.
+ * 
+ * @returns {Function} A cleanup function that cancels the animation frame when called
+ * @throws {Error} If WebGL context cannot be obtained or shader compilation fails
+ */
+export function startLavaAnimation() {
   // Calculate camera position
   // based on THREE.Vector3.setFromSphericalCoords(radius, phi, theta)
   const DEG_TO_RAD = Math.PI / 180;
@@ -57,4 +65,7 @@ export function main() {
 
     frameId = requestAnimationFrame(render);
   }
+
+  // Return cleanup function
+  return () => cancelAnimationFrame(frameId);
 }

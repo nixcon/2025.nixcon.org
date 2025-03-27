@@ -72,7 +72,7 @@ function App() {
         </section>
 
         {/* Glass container for the whole page content */}
-        <div class="max-w-3xl mx-auto p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl">
+        <div class="max-w-3xl mx-auto p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl glass-container-with-texture">
 
           {/* Content sections */}
           <div class="w-full mx-auto space-y-12 px-4">

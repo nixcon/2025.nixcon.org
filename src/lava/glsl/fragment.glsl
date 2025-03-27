@@ -3,9 +3,8 @@ precision mediump float;
 uniform float uTime;
 uniform vec2 uResolution;
 uniform vec3 uCameraPosition;
-
-vec3 backgroundColor = vec3(0.4, 0.1, 0.4);
-vec3 lavaColor = vec3(2.0, 0.8, -0.6);
+uniform vec3 uBackgroundColor;
+uniform vec3 uLavaColor;
 
 // Based on https://www.shadertoy.com/view/fsKXDm
 
@@ -119,8 +118,8 @@ void main() {
   
   gl_FragColor = vec4(
     mix(
-      backgroundColor,
-      lavaColor,
+      uBackgroundColor,
+      uLavaColor,
       col
     ),
     1.0

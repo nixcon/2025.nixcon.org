@@ -1,13 +1,28 @@
 import { startLavaAnimation } from "./lava/app"
 import { createEffect } from 'solid-js';
+import { useThemeStore, colorSchemes } from './stores/theme';
 
 function App() {
-  createEffect(() => startLavaAnimation())
+  const { currentTheme, cycleTheme } = useThemeStore();
+
+  createEffect(() => {
+    const cleanup = startLavaAnimation(colorSchemes[currentTheme()]);
+    return cleanup;
+  });
 
   return (
     <>
       {/* Background. Mounting point for lava animation */}
       <canvas id="background" class="fixed inset-0 w-screen h-screen" />
+
+      {/* Theme toggle button */}
+      <button
+        onClick={cycleTheme}
+        class="fixed top-4 right-4 z-10 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg 
+               hover:bg-white/20 transition-colors text-white font-medium"
+      >
+        Theme: {currentTheme()}
+      </button>
 
       {/* Content */}
       <div class="relative min-h-screen text-white">

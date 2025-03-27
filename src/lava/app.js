@@ -8,10 +8,16 @@ import fragmentShader from './glsl/fragment.glsl';
  * The animation uses spherical coordinates to position the camera and renders
  * a full-screen quad with custom shaders.
  * 
+ * @param {Object} options Configuration options
+ * @param {number[]} [options.backgroundColor=[0.4, 0.1, 0.4]] Background color as RGB array
+ * @param {number[]} [options.lavaColor=[2.0, 0.8, -0.6]] Lava color as RGB array
  * @returns {Function} A cleanup function that cancels the animation frame when called
  * @throws {Error} If WebGL context cannot be obtained or shader compilation fails
  */
-export function startLavaAnimation() {
+export function startLavaAnimation({ 
+  backgroundColor = [0.4, 0.1, 0.4],
+  lavaColor = [2.0, 0.8, -0.6]
+} = {}) {
   // Calculate camera position
   // based on THREE.Vector3.setFromSphericalCoords(radius, phi, theta)
   const DEG_TO_RAD = Math.PI / 180;
@@ -52,6 +58,8 @@ export function startLavaAnimation() {
         uTime: time * 0.001,
         uResolution: [canvasWidth, canvasHeight],
         uCameraPosition: cameraPosition,
+        uBackgroundColor: backgroundColor,
+        uLavaColor: lavaColor,
       };
 
       gl.useProgram(programInfo.program);

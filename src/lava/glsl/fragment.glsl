@@ -8,6 +8,23 @@ uniform vec3 uLavaColor;
 
 // Based on https://www.shadertoy.com/view/fsKXDm
 
+// Noise functions
+// Based on https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
+float rand(vec2 n) { 
+  return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+float noise(vec2 p) {
+  vec2 ip = floor(p);
+  vec2 u = fract(p);
+  u = u*u*(3.0-2.0*u);
+  
+  float res = mix(
+    mix(rand(ip), rand(ip+vec2(1.0,0.0)), u.x),
+    mix(rand(ip+vec2(0.0,1.0)), rand(ip+vec2(1.0,1.0)), u.x), u.y);
+  return res*res;
+}
+
 #define MAX_STEPS 30
 #define MAX_DIST 30.0
 #define MIN_DIST 1.5
@@ -116,12 +133,29 @@ void main() {
   col += vec3(1.0 - diff);
   col = col * 0.5;
   
-  gl_FragColor = vec4(
-    mix(
-      uBackgroundColor,
-      uLavaColor,
-      col
-    ),
-    1.0
+  // Generate noise with extremely decreased scale (extremely large pattern)
+  float noiseScale = 0.7; // Decreased by 1000% from 11.11
+  float noiseValue = noise(gl_FragCoord.xy / noiseScale + uTime * 0.01);
+  
+  // Add a second layer of noise for more detail
+  float noiseValue2 = noise(gl_FragCoord.xy / (noiseScale * 0.3) + vec2(uTime * 0.02, -uTime * 0.01));
+  
+  // Add a third layer for even more fine detail
+  float noiseValue3 = noise(gl_FragCoord.xy / (noiseScale * 0.1) + vec2(-uTime * 0.03, uTime * 0.02));
+  
+  // Blend all noise layers with different weights
+  noiseValue = (noiseValue * 0.5 + noiseValue2 * 0.3 + noiseValue3 * 0.2);
+  
+  // Apply noise to the final color
+  vec3 finalColor = mix(
+    uBackgroundColor,
+    uLavaColor,
+    col
   );
+  
+  // Blend noise with the final color - increased strength for more visibility
+  float noiseStrength = 0.06; // Increased strength to make it more noticeable
+  finalColor = mix(finalColor, finalColor * (1.0 - noiseStrength) + vec3(noiseValue) * noiseStrength, 0.95);
+  
+  gl_FragColor = vec4(finalColor, 1.0);
 }

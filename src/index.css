@@ -33,3 +33,28 @@
   src: url("/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf") format("truetype");
   font-display: swap;
 }
+
+/* Glass container with noisy texture overlay */
+.glass-container-with-texture {
+  position: relative;
+}
+
+.glass-container-with-texture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/noisy-texture-100x100-o4-d10-c-f34379-t1.png');
+  background-repeat: repeat;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.glass-container-with-texture>* {
+  position: relative;
+  z-index: 2;
+}

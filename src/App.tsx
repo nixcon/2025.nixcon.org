@@ -2,6 +2,14 @@ import { startLavaAnimation } from "./lava/app"
 import { createEffect } from 'solid-js';
 import { useThemeStore, colorSchemes } from './stores/theme';
 import { JSX } from "solid-js";
+import {
+  BsGeoAlt,
+  BsTicket,
+  BsFileText,
+  BsQuestionCircle,
+  BsChatDots,
+  BsCalendar3Event
+} from 'solid-icons/bs';
 
 // Content section component
 interface ContentSectionProps {
@@ -14,11 +22,34 @@ function ContentSection(props: ContentSectionProps) {
   return (
     <section id={props.id} class="group">
       <div class="flex flex-col items-center gap-5">
-        <h2 class="text-4xl font-bold font-serif">{props.title}</h2>
+        <h2 class="text-4xl font-bold font-serif flex items-center gap-2">
+          {getIconForSection(props.id)}
+          {props.title}
+        </h2>
         {props.children}
       </div>
     </section>
   );
+}
+
+// Helper function to get the appropriate icon for each section
+function getIconForSection(id: string) {
+  switch (id) {
+    case 'location':
+      return <BsGeoAlt class="text-3xl" />;
+    case 'tickets':
+      return <BsTicket class="text-3xl" />;
+    case 'coc':
+      return <BsFileText class="text-3xl" />;
+    case 'faq':
+      return <BsQuestionCircle class="text-3xl" />;
+    case 'chat':
+      return <BsChatDots class="text-3xl" />;
+    case 'schedule':
+      return <BsCalendar3Event class="text-3xl" />;
+    default:
+      return null;
+  }
 }
 
 function App() {
@@ -62,12 +93,24 @@ function App() {
 
           {/* Nav */}
           <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-bold text-lg md:text-xl px-2">
-            <a href="#location" class="hover:text-gray-300 transition-colors">Location</a>
-            <a href="#tickets" class="hover:text-gray-300 transition-colors">Tickets</a>
-            <a href="#coc" class="hover:text-gray-300 transition-colors">CoC</a>
-            <a href="#faq" class="hover:text-gray-300 transition-colors">FAQ</a>
-            <a href="#chat" class="hover:text-gray-300 transition-colors">Chat</a>
-            <a href="#schedule" class="hover:text-gray-300 transition-colors">Schedule</a>
+            <a href="#location" class="hover:text-gray-300 transition-colors flex items-center gap-1">
+              <BsGeoAlt /> Location
+            </a>
+            <a href="#tickets" class="hover:text-gray-300 transition-colors flex items-center gap-1">
+              <BsTicket /> Tickets
+            </a>
+            <a href="#coc" class="hover:text-gray-300 transition-colors flex items-center gap-1">
+              <BsFileText /> CoC
+            </a>
+            <a href="#faq" class="hover:text-gray-300 transition-colors flex items-center gap-1">
+              <BsQuestionCircle /> FAQ
+            </a>
+            <a href="#chat" class="hover:text-gray-300 transition-colors flex items-center gap-1">
+              <BsChatDots /> Chat
+            </a>
+            <a href="#schedule" class="hover:text-gray-300 transition-colors flex items-center gap-1">
+              <BsCalendar3Event /> Schedule
+            </a>
           </nav>
 
         </section>

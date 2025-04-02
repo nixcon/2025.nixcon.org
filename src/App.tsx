@@ -48,6 +48,7 @@ function App() {
         {/* Hero section */}
         <section class="flex flex-col gap-5 items-center py-12 pt-24 md:py-20 md:pt-40 px-4">
           <h1 class="font-bold text-5xl md:text-6xl lg:text-8xl font-serif text-white text-center">NixCon 2025</h1>
+          <p class="text-sm italic text-white/70">(Logo coming soon)</p>
           <div class="flex flex-col gap-2 items-center text-lg md:text-2xl font-bold tracking-tight">
             <p class="flex items-center gap-2">
               <span class="text-2xl md:text-3xl">🗺️</span>
@@ -55,7 +56,7 @@ function App() {
             </p>
             <p class="flex items-center gap-2">
               <span class="text-2xl md:text-3xl">🗓️</span>
-              September 15-17, 2025
+              September 5-7, 2025
             </p>
           </div>
 
@@ -77,7 +78,17 @@ function App() {
           {/* Content sections */}
           <div class="w-full mx-auto space-y-12 px-4">
             <ContentSection id="location" title="Location">
-              <p class="text-center">Join us in Rapperswil-Jona, Switzerland for NixCon 2025!</p>
+              <div class="flex flex-col items-center gap-3">
+                <p class="text-center">Join us at OST in Rapperswil-Jona, Switzerland for NixCon 2025!</p>
+                <a
+                  href="https://www.openstreetmap.org/way/34754484?mlat=47.22318649291992&mlon=8.81653368473053#map=19/47.223186/8.816534"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+                >
+                  View on OpenStreetMap
+                </a>
+              </div>
             </ContentSection>
 
             <hr class="h-[1px] w-full border-white/10" />
@@ -89,7 +100,17 @@ function App() {
             <hr class="h-[1px] w-full border-white/10" />
 
             <ContentSection id="coc" title="Code of Conduct">
-              <p class="text-center">Our community guidelines and code of conduct will be available soon.</p>
+              <div class="flex flex-col items-center gap-3">
+                <p class="text-center">Our community guidelines and code of conduct ensure a respectful and inclusive environment for all attendees.</p>
+                <a
+                  href="/nix-con-2025/coc.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+                >
+                  Download Code of Conduct
+                </a>
+              </div>
             </ContentSection>
 
             <hr class="h-[1px] w-full border-white/10" />
@@ -101,7 +122,18 @@ function App() {
             <hr class="h-[1px] w-full border-white/10" />
 
             <ContentSection id="chat" title="Chat">
-              <p class="text-center">Join our community chat to connect with other attendees!</p>
+              <div class="flex flex-col items-center gap-3">
+                <p class="text-center">Join our community chat to connect with other attendees!</p>
+                <p class="text-center">For everything NixCon-related and announcements there is a Matrix room you can join at #nixcon:matrix.org</p>
+                <a
+                  href="https://matrix.to/#/#nixcon:matrix.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+                >
+                  Join Matrix Room
+                </a>
+              </div>
             </ContentSection>
 
             <hr class="h-[1px] w-full border-white/10" />

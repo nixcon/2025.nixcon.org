@@ -9,5 +9,8 @@ export default defineConfig({
     tailwindcss(),
     glslPlugin(),
   ],
-  base: "/nix-con-2025", // Cache test
+  base: "/nix-con-2025",
+  optimizeDeps: {
+    exclude: ['solid-icons'], // See https://stackoverflow.com/a/79316833
+  },
 })

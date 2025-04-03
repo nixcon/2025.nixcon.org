@@ -3,7 +3,6 @@ import { createEffect } from 'solid-js';
 import { useThemeStore, colorSchemes } from './stores/theme';
 import { JSX } from "solid-js";
 import {
-  BsGeoAlt,
   BsTicket,
   BsFileText,
   BsQuestionCircle,
@@ -11,13 +10,13 @@ import {
   BsCalendar3Event,
   BsSnow,
   BsGeoFill,
-  BsCalendarEvent,
   BsTicketFill,
   BsFileTextFill,
   BsQuestionCircleFill,
   BsChatDotsFill,
   BsCalendarEventFill,
-  BsGeo
+  BsGeo,
+  BsPalette2
 } from 'solid-icons/bs';
 import { Logo } from "./components/Logo";
 
@@ -83,9 +82,12 @@ function App() {
       <button
         onClick={cycleTheme}
         class="fixed top-4 right-4 z-10 px-4 py-2 bg-white/10 backdrop-blur-2xl rounded-lg 
-               hover:bg-white/20 transition-colors text-white font-medium"
+               hover:bg-white/20 transition-colors text-white font-medium
+               cursor-pointer
+               text-sm
+               "
       >
-        Theme: {currentTheme()}
+        <BsPalette2 />
       </button>
 
       {/* Content */}

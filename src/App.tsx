@@ -97,7 +97,7 @@ function App() {
           {/* <img src={LogoSrc} alt="" srcset="" class="w-1/4" /> */}
           <div class="flex flex-wrap flex-row gap-20 items-center justify-center">
             <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
-              <Logo startColor={"white"} endColor={"white"} />
+              <Logo />
             </div>
             <div class="text-2xl font-medium">
               <p class="flex items-center gap-3 mb-4">

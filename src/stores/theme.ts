@@ -37,9 +37,8 @@ export const colorSchemes: Record<ThemeName, { backgroundColor: number[], lavaCo
 
 const themes: ThemeName[] = ['Lambda Nix', 'Nix Blue', 'Lava', 'Ocean', 'Acid'];
 
-// Get initial theme from localStorage or default to 'Lava'
-const savedTheme = localStorage.getItem('theme') as ThemeName;
-const initialTheme: ThemeName = themes.includes(savedTheme) ? savedTheme : 'Lava';
+// Default theme (localStorage persistence disabled)
+const initialTheme: ThemeName = 'Lava';
 
 const [currentTheme, setCurrentTheme] = createSignal<ThemeName>(initialTheme);
 
@@ -50,14 +49,14 @@ export const useThemeStore = () => {
     const nextIndex = (currentIndex + 1) % themes.length;
     const newTheme = themes[nextIndex];
 
-    localStorage.setItem('theme', newTheme);
+    // localStorage persistence disabled
     setCurrentTheme(newTheme);
   };
 
   return {
     currentTheme,
     setTheme: (theme: ThemeName) => {
-      localStorage.setItem('theme', theme);
+      // localStorage persistence disabled
       setCurrentTheme(theme);
     },
     cycleTheme

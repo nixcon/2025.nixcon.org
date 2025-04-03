@@ -37,7 +37,7 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
               just
-              nodejs_20
+              bun
 
             ];
 

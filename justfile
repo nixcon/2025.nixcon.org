@@ -1,8 +1,8 @@
 dev:
-  npx vite --port 1234
+  bun vite --port 1234
 
 build:
-  npx tsc -b && npx vite build
+  bun tsc -b && bun vite build
   
 preview:
-  npx vite preview
+  bun vite preview

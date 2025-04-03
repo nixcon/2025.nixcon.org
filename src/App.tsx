@@ -91,12 +91,12 @@ function App() {
       </button>
 
       {/* Content */}
-      <div class="relative min-h-screen text-white">
+      <div class="relative min-h-screen text-white p-5">
         {/* Hero section */}
         <section class="flex flex-col gap-5 items-center px-10 py-40">
           {/* <img src={LogoSrc} alt="" srcset="" class="w-1/4" /> */}
-          <div class="flex flex-wrap flex-row gap-20 items-center">
-            <div class="h-[320px] flex">
+          <div class="flex flex-wrap flex-row gap-20 items-center justify-center">
+            <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
               <Logo startColor={"white"} endColor={"white"} />
             </div>
             <div class="text-2xl font-medium">

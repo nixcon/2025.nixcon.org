@@ -28,7 +28,7 @@ function ContentSection(props: ContentSectionProps) {
   return (
     <section id={props.id} class="group">
       <div class="flex flex-col items-center gap-5">
-        <h2 class="text-4xl font-bold font-serif flex items-center gap-2">
+        <h2 class="text-4xl font-bold flex items-center gap-2">
           {getIconForSection(props.id)}
           {props.title}
         </h2>
@@ -91,7 +91,7 @@ function App() {
             <div class="h-[320px] flex">
               <Logo startColor={"white"} endColor={"white"} />
             </div>
-            <div class="text-xl font-black tracking-wider">
+            <div class="text-2xl font-medium">
               <p class="flex items-center gap-3 mb-4">
                 <span class="text-xl bg-white/10 p-2 rounded-full"><BsSnow /></span>
                 <span >NixCon 2025</span>
@@ -110,7 +110,7 @@ function App() {
         </section>
 
         {/* Nav */}
-        <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-bold text-lg md:text-xl px-2 pb-8">
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-medium text-lg md:text-xl px-2 pb-8">
           <a href="#location" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
             <BsGeoAlt /> Location
           </a>

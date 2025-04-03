@@ -8,8 +8,14 @@ import {
   BsFileText,
   BsQuestionCircle,
   BsChatDots,
-  BsCalendar3Event
+  BsCalendar3Event,
+  BsSnow,
+  BsGeoFill,
+  BsCalendarEvent
 } from 'solid-icons/bs';
+import { Logo } from "./components/Logo";
+
+
 
 // Content section component
 interface ContentSectionProps {
@@ -55,8 +61,10 @@ function getIconForSection(id: string) {
 function App() {
   const { currentTheme, cycleTheme } = useThemeStore();
 
+
   createEffect(() => {
-    const cleanup = startLavaAnimation(colorSchemes[currentTheme()]);
+    const colors = colorSchemes[currentTheme()]
+    const cleanup = startLavaAnimation(colors);
     return cleanup;
   });
 
@@ -77,46 +85,55 @@ function App() {
       {/* Content */}
       <div class="relative min-h-screen text-white">
         {/* Hero section */}
-        <section class="flex flex-col gap-5 items-center py-12 pt-24 md:py-20 md:pt-40 px-4">
-          <h1 class="font-bold text-5xl md:text-6xl lg:text-8xl font-serif text-white text-center">NixCon 2025</h1>
-          <p class="text-sm italic text-white/70">(Logo coming soon)</p>
-          <div class="flex flex-col gap-2 items-center text-lg md:text-2xl font-bold tracking-tight">
-            <p class="flex items-center gap-2">
-              <span class="text-2xl md:text-3xl">🗺️</span>
-              Rapperswil-Jona, Switzerland
-            </p>
-            <p class="flex items-center gap-2">
-              <span class="text-2xl md:text-3xl">🗓️</span>
-              September 5-7, 2025
-            </p>
+        <section class="flex flex-col gap-5 items-center px-10 py-40">
+          {/* <img src={LogoSrc} alt="" srcset="" class="w-1/4" /> */}
+          <div class="flex flex-wrap flex-row gap-20 items-center">
+            <div class="h-[320px] flex">
+              <Logo startColor={"white"} endColor={"white"} />
+            </div>
+            <div class="text-xl font-black tracking-wider">
+              <p class="flex items-center gap-3 mb-4">
+                <span class="text-xl bg-white/10 p-2 rounded-full"><BsSnow /></span>
+                <span >NixCon 2025</span>
+              </p>
+              <p class="flex items-center gap-3 mb-4">
+                <span class="text-xl bg-white/10 p-2 rounded-full"><BsGeoFill /></span>
+                <span >Switzerland</span>
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-xl bg-white/10 p-2 rounded-full"><BsCalendarEvent /></span>
+                <span >September 5-7, 2025</span>
+              </p>
+            </div>
           </div>
-
-          {/* Nav */}
-          <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-bold text-lg md:text-xl px-2">
-            <a href="#location" class="hover:text-gray-300 transition-colors flex items-center gap-1">
-              <BsGeoAlt /> Location
-            </a>
-            <a href="#tickets" class="hover:text-gray-300 transition-colors flex items-center gap-1">
-              <BsTicket /> Tickets
-            </a>
-            <a href="#coc" class="hover:text-gray-300 transition-colors flex items-center gap-1">
-              <BsFileText /> CoC
-            </a>
-            <a href="#faq" class="hover:text-gray-300 transition-colors flex items-center gap-1">
-              <BsQuestionCircle /> FAQ
-            </a>
-            <a href="#chat" class="hover:text-gray-300 transition-colors flex items-center gap-1">
-              <BsChatDots /> Chat
-            </a>
-            <a href="#schedule" class="hover:text-gray-300 transition-colors flex items-center gap-1">
-              <BsCalendar3Event /> Schedule
-            </a>
-          </nav>
 
         </section>
 
+        {/* Nav */}
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-bold text-lg md:text-xl px-2 pb-8">
+          <a href="#location" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
+            <BsGeoAlt /> Location
+          </a>
+          <a href="#tickets" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
+            <BsTicket /> Tickets
+          </a>
+          <a href="#coc" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
+            <BsFileText /> CoC
+          </a>
+          <a href="#faq" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
+            <BsQuestionCircle /> FAQ
+          </a>
+          <a href="#chat" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
+            <BsChatDots /> Chat
+          </a>
+          <a href="#schedule" class="hover:text-gray-300 transition-colors flex items-center gap-2 uppercase">
+            <BsCalendar3Event /> Schedule
+          </a>
+        </nav>
+
+
         {/* Glass container for the whole page content */}
-        <div class="max-w-3xl mx-auto p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl glass-container-with-texture">
+        <div class="max-w-3xl mx-auto p-8 glass">
 
           {/* Content sections */}
           <div class="w-full mx-auto space-y-12 px-4">

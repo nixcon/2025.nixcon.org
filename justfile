@@ -6,3 +6,6 @@ build:
   
 preview:
   bun vite preview
+
+install:
+  bun install

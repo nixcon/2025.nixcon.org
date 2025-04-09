@@ -1,3 +1,11 @@
+// This file is based on https://github.com/brybrant/lava-lamp
+// Original license: GNU General Public License v3.0
+// See LICENSE file for details.
+// Modifications:
+// - Include uBackgroundColor and uLavaColor
+// - Add noise overlay shader
+
+
 precision mediump float;
 
 uniform float uTime;

@@ -1,0 +1,7 @@
+## Notice
+
+This project contains modified code from [https://github.com/brybrant/lava-lamp](https://github.com/brybrant/lava-lamp), licensed under the GNU General Public License v3.0.
+
+Modifications are documented in the source files under [./src/lava](./src/lava)
+
+This project as a whole is licensed under the GNU General Public License v3.0.

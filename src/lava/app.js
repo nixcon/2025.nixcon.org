@@ -1,3 +1,10 @@
+// This file is based on https://github.com/brybrant/lava-lamp
+// Original license: GNU General Public License v3.0
+// See LICENSE file for details.
+// Modifications
+// - Wrap script into a start function
+
+
 import * as TWGL from 'twgl.js';
 
 import vertexShader from './glsl/vertex.glsl';
@@ -14,7 +21,7 @@ import fragmentShader from './glsl/fragment.glsl';
  * @returns {Function} A cleanup function that cancels the animation frame when called
  * @throws {Error} If WebGL context cannot be obtained or shader compilation fails
  */
-export function startLavaAnimation({ 
+export function startLavaAnimation({
   backgroundColor = [0.4, 0.1, 0.4],
   lavaColor = [2.0, 0.8, -0.6]
 } = {}) {

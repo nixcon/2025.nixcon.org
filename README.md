@@ -1,9 +1,9 @@
 <div align="center">
-  <a href="https://escherlies.github.io/nix-con-2025/">
+  <a href="https://nixcon.github.io/2025.nixcon.org/">
     <img src="./Screenshot.jpg" alt="Screenshot NixCon 2025 Website" style="border-radius: 10px;" />
   </a>
 
-  <p><a href="https://escherlies.github.io/nix-con-2025/">Visit the NixCon 2025 Website</a></p>
+  <p><a href="https://nixcon.github.io/2025.nixcon.org/">Visit the NixCon 2025 Website</a></p>
 </div>
 
 ## Development

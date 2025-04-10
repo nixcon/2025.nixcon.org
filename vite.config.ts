@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss(),
     glslPlugin(),
   ],
-  base: "/nix-con-2025",
+  base: "/2025.nixcon.org",
   optimizeDeps: {
     exclude: ['solid-icons'], // See https://stackoverflow.com/a/79316833
   },

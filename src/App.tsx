@@ -21,7 +21,6 @@ import {
   BsChatDotsFill,
   BsCalendarEventFill,
   BsGeo,
-  BsPalette2,
   BsChevronDown
 } from 'solid-icons/bs';
 import { Logo } from "./components/Logo";

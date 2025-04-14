@@ -34,9 +34,13 @@
   font-display: swap;
 }
 
+body {
+  @apply bg-[#661A66]
+}
+
 /* Glass container with noisy texture overlay */
 .glass {
-  @apply p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl;
+  @apply p-8 bg-[#661A66]/50 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl;
   position: relative;
 }
 
@@ -58,4 +62,21 @@
 .glass>* {
   position: relative;
   z-index: 2;
+}
+
+/* Burger Menu Animation */
+.burger-menu {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -5,6 +5,7 @@ import { Router, Route } from "@solidjs/router";
 import Sponsorship from "./pages/Sponsorship";
 import Hotels from "./pages/Hotels";
 import Organizers from "./pages/Organizers";
+import Legal from "./pages/Legal";
 import TopMenu from "./components/TopMenu";
 import MobileMenu from "./components/MobileMenu";
 import {
@@ -257,6 +258,13 @@ function RootLayout(props: { children?: JSX.Element }) {
 
       {/* Routes */}
       {props.children}
+
+      {/* Footer */}
+      <footer class="w-full py-6 my-6 text-center relative">
+        <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg">
+          <a href="/2025.nixcon.org/legal" class="text-white/80 hover:text-white transition-colors text-base font-medium">Legal disclosure</a>
+        </div>
+      </footer>
     </>
 
   );
@@ -271,6 +279,7 @@ function App() {
     <Route path="/sponsorship" component={Sponsorship} />
     <Route path="/hotels" component={Hotels} />
     <Route path="/organizers" component={Organizers} />
+    <Route path="/legal" component={Legal} />
   </Router>)
 }
 

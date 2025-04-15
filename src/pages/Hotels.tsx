@@ -70,7 +70,7 @@ export default function Hotels(): JSX.Element {
             </div>
 
             <p class="text-center mt-6">
-              For assistance with accommodation, please contact <a href="mailto:info@nixcon.org" class="underline hover:text-white/80">info@nixcon.org</a>
+              For assistance with accommodation, please contact <a href="mailto:nixcon@nixos.org" class="underline hover:text-white/80">nixcon@nixos.org</a>
             </p>
           </div>
         </div>

@@ -260,7 +260,7 @@ export default function Organizers(): JSX.Element {
             </div>
 
             <p class="text-center mt-6">
-              For any questions about the organizing team, please contact <a href="mailto:info@nixcon.org" class="underline hover:text-white/80">info@nixcon.org</a>
+              For any questions about the organizing team, please contact <a href="mailto:nixcon@nixos.org" class="underline hover:text-white/80">nixcon@nixos.org</a>
             </p>
           </div>
         </div>

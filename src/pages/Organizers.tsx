@@ -163,7 +163,7 @@ const organizers: Organizer[] = [
     matrixUrl: "https://matrix.to/#/%40ronef:matrix.org",
     discourse: "ron",
     discourseUrl: "https://discourse.nixos.org/u/ron",
-    responsibilities: ["Sponsorship stuff"]
+    responsibilities: ["Sponsorships"]
   },
   {
     name: "Sebastian",
@@ -173,7 +173,7 @@ const organizers: Organizer[] = [
     matrixUrl: "https://matrix.to/#/%40ra33it0:matrix.org",
     discourse: "ra33it0",
     discourseUrl: "https://discourse.nixos.org/u/ra33it0",
-    responsibilities: ["Program", "Sponsorship stuff"]
+    responsibilities: ["Program", "Sponsorships"]
   },
   {
     name: "Silvan",
@@ -183,7 +183,7 @@ const organizers: Organizer[] = [
     matrixUrl: "https://matrix.to/#/%40infinisil:matrix.org",
     discourse: "infinisil",
     discourseUrl: "https://discourse.nixos.org/u/infinisil",
-    responsibilities: ["General administration", "Hotels", "Sponsorship stuff", "Letters of Invitation"]
+    responsibilities: ["General administration", "Hotels", "Sponsorships", "Letters of Invitation"]
   }
 ];
 

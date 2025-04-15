@@ -65,7 +65,7 @@ const organizers: Organizer[] = [
     matrixUrl: "https://matrix.to/#/%40zmberber:matrix.org",
     discourse: "zmberber",
     discourseUrl: "https://discourse.nixos.org/u/zmberber",
-    responsibilities: ["Unassigned"]
+    responsibilities: ["Letters of Invitation"]
   },
   {
     name: "Enrico",
@@ -183,7 +183,7 @@ const organizers: Organizer[] = [
     matrixUrl: "https://matrix.to/#/%40infinisil:matrix.org",
     discourse: "infinisil",
     discourseUrl: "https://discourse.nixos.org/u/infinisil",
-    responsibilities: ["General administration", "Hotels", "Sponsorship stuff"]
+    responsibilities: ["General administration", "Hotels", "Sponsorship stuff", "Letters of Invitation"]
   }
 ];
 

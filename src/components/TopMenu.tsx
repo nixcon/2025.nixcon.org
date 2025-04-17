@@ -1,5 +1,6 @@
 import { JSX, createSignal, onMount, onCleanup } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
+import { Logo } from "./Logo";
 
 export default function TopMenu(): JSX.Element {
   const location = useLocation();
@@ -28,13 +29,15 @@ export default function TopMenu(): JSX.Element {
         <div class={`flex items-center justify-center h-16 ${scrolled() ? 'glass' : ''}`}>
           {/* Navigation Links */}
           <nav class="flex items-center space-x-10">
-            {/* Home */}
+            {/* Home with Logo */}
             <A
               href="/"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive('/') ? 'underline' : ''}`}
+              class={`text-white hover:text-white/80 transition-all duration-75 ${isActive('/') ? 'underline' : ''}`}
               aria-label="Home"
             >
-              NixCon 2025
+              <div class="w-8 h-8">
+                <Logo />
+              </div>
             </A>
 
             <div class="text-white">|</div>

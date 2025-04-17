@@ -80,3 +80,11 @@ body {
     transform: translateY(0);
   }
 }
+
+.debug {
+  border: 2px dashed blue;
+}
+
+.debug>* {
+  border: 2px dashed red;
+}

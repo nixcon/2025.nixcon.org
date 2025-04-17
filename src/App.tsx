@@ -72,38 +72,41 @@ function getIconForSection(id: string) {
 // Main page content component
 function MainPage() {
   return (
-    <div class="relative min-h-screen text-white p-5 pt-20">
+    <div class="relative min-h-screen text-white">
       {/* Hero section */}
-      <section class="flex flex-col gap-5 items-center px-10 min-h-screen justify-center relative">
+      <section class="flex flex-col gap-5 items-center px-10 h-screen justify-center relative">
         {/* <img src={LogoSrc} alt="" srcset="" class="w-1/4" /> */}
-        <div class="flex flex-wrap flex-row gap-20 items-center justify-center">
-          <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
-            <Logo />
+        <div class="flex flex-col items-center gap-10 h-full justify-center pt-20 pb-2">
+          <div class="flex h-full items-center">
+            <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
+              <Logo />
+            </div>
           </div>
-          <div class="text-2xl font-medium">
-            <p class="flex items-center gap-3 mb-4">
+          <div class="flex flex-row flex-wrap justify-center gap-6 md:gap-10 text-2xl font-medium">
+            <p class="flex items-center gap-3">
               <span class="text-xl bg-white/10 p-2 rounded-full"><BsSnow /></span>
-              <span >NixCon 2025</span>
+              <span>NixCon 2025</span>
             </p>
-            <p class="flex items-center gap-3 mb-4">
+            <p class="flex items-center gap-3">
               <span class="text-xl bg-white/10 p-2 rounded-full"><BsGeoFill /></span>
-              <span >Switzerland</span>
+              <span>Switzerland</span>
             </p>
             <p class="flex items-center gap-3">
               <span class="text-xl bg-white/10 p-2 rounded-full"><BsCalendarEventFill /></span>
-              <span >September 5-7, 2025</span>
+              <span>September 5-7, 2025</span>
             </p>
+          </div>
+
+          {/* Arrow indicator */}
+          <div class="">
+            <a href="#tickets" class="flex flex-col items-center text-white hover:text-white">
+              <div class="bg-white/10 p-2 rounded-full">
+                <BsChevronDown size={28} class="translate-y-[1px]" />
+              </div>
+            </a>
           </div>
         </div>
 
-        {/* Arrow indicator */}
-        <div class="absolute bottom-24">
-          <a href="#tickets" class="flex flex-col items-center text-white hover:text-white">
-            <div class="bg-white/10 p-2 rounded-full">
-              <BsChevronDown size={28} class="translate-y-[1px]" />
-            </div>
-          </a>
-        </div>
       </section>
 
       {/* Nav - Reordered by user interest frequency */}

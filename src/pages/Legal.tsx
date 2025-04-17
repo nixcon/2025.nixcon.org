@@ -29,10 +29,6 @@ export default function Legal(): JSX.Element {
                 </div>
 
                 <div class="mb-6">
-                  <p>Representative: Ron Efroni</p>
-                </div>
-
-                <div class="mb-6">
                   <p>E-Mail: <a href="mailto:foundation@nixos.org" class="text-white underline hover:text-white/80">foundation@nixos.org</a></p>
                 </div>
               </div>

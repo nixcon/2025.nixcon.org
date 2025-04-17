@@ -8,6 +8,7 @@ import {
 } from 'solid-icons/bs';
 import { FaSolidHotel } from 'solid-icons/fa'
 import { BiSolidHeartCircle } from 'solid-icons/bi'
+import { Logo } from "./Logo";
 
 export default function MobileMenu(): JSX.Element {
   const location = useLocation();
@@ -19,29 +20,47 @@ export default function MobileMenu(): JSX.Element {
   };
 
   return (
-    <div class="fixed top-2 right-4 z-50 md:hidden">
+    <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
+      {/* Header with background */}
+      <div class="glass !rounded-none !px-4 !py-2 flex justify-between items-center">
+        {/* Logo on the left */}
+        <A href="/" aria-label="Home">
+          <div class="w-10 h-10">
+            <Logo />
+          </div>
+        </A>
+
+        {/* Burger Button on the right */}
+        <button
+          onClick={toggleMenu}
+          class="text-white p-2"
+          aria-label="Toggle menu"
+        >
+          {isOpen() ? <BsX size={30} /> : <BsList size={30} />}
+        </button>
+      </div>
+
       {/* Mobile Menu Dropdown */}
       {isOpen() && (
-        <div class="absolute top-5 right-5 w-56 burger-menu">
-          <div class="glass p-4 rounded-lg">
+        <div class="absolute top-full left-0 right-0 burger-menu">
+          <div class="glass !p-4 !rounded-none">
             <nav class="flex flex-col space-y-4">
               {/* Home */}
               <A
                 href="/"
-                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center gap-2 ${isActive('/') ? 'underline' : ''}`}
+                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/') ? 'underline' : ''}`}
                 aria-label="Home"
                 onClick={() => setIsOpen(false)}
               >
                 <BsHouseFill />
-                NixCon 2025
+                Home
               </A>
 
-              <div class="h-px w-full bg-white/20"></div>
 
               {/* Sponsorship */}
               <A
                 href="/sponsorship"
-                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center gap-2 ${isActive('/sponsorship') ? 'underline' : ''}`}
+                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/sponsorship') ? 'underline' : ''}`}
                 aria-label="Sponsorship"
                 onClick={() => setIsOpen(false)}
               >
@@ -52,7 +71,7 @@ export default function MobileMenu(): JSX.Element {
               {/* Hotels */}
               <A
                 href="/hotels"
-                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center gap-2 ${isActive('/hotels') ? 'underline' : ''}`}
+                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/hotels') ? 'underline' : ''}`}
                 aria-label="Hotels"
                 onClick={() => setIsOpen(false)}
               >
@@ -63,7 +82,7 @@ export default function MobileMenu(): JSX.Element {
               {/* Organizers */}
               <A
                 href="/organizers"
-                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center gap-2 ${isActive('/organizers') ? 'underline' : ''}`}
+                class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/organizers') ? 'underline' : ''}`}
                 aria-label="Organizers"
                 onClick={() => setIsOpen(false)}
               >
@@ -75,14 +94,6 @@ export default function MobileMenu(): JSX.Element {
         </div>
       )}
 
-      {/* Burger Button */}
-      <button
-        onClick={toggleMenu}
-        class="text-white glass !p-2 !rounded-full"
-        aria-label="Toggle menu"
-      >
-        {isOpen() ? <BsX size={35} /> : <BsList size={35} />}
-      </button>
     </div>
   );
 }

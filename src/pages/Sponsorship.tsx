@@ -1,6 +1,6 @@
 import { JSX } from "solid-js";
 import { A } from "@solidjs/router";
-import { BsGiftFill } from 'solid-icons/bs';
+import { BiSolidHeartCircle } from 'solid-icons/bi';
 
 function sponsorLink(tier: string, amount: number): string {
 
@@ -23,7 +23,7 @@ export default function Sponsorship(): JSX.Element {
         <div class="w-full mx-auto space-y-8 px-4">
           <div class="flex flex-col items-center gap-5">
             <h1 class="text-4xl font-bold flex items-center gap-3">
-              <BsGiftFill class="text-3xl" />
+              <BiSolidHeartCircle class="text-3xl" />
               Sponsorship Tiers
             </h1>
 

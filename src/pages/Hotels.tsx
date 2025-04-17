@@ -1,5 +1,5 @@
 import { JSX } from "solid-js";
-import { BsBuildingFill } from 'solid-icons/bs';
+import { FaSolidHotel } from 'solid-icons/fa';
 import { FaRegularComments } from 'solid-icons/fa';
 
 export default function Hotels(): JSX.Element {
@@ -10,7 +10,7 @@ export default function Hotels(): JSX.Element {
         <div class="w-full mx-auto space-y-8 px-4">
           <div class="flex flex-col items-center gap-5">
             <h1 class="text-4xl font-bold flex items-center gap-3">
-              <BsBuildingFill class="text-3xl" />
+              <FaSolidHotel class="text-3xl" />
               Hotel Recommendations
             </h1>
 

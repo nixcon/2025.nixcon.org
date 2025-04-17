@@ -2,6 +2,19 @@ import { JSX } from "solid-js";
 import { A } from "@solidjs/router";
 import { BsGiftFill } from 'solid-icons/bs';
 
+function sponsorLink(tier: string, amount: number): string {
+
+  let body = `Please provide at least the following information:
+  - Company Name and Website:
+  - Desired Tier: ${tier}
+  - Desired Amount: ${amount} EUR
+  `
+
+  let title = "NixCon 2025 Sponsorship: <Your Company Name>"
+
+  return "mailto:sponsor@nixos.org?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body)
+}
+
 export default function Sponsorship(): JSX.Element {
   return (
     <div class="relative min-h-screen text-white p-5 pt-20">
@@ -29,8 +42,8 @@ export default function Sponsorship(): JSX.Element {
                   <li>Supporting the conference and official Nix projects</li>
                   <li>Confirmation of donation via OpenCollective</li>
                 </ul>
-                <A href="#how-to-sponsor" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
-                  Contact Us
+                <A href="https://opencollective.com/nixos" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                  Donate
                 </A>
               </div>
 
@@ -42,11 +55,11 @@ export default function Sponsorship(): JSX.Element {
                   <li>Linked logo on the website</li>
                   <li>Linked shout-out or repost from official social media accounts</li>
                   <li>Possibility to distribute your own stickers/swag/merch at the venue</li>
-                  <li>Tickets: 1+ corporate tickets</li>
+                  <li>Tickets: 1+ corporate tickets<a href="#corporate-tickets"><sup>[1]</sup></a></li>
                 </ul>
-                <A href="#how-to-sponsor" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                <a href={sponsorLink("Bronze", 1024)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
                   Contact Us
-                </A>
+                </a>
               </div>
 
               {/* Silver Tier */}
@@ -58,11 +71,11 @@ export default function Sponsorship(): JSX.Element {
                   <li>Shout-out in the opening</li>
                   <li>Slot on break slideshow (provide a slide in advance)</li>
                   <li>Possibility to distribute flyers (provide them in advance) to all attendees in bag</li>
-                  <li>Tickets: 2+ corporate tickets</li>
+                  <li>Tickets: 2+ corporate tickets<a href="#corporate-tickets"><sup>[1]</sup></a></li>
                 </ul>
-                <A href="#how-to-sponsor" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                <a href={sponsorLink("Silver", 2048)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
                   Contact Us
-                </A>
+                </a>
               </div>
 
               {/* Gold Tier */}
@@ -72,12 +85,12 @@ export default function Sponsorship(): JSX.Element {
                 <ul class="list-disc list-inside space-y-2 mb-4">
                   <li>Everything from Silver</li>
                   <li>5 minute lightning talk slot</li>
-                  <li>Dedicated space for a booth</li>
-                  <li>Tickets: 4+ corporate tickets</li>
+                  <li>Dedicated space for a booth<a href="#limited"><sup>[2]</sup></a></li>
+                  <li>Tickets: 4+ corporate tickets<a href="#corporate-tickets"><sup>[1]</sup></a></li>
                 </ul>
-                <A href="#how-to-sponsor" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                <a href={sponsorLink("Gold", 4096)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
                   Contact Us
-                </A>
+                </a>
               </div>
 
               {/* Diamond Tier */}
@@ -86,42 +99,43 @@ export default function Sponsorship(): JSX.Element {
                 <p class="text-xl mb-4">8192+ EUR</p>
                 <ul class="list-disc list-inside space-y-2 mb-4">
                   <li>Everything from Gold</li>
-                  <li>Logo on some official conference swag</li>
+                  <li>Logo on some official conference swag<a href="#limited"><sup>[2]</sup></a><a href="#production"><sup>[3]</sup></a></li>
                   <li>1 minute presentation slot (provide the slides in advance) in the conference opening</li>
                   <li>Intro of all recordings show your name/logo</li>
                   <li>Possibility to distribute items (provide them in advance) to all attendees in bag</li>
-                  <li>Tickets: 8+ corporate tickets</li>
+                  <li>Tickets: 8+ corporate tickets<a href="#corporate-tickets"><sup>[1]</sup></a></li>
                 </ul>
-                <A href="#how-to-sponsor" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                <a href={sponsorLink("Diamond", 8192)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
                   Contact Us
-                </A>
+                </a>
+              </div>
+
+              {/* Custom Tier */}
+              <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                <h3 class="text-2xl font-bold mb-2">Custom</h3>
+                <p class="text-xl mb-4">Sponsor in a more custom way, such as</p>
+                <ul class="list-disc list-inside space-y-2 mb-4">
+                  <li>Food, drinks, services, equipment</li>
+                  <li>Only specific perks</li>
+                </ul>
+                <a href={sponsorLink("Custom", 1)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                  Contact Us
+                </a>
               </div>
             </div>
 
             {/* General Info */}
             <div class="mt-12 w-full">
-              <h2 class="text-3xl font-bold mb-4">General Info</h2>
-              <ul class="list-disc list-inside space-y-2 mb-4">
+              <ol class="list-decimal text-xs list-inside space-y-2 mb-4">
+                <li id="corporate-tickets">One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually when ticket sales open.</li>
+                <li id="limited">These perks may be limited in availability.</li>
+                <li id="production">These perks require production and cannot be guaranteed if too late.</li>
                 <li>Sponsors can be tier-limited or rejected by the Nix Steering Committee for any reason.</li>
                 <li>The outline of all sponsor content must be disclosed in advance. We reserve the right to reject content.</li>
                 <li>Visibility priority is given according to tiers and donation amount.</li>
                 <li>The sponsor can selectively abstain from perks.</li>
                 <li>Surplus funds will be used to support official Nix projects.</li>
-                <li>Reach out if you'd like to sponsor in a more custom way, such as food, drinks, services, equipment, or only specific perks.</li>
-              </ul>
-            </div>
-
-            {/* How to Sponsor */}
-            <div id="how-to-sponsor" class="mt-8 w-full">
-              <h2 class="text-3xl font-bold mb-4">How to Sponsor</h2>
-              <p class="mb-4">
-                Send an email to <a href="mailto:sponsor@nixos.org" class="underline hover:text-white/80">sponsor@nixos.org</a> (which will forward to both the Nix Steering Committee and the NixOS Foundation board) with:
-              </p>
-              <ul class="list-disc list-inside space-y-2 mb-4">
-                <li>Company name and website</li>
-                <li>Desired tier, amount and perks</li>
-                <li>Any other details</li>
-              </ul>
+              </ol>
             </div>
           </div>
         </div>

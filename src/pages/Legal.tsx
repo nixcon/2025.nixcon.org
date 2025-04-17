@@ -19,7 +19,8 @@ export default function Legal(): JSX.Element {
 
                 <div class="mb-6">
                   <p>Stichting NixOS Foundation</p>
-                  <p>3500 Utrecht</p>
+                  <p>Korte Lijnbaanssteeg 1-4318</p>
+                  <p>1012 SL, Amsterdam</p>
                   <p>The Netherlands</p>
                 </div>
 

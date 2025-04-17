@@ -20,18 +20,9 @@ export default function MobileMenu(): JSX.Element {
 
   return (
     <div class="fixed top-2 right-4 z-50 md:hidden">
-      {/* Burger Button */}
-      <button
-        onClick={toggleMenu}
-        class="p-2 rounded-full transition-colors text-white"
-        aria-label="Toggle menu"
-      >
-        {isOpen() ? <BsX size={35} /> : <BsList size={35} />}
-      </button>
-
       {/* Mobile Menu Dropdown */}
       {isOpen() && (
-        <div class="absolute top-12 right-0 w-56 burger-menu">
+        <div class="absolute top-5 right-5 w-56 burger-menu">
           <div class="glass p-4 rounded-lg">
             <nav class="flex flex-col space-y-4">
               {/* Home */}
@@ -83,6 +74,15 @@ export default function MobileMenu(): JSX.Element {
           </div>
         </div>
       )}
+
+      {/* Burger Button */}
+      <button
+        onClick={toggleMenu}
+        class="text-white glass !p-2 !rounded-full"
+        aria-label="Toggle menu"
+      >
+        {isOpen() ? <BsX size={35} /> : <BsList size={35} />}
+      </button>
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { createSignal } from "solid-js";
-import { A, useLocation } from "@solidjs/router";
+import { useLocation } from "@solidjs/router";
+import { A } from "@solidjs/router";
 import {
   BsHouseFill,
   BsPeopleFill,
@@ -13,14 +13,17 @@ import { Logo } from "./Logo";
 export default function MobileMenu() {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
-  const [isOpen, setIsOpen] = createSignal(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen());
-  };
 
   return (
     <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
+      {/* Checkbox for the toggle - placed at the top level */}
+      <input 
+        type="checkbox" 
+        id="mobile-menu-toggle" 
+        class="hidden peer" 
+        aria-label="Toggle menu"
+      />
+      
       {/* Header with background */}
       <div class="glass !rounded-none !px-4 !py-2 flex justify-between items-center">
         {/* Logo on the left */}
@@ -30,27 +33,26 @@ export default function MobileMenu() {
           </div>
         </A>
 
-        {/* Burger Button on the right */}
-        <button
-          onClick={toggleMenu}
-          class="text-white p-2"
+        {/* Burger Button on the right - using checkbox hack */}
+        <label 
+          for="mobile-menu-toggle" 
+          class="text-white p-2 cursor-pointer block"
           aria-label="Toggle menu"
         >
-          {isOpen() ? <BsX size={30} /> : <BsList size={30} />}
-        </button>
+          <BsList size={30} class="peer-checked:hidden" />
+          <BsX size={30} class="hidden peer-checked:block" />
+        </label>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isOpen() && (
-        <div class="absolute top-full left-0 right-0 burger-menu">
-          <div class="glass !p-4 !rounded-none">
+      {/* Mobile Menu Dropdown - visible when checkbox is checked */}
+      <div class="absolute top-full left-0 right-0 burger-menu hidden peer-checked:block">
+        <div class="glass !p-4 !rounded-none">
             <nav class="flex flex-col space-y-4">
               {/* Home */}
               <A
                 href="/"
                 class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/') ? 'underline' : ''}`}
                 aria-label="Home"
-                onClick={() => setIsOpen(false)}
               >
                 <BsHouseFill />
                 Home
@@ -61,7 +63,6 @@ export default function MobileMenu() {
                 href="/sponsorship"
                 class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/sponsorship') ? 'underline' : ''}`}
                 aria-label="Sponsorship"
-                onClick={() => setIsOpen(false)}
               >
                 <BiSolidHeartCircle />
                 Sponsorship
@@ -72,7 +73,6 @@ export default function MobileMenu() {
                 href="/hotels"
                 class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/hotels') ? 'underline' : ''}`}
                 aria-label="Hotels"
-                onClick={() => setIsOpen(false)}
               >
                 <FaSolidHotel />
                 Hotels
@@ -83,7 +83,6 @@ export default function MobileMenu() {
                 href="/organizers"
                 class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive('/organizers') ? 'underline' : ''}`}
                 aria-label="Organizers"
-                onClick={() => setIsOpen(false)}
               >
                 <BsPeopleFill />
                 Organizers
@@ -91,7 +90,6 @@ export default function MobileMenu() {
             </nav>
           </div>
         </div>
-      )}
     </div>
   );
 }

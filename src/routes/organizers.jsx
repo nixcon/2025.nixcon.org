@@ -176,7 +176,7 @@ const organizers = [
 
 export default function Organizers() {
   return (
-    <div class="relative min-h-screen text-white p-5 pt-20">
+    <div class="relative min-h-svh text-white p-5 pt-20">
       {/* Content */}
       <div class="max-w-6xl mx-auto p-8 glass mt-20">
         <div class="w-full mx-auto space-y-8 px-4">

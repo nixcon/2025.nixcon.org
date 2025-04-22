@@ -47,9 +47,12 @@ body {
 
 /* Glass container with noisy texture overlay */
 .glass {
-  @apply p-8 bg-[#661A66]/50 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl;
+  @apply px-0 py-8 bg-[#661A66]/50 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl;
+  @apply sm:p-8;
   position: relative;
 }
+
+
 
 .glass::before {
   content: "";

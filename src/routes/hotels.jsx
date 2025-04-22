@@ -3,7 +3,7 @@ import { FaRegularComments } from 'solid-icons/fa';
 
 export default function Hotels() {
   return (
-    <div class="relative min-h-screen text-white p-5 pt-20">
+    <div class="relative min-h-svh text-white p-5 pt-20">
       {/* Content */}
       <div class="max-w-3xl mx-auto p-8 glass mt-20">
         <div class="w-full mx-auto space-y-8 px-4">

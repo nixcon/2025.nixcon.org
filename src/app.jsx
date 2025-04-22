@@ -20,7 +20,7 @@ export default function App() {
       <ClientLavaBackground />
 
       <Router
-        base="2025.nixcon.org"
+        base="/2025.nixcon.org"
         root={(props) => (
           <>
             {/* Menus */}

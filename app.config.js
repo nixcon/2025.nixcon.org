@@ -4,6 +4,7 @@ import glslPlugin from 'vite-plugin-glsl';
 
 export default defineConfig({
   vite: {
+    base: "/2025.nixcon.org/", // Add base path for GitHub Pages deployment
     plugins: [
       tailwindcss(),
       glslPlugin()

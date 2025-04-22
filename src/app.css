@@ -6,8 +6,6 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-@config "../tailwind.config.js";
-
 @font-face {
   font-weight: 500;
   font-style: normal;
@@ -63,8 +61,6 @@ body {
   position: relative;
   z-index: 2;
 }
-
-
 
 .debug {
   border: 2px dashed blue;

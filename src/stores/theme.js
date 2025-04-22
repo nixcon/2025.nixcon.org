@@ -1,8 +1,8 @@
 import { createSignal } from 'solid-js';
 
-type ThemeName = 'Lambda Nix' | 'Nix Blue' | 'Lava' | 'Ocean' | 'Acid';
+const ThemeNames = ['Lambda Nix', 'Nix Blue', 'Lava', 'Ocean', 'Acid'];
 
-export const colorSchemes: Record<ThemeName, { backgroundColor: number[], lavaColor: number[], cssBackgroundColor: string, cssLavaColor: string }> = {
+export const colorSchemes = {
   'Lambda Nix': {
     backgroundColor: [0.15, 0.05, 0.25],  // More purple-dominant dark base
     lavaColor: [0.72, 0.89, 1.22],      // Slightly darker blue tint
@@ -35,19 +35,17 @@ export const colorSchemes: Record<ThemeName, { backgroundColor: number[], lavaCo
   }
 };
 
-const themes: ThemeName[] = ['Lambda Nix', 'Nix Blue', 'Lava', 'Ocean', 'Acid'];
-
 // Default theme (localStorage persistence disabled)
-const initialTheme: ThemeName = 'Lava';
+const initialTheme = 'Lava';
 
-const [currentTheme, setCurrentTheme] = createSignal<ThemeName>(initialTheme);
+const [currentTheme, setCurrentTheme] = createSignal(initialTheme);
 
 export const useThemeStore = () => {
   const cycleTheme = () => {
     const current = currentTheme();
-    const currentIndex = themes.indexOf(current);
-    const nextIndex = (currentIndex + 1) % themes.length;
-    const newTheme = themes[nextIndex];
+    const currentIndex = ThemeNames.indexOf(current);
+    const nextIndex = (currentIndex + 1) % ThemeNames.length;
+    const newTheme = ThemeNames[nextIndex];
 
     // localStorage persistence disabled
     setCurrentTheme(newTheme);
@@ -55,7 +53,7 @@ export const useThemeStore = () => {
 
   return {
     currentTheme,
-    setTheme: (theme: ThemeName) => {
+    setTheme: (theme) => {
       // localStorage persistence disabled
       setCurrentTheme(theme);
     },

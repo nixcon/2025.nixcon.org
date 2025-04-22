@@ -15,6 +15,9 @@ import fragmentShader from './glsl/fragment.glsl';
  * The animation uses spherical coordinates to position the camera and renders
  * a full-screen quad with custom shaders.
  * 
+ * This function is designed to be called only in browser environments and is
+ * safely wrapped in the LavaBackground component which is marked as clientOnly.
+ * 
  * @param {Object} options Configuration options
  * @param {number[]} [options.backgroundColor=[0.4, 0.1, 0.4]] Background color as RGB array
  * @param {number[]} [options.lavaColor=[2.0, 0.8, -0.6]] Lava color as RGB array
@@ -41,7 +44,9 @@ export function startLavaAnimation({
     sinPhiRadius * Math.cos(cameraTheta), // Z
   ];
 
-  const gl = document.getElementById('background').getContext('webgl');
+  // Get the canvas element and WebGL context
+  const canvas = document.getElementById('background');
+  const gl = canvas.getContext('webgl');
   const programInfo = TWGL.createProgramInfo(gl, [vertexShader, fragmentShader]);
 
   const arrays = {

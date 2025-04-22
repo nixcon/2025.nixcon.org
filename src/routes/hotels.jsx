@@ -1,8 +1,7 @@
-import { JSX } from "solid-js";
 import { FaSolidHotel } from 'solid-icons/fa';
 import { FaRegularComments } from 'solid-icons/fa';
 
-export default function Hotels(): JSX.Element {
+export default function Hotels() {
   return (
     <div class="relative min-h-screen text-white p-5 pt-20">
       {/* Content */}

@@ -1,4 +1,4 @@
-import { JSX, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
 import {
   BsHouseFill,
@@ -10,9 +10,9 @@ import { FaSolidHotel } from 'solid-icons/fa'
 import { BiSolidHeartCircle } from 'solid-icons/bi'
 import { Logo } from "./Logo";
 
-export default function MobileMenu(): JSX.Element {
+export default function MobileMenu() {
   const location = useLocation();
-  const isActive = (path: string) => location.pathname === `/2025.nixcon.org${path}`;
+  const isActive = (path) => location.pathname === path;
   const [isOpen, setIsOpen] = createSignal(false);
 
   const toggleMenu = () => {
@@ -56,7 +56,6 @@ export default function MobileMenu(): JSX.Element {
                 Home
               </A>
 
-
               {/* Sponsorship */}
               <A
                 href="/sponsorship"
@@ -93,7 +92,6 @@ export default function MobileMenu(): JSX.Element {
           </div>
         </div>
       )}
-
     </div>
   );
 }

@@ -1,7 +1,6 @@
-import { JSX } from "solid-js";
 import { BsFileTextFill } from 'solid-icons/bs';
 
-export default function Legal(): JSX.Element {
+export default function Legal() {
   return (
     <div class="relative min-h-screen text-white p-5 pt-20">
       {/* Content */}

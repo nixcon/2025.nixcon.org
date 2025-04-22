@@ -1,9 +1,6 @@
-import { JSX } from "solid-js";
-import { A } from "@solidjs/router";
 import { BiSolidHeartCircle } from 'solid-icons/bi';
 
-function sponsorLink(tier: string, amount: number): string {
-
+function sponsorLink(tier, amount) {
   let body = `Please provide at least the following information:
   - Company Name and Website:
   - Desired Tier: ${tier}
@@ -15,7 +12,7 @@ function sponsorLink(tier: string, amount: number): string {
   return "mailto:sponsor@nixos.org?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body)
 }
 
-export default function Sponsorship(): JSX.Element {
+export default function Sponsorship() {
   return (
     <div class="relative min-h-screen text-white p-5 pt-20">
       {/* Content */}
@@ -42,9 +39,9 @@ export default function Sponsorship(): JSX.Element {
                   <li>Supporting the conference and official Nix projects</li>
                   <li>Confirmation of donation via OpenCollective</li>
                 </ul>
-                <A href="https://opencollective.com/nixos" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+                <a href="https://opencollective.com/nixos" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
                   Donate
-                </A>
+                </a>
               </div>
 
               {/* Bronze Tier */}

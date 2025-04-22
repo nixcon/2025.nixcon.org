@@ -1,27 +1,38 @@
-import { JSX, createSignal, onMount, onCleanup } from "solid-js";
+import { createSignal, onMount, onCleanup } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
 import { Logo } from "./Logo";
 
-export default function TopMenu(): JSX.Element {
-  const location = useLocation();
-  const isActive = (path: string) => location.pathname === `/2025.nixcon.org${path}`;
+/**
+ * Custom hook to track scroll position
+ * Only runs on the client side due to onMount
+ * 
+ * @param {number} threshold Scroll position threshold in pixels
+ * @returns {() => boolean} Signal that returns true when scrolled past threshold
+ */
+function useScrollPosition(threshold = 0) {
   const [scrolled, setScrolled] = createSignal(false);
-
-  const handleScroll = () => {
-    const threshold = 120
-    setScrolled(window.scrollY > threshold);
-  };
-
-
+  
   onMount(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > threshold);
+    };
+    
     window.addEventListener('scroll', handleScroll);
     // Check initial scroll position
     handleScroll();
+    
+    onCleanup(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
   });
+  
+  return scrolled;
+}
 
-  onCleanup(() => {
-    window.removeEventListener('scroll', handleScroll);
-  });
+export default function TopMenu() {
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path;
+  const scrolled = useScrollPosition(120);
 
   return (
     <div class="fixed top-0 left-0 right-0 z-50 hidden md:block">
@@ -41,7 +52,6 @@ export default function TopMenu(): JSX.Element {
             </A>
 
             <div class="text-white">|</div>
-
 
             {/* Sponsorship */}
             <A

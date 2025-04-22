@@ -1,13 +1,4 @@
-import { startLavaAnimation } from "./lava/app"
-import { createEffect, JSX } from 'solid-js';
-import { useThemeStore, colorSchemes } from './stores/theme';
-import { Router, Route } from "@solidjs/router";
-import Sponsorship from "./pages/Sponsorship";
-import Hotels from "./pages/Hotels";
-import Organizers from "./pages/Organizers";
-import Legal from "./pages/Legal";
-import TopMenu from "./components/TopMenu";
-import MobileMenu from "./components/MobileMenu";
+import { A } from "@solidjs/router";
 import {
   BsTicket,
   BsFileText,
@@ -24,18 +15,10 @@ import {
   BsGeo,
   BsChevronDown
 } from 'solid-icons/bs';
-import { Logo } from "./components/Logo";
-
-
+import { Logo } from "~/components/Logo";
 
 // Content section component
-interface ContentSectionProps {
-  id: string;
-  title: string;
-  children: JSX.Element;
-}
-
-function ContentSection(props: ContentSectionProps) {
+function ContentSection(props) {
   return (
     <section id={props.id} class="group">
       <div class="flex flex-col items-center gap-5">
@@ -50,7 +33,7 @@ function ContentSection(props: ContentSectionProps) {
 }
 
 // Helper function to get the appropriate icon for each section
-function getIconForSection(id: string) {
+function getIconForSection(id) {
   switch (id) {
     case 'location':
       return <BsGeoFill class="text-3xl" />; // Using filled pin icon for consistency with hero section
@@ -69,13 +52,11 @@ function getIconForSection(id: string) {
   }
 }
 
-// Main page content component
-function MainPage() {
+export default function Home() {
   return (
     <div class="relative min-h-screen text-white">
       {/* Hero section */}
       <section class="flex flex-col gap-5 items-center px-10 h-screen justify-center relative">
-        {/* <img src={LogoSrc} alt="" srcset="" class="w-1/4" /> */}
         <div class="flex flex-col items-center gap-10 h-full justify-center pt-20 pb-2">
           <div class="flex h-full items-center">
             <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
@@ -106,7 +87,6 @@ function MainPage() {
             </a>
           </div>
         </div>
-
       </section>
 
       {/* Nav - Reordered by user interest frequency */}
@@ -143,10 +123,8 @@ function MainPage() {
         </a>
       </nav>
 
-
       {/* Glass container for the whole page content */}
       <div class="max-w-3xl mx-auto p-8 glass">
-
         {/* Content sections - Reordered by user interest frequency */}
         <div class="w-full mx-auto space-y-12 px-4">
           {/* Tickets - Most important section */}
@@ -221,7 +199,7 @@ function MainPage() {
             <div class="flex flex-col items-center gap-3 w-full max-w-md">
               <p class="text-center">Our community guidelines and code of conduct ensure a respectful and inclusive environment for all attendees.</p>
               <a
-                href="/2025.nixcon.org/coc.pdf"
+                href="/coc.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
@@ -231,60 +209,9 @@ function MainPage() {
             </div>
           </ContentSection>
         </div>
-
       </div>
 
       <div class="h-20"></div>
     </div>
   );
 }
-
-// Main App component with router setup
-function RootLayout(props: { children?: JSX.Element }) {
-  const { currentTheme } = useThemeStore();
-
-  // Start lava animation after the component is mounted
-  createEffect(() => {
-    const colors = colorSchemes[currentTheme()];
-    const cleanup = startLavaAnimation(colors);
-    return cleanup;
-  });
-
-  return (
-    <>
-      {/* Background. Mounting point for lava animation */}
-      <canvas id="background" class="fixed inset-0 w-screen h-screen" />
-
-      {/* Menus */}
-      <TopMenu />
-      <MobileMenu />
-
-      {/* Routes */}
-      {props.children}
-
-      {/* Footer */}
-      <footer class="w-full py-6 my-6 text-center relative">
-        <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg">
-          <a href="/2025.nixcon.org/legal" class="text-white/80 hover:text-white transition-colors text-base font-medium">Legal disclosure</a>
-        </div>
-      </footer>
-    </>
-
-  );
-}
-
-// export default App;
-
-function App() {
-  return (<Router base="2025.nixcon.org" root={RootLayout}>
-    {/* Routes */}
-    <Route path="/" component={MainPage} />
-    <Route path="/sponsorship" component={Sponsorship} />
-    <Route path="/hotels" component={Hotels} />
-    <Route path="/organizers" component={Organizers} />
-    <Route path="/legal" component={Legal} />
-  </Router>)
-}
-
-
-export default App

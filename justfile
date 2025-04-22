@@ -1,11 +1,8 @@
 dev:
-  bun vite --port 1234
+  bun run dev
 
 build:
-  bun tsc -b && bun vite build
+  bun run build
   
-preview:
-  bun vite preview
-
 install:
   bun install

@@ -3,7 +3,7 @@ import { A } from "@solidjs/router";
 import { BsHouseFill, BsPeopleFill, BsList, BsX } from "solid-icons/bs";
 import { FaSolidHotel } from "solid-icons/fa";
 import { BiSolidHeartCircle } from "solid-icons/bi";
-import { Logo } from "./Logo";
+import { LogoMenu } from "./Logo";
 
 export default function MobileMenu() {
   const location = useLocation();
@@ -23,8 +23,8 @@ export default function MobileMenu() {
       <div class="glass !rounded-none !px-4 !py-2 flex justify-between items-center">
         {/* Logo on the left */}
         <A href="/" aria-label="Home">
-          <div class="w-10 h-10">
-            <Logo />
+          <div class="h-6">
+            <LogoMenu />
           </div>
         </A>
 

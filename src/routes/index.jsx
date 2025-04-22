@@ -54,7 +54,7 @@ function getIconForSection(id) {
 
 export default function Home() {
   return (
-    <div class="relative h-svh text-white p-5 pt-20">
+    <div class="relative min-h-svh text-white p-5 pt-20">
       {/* Hero section */}
       <section class="flex flex-col gap-5 items-center px-10 h-svh justify-center relative">
         <div class="flex flex-col items-center gap-10 h-full justify-center pt-20 pb-2">

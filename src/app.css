@@ -33,7 +33,16 @@
 }
 
 body {
-  @apply bg-[#661A66]
+  background-color: #661A66;
+  background-image:
+    radial-gradient(circle 60vw at 67% 12%, #FF5500 0%, transparent 70%),
+    radial-gradient(ellipse 45vw 30vw at 23% 37%, rgba(255, 85, 0, 0.8) 0%, transparent 80%),
+    radial-gradient(circle 40vw at 91% 63%, #661A66 0%, transparent 65%),
+    radial-gradient(ellipse 50vw 35vw at 8% 82%, rgba(102, 26, 102, 0.9) 0%, transparent 75%),
+    radial-gradient(circle 65vw at 74% 39%, #FF5500 0%, transparent 85%),
+    radial-gradient(ellipse 55vw 40vw at 32% 19%, rgba(102, 26, 102, 0.7) 0%, transparent 70%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 /* Glass container with noisy texture overlay */

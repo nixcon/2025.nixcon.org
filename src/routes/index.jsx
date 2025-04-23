@@ -1,4 +1,6 @@
 import { A } from "@solidjs/router";
+import { createEffect, onMount } from "solid-js";
+import { useAnimationStore } from "~/stores/animation";
 import {
   BsTicket,
   BsFileText,
@@ -13,7 +15,9 @@ import {
   BsChatDotsFill,
   BsCalendarEventFill,
   BsGeo,
-  BsChevronDown
+  BsChevronDown,
+  BsPlayFill,
+  BsPauseFill
 } from 'solid-icons/bs';
 import { Logo } from "~/components/Logo";
 
@@ -53,39 +57,52 @@ function getIconForSection(id) {
 }
 
 export default function Home() {
-  return (
-    <div class="relative min-h-svh text-white p-5 pt-20">
-      {/* Hero section */}
-      <section class="flex flex-col gap-5 items-center px-10 h-svh justify-center relative">
-        <div class="flex flex-col items-center gap-10 h-full justify-center pt-20 pb-2">
-          <div class="flex h-full items-center">
-            <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
-              <Logo />
-            </div>
-          </div>
-          <div class="flex flex-row flex-wrap justify-center gap-6 md:gap-10 text-2xl font-medium">
-            <p class="flex items-center gap-3">
-              <span class="text-xl bg-white/10 p-2 rounded-full"><BsSnow /></span>
-              <span>NixCon 2025</span>
-            </p>
-            <p class="flex items-center gap-3">
-              <span class="text-xl bg-white/10 p-2 rounded-full"><BsGeoFill /></span>
-              <span>Switzerland</span>
-            </p>
-            <p class="flex items-center gap-3">
-              <span class="text-xl bg-white/10 p-2 rounded-full"><BsCalendarEventFill /></span>
-              <span>September 5-7, 2025</span>
-            </p>
-          </div>
+  const { isAnimationOn, setIsAnimationOn } = useAnimationStore();
 
-          {/* Arrow indicator */}
-          <div class="">
-            <a href="#tickets" class="flex flex-col items-center text-white hover:text-white">
-              <div class="bg-white/10 p-2 rounded-full">
-                <BsChevronDown size={28} class="translate-y-[1px]" />
-              </div>
-            </a>
+  // Handle toggle button click
+  const handleToggleClick = () => {
+    setIsAnimationOn(!isAnimationOn());
+  };
+
+  return (
+    <div class="relative min-h-svh text-white">
+      {/* Hero section */}
+      <section class="flex flex-col gap-5 items-center px-10 h-svh justify-center relative pt-10 pb-2">
+        <div class="flex h-full flex-col items-center justify-end">
+          <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
+            <Logo />
           </div>
+          <button
+            onClick={handleToggleClick}
+            class="my-8 p-3 bg-white/10 hover:bg-white/20 transition-colors rounded-full text-white flex items-center justify-center"
+            aria-label="Toggle animation"
+          >
+            {!isAnimationOn() ? <BsPlayFill size={24} /> : <BsPauseFill size={24} />}
+          </button>
+        </div>
+
+        <div class="flex flex-row flex-wrap justify-center gap-6 md:gap-10 text-2xl font-medium">
+          <p class="flex items-center gap-3">
+            <span class="text-xl bg-white/10 p-2 rounded-full"><BsSnow /></span>
+            <span>NixCon 2025</span>
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="text-xl bg-white/10 p-2 rounded-full"><BsGeoFill /></span>
+            <span>Switzerland</span>
+          </p>
+          <p class="flex items-center gap-3">
+            <span class="text-xl bg-white/10 p-2 rounded-full"><BsCalendarEventFill /></span>
+            <span>September 5-7, 2025</span>
+          </p>
+        </div>
+
+        {/* Arrow indicator */}
+        <div class="">
+          <a href="#tickets" class="flex flex-col items-center text-white hover:text-white">
+            <div class="bg-white/10 p-2 rounded-full">
+              <BsChevronDown size={28} class="translate-y-[1px]" />
+            </div>
+          </a>
         </div>
       </section>
 

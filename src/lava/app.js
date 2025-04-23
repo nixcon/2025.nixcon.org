@@ -79,7 +79,7 @@ export function startLavaAnimation({
       gl.viewport(0, 0, canvasWidth, canvasHeight);
 
       const uniforms = {
-        uTime: animationTime,
+        uTime: animationTime / 2,
         uResolution: [canvasWidth, canvasHeight],
         uCameraPosition: cameraPosition,
         uBackgroundColor: backgroundColor,

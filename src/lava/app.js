@@ -58,7 +58,7 @@ export function startLavaAnimation({
   const bufferInfo = TWGL.createBufferInfoFromArrays(gl, arrays);
 
   let frameId = null;
-  let animationTime = 0;
+  let animationTime = Math.round(300 * Math.random()); // Randomize the animation start within 5minutes
   let lastFrameTime = 0;
 
   function render(time) {

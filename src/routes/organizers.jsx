@@ -77,7 +77,7 @@ const organizers = [
     github: "ForsakenHarmony",
     githubUrl: "https://github.com/ForsakenHarmony",
     matrix: "@hrmny:matrix.org",
-    matrixUrl: "https://matrix.to/#/%40hrmny:matrix.org",
+    matrixUrl: "https://matrix.to/#/%40hrmny:c-base.org",
     discourse: "hrmny",
     discourseUrl: "https://discourse.nixos.org/u/hrmny",
     responsibilities: ["Tickets", "A/V"]

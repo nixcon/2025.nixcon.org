@@ -2,14 +2,14 @@ import { useAnimationStore, AnimationModes } from "~/stores/animation";
 import { useThemeStore, colorSchemes } from "~/stores/theme";
 
 /**
- * A component that displays the current animation mode and allows cycling through modes.
+ * A component that displays the current animation mode and allows toggling between on/off.
  */
 export default function AnimationModeToggle() {
-  const { animationMode, isAnimationOn, cycleAnimationMode, getAnimationModeDisplayName } = useAnimationStore();
+  const { animationMode, isAnimationOn, toggleAnimationMode, getAnimationModeDisplayName } = useAnimationStore();
   const { currentTheme } = useThemeStore();
 
   const handleClick = () => {
-    cycleAnimationMode();
+    toggleAnimationMode();
   };
 
   // Get the appropriate color based on the current theme and animation state

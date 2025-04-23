@@ -2,7 +2,7 @@ import { createSignal, createEffect, onCleanup, onMount } from 'solid-js';
 
 // Animation modes
 export const AnimationModes = {
-  AUTO: 'auto',         // Off after 10 seconds
+  AUTO: 'auto',         // Off after 5 seconds
   ALWAYS_ON: 'always_on',
   ALWAYS_OFF: 'always_off'
 };
@@ -54,11 +54,11 @@ export const useAnimationStore = () => {
       autoOffTimer = null;
     }
 
-    // If in AUTO mode, set a timer to turn off animation after 10 seconds
+    // If in AUTO mode, set a timer to turn off animation after 5 seconds
     if (animationMode() === AnimationModes.AUTO && isAnimationOn()) {
       autoOffTimer = setTimeout(() => {
         setIsAnimationOn(false);
-      }, 10000); // 10 seconds
+      }, 5000); // 5 seconds
     }
   });
 
@@ -121,7 +121,7 @@ export const useAnimationStore = () => {
     getAnimationModeDisplayName: () => {
       switch (animationMode()) {
         case AnimationModes.AUTO:
-          return 'Auto (10 Seconds)';
+          return 'Auto (5 Seconds)';
         case AnimationModes.ALWAYS_ON:
           return 'Always On';
         case AnimationModes.ALWAYS_OFF:

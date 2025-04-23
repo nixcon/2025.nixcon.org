@@ -1,6 +1,7 @@
-import { onMount, onCleanup } from "solid-js";
+import { onMount, onCleanup, createEffect } from "solid-js";
 import { startLavaAnimation } from "~/lava/app";
 import { useThemeStore, colorSchemes } from "~/stores/theme";
+import { useAnimationStore } from "~/stores/animation";
 
 /**
  * A component that renders the lava animation background.
@@ -8,16 +9,41 @@ import { useThemeStore, colorSchemes } from "~/stores/theme";
  */
 export default function LavaBackground() {
   const { currentTheme } = useThemeStore();
-  let cleanup = null;
+  const { isAnimationOn } = useAnimationStore();
+  let animation = null;
 
   onMount(() => {
     const colors = colorSchemes[currentTheme()];
-    cleanup = startLavaAnimation(colors);
+    animation = startLavaAnimation(colors);
+
+    if (isAnimationOn()) {
+      animation.start();
+    } else {
+      // Render a single static frame if animation is initially off
+      animation.renderSingleFrame();
+    }
   });
 
   onCleanup(() => {
-    if (cleanup) cleanup();
+    if (animation) animation.stop();
   });
 
-  return <canvas id="background" class="fixed inset-0 w-screen h-svh" />;
+  // Effect to start/stop animation when isAnimationOn changes
+  createEffect(() => {
+    if (!animation) return;
+
+    if (isAnimationOn()) {
+      animation.start();
+    } else {
+      // Render a single static frame instead of stopping completely
+      animation.renderSingleFrame();
+    }
+  });
+
+  return (
+    <>
+      <canvas id="background" class="fixed inset-0 w-screen h-svh" />
+
+    </>
+  );
 }

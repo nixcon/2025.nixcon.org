@@ -8,9 +8,13 @@ import MobileMenu from "~/components/MobileMenu";
 import LavaBackground from "~/components/LavaBackground";
 import "./app.css";
 
-// Create a client-only version of LavaBackground
+// Create client-only versions of components that need browser APIs
 const ClientLavaBackground = clientOnly(() =>
   import("~/components/LavaBackground")
+);
+
+const ClientAnimationModeToggle = clientOnly(() =>
+  import("~/components/AnimationModeToggle")
 );
 
 export default function App() {
@@ -32,7 +36,9 @@ export default function App() {
 
             {/* Footer */}
             <footer class="w-full py-6 my-6 text-center relative">
-              <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg">
+              <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg flex flex-col md:flex-row items-center justify-center gap-4">
+                <ClientAnimationModeToggle />
+                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
                 <A
                   href="/legal"
                   class="text-white/80 hover:text-white transition-colors text-base font-medium"

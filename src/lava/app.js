@@ -11,7 +11,7 @@ import vertexShader from './glsl/vertex.glsl';
 import fragmentShader from './glsl/fragment.glsl';
 
 /**
- * Initializes and starts a WebGL-based lava animation in the background canvas.
+ * Initializes a WebGL-based lava animation in the background canvas.
  * The animation uses spherical coordinates to position the camera and renders
  * a full-screen quad with custom shaders.
  * 
@@ -21,7 +21,9 @@ import fragmentShader from './glsl/fragment.glsl';
  * @param {Object} options Configuration options
  * @param {number[]} [options.backgroundColor=[0.4, 0.1, 0.4]] Background color as RGB array
  * @param {number[]} [options.lavaColor=[2.0, 0.8, -0.6]] Lava color as RGB array
- * @returns {Function} A cleanup function that cancels the animation frame when called
+ * @returns {Object} An object containing start and stop functions to control the animation
+ * @returns {Function} start - Function to start the animation
+ * @returns {Function} stop - Function to stop the animation
  * @throws {Error} If WebGL context cannot be obtained or shader compilation fails
  */
 export function startLavaAnimation({
@@ -55,9 +57,19 @@ export function startLavaAnimation({
 
   const bufferInfo = TWGL.createBufferInfoFromArrays(gl, arrays);
 
-  let frameId = requestAnimationFrame(render);
+  let frameId = null;
+  let animationTime = Math.round(300 * Math.random()); // Randomize the animation start within 5minutes
+  let lastFrameTime = 0;
 
-  function render(time) {
+  function render(time, singleFrame = false) {
+    // Calculate delta time and add it to our animation time
+    if (!singleFrame && lastFrameTime > 0) {
+      const deltaTime = (time - lastFrameTime) * 0.001; // Convert to seconds
+      animationTime += deltaTime;
+    }
+    if (!singleFrame) {
+      lastFrameTime = time;
+    }
     try {
       const canvasWidth = window.innerWidth;
       const canvasHeight = window.innerHeight;
@@ -67,7 +79,7 @@ export function startLavaAnimation({
       gl.viewport(0, 0, canvasWidth, canvasHeight);
 
       const uniforms = {
-        uTime: time * 0.001,
+        uTime: animationTime / 2,
         uResolution: [canvasWidth, canvasHeight],
         uCameraPosition: cameraPosition,
         uBackgroundColor: backgroundColor,
@@ -83,9 +95,37 @@ export function startLavaAnimation({
       return cancelAnimationFrame(frameId);
     }
 
-    frameId = requestAnimationFrame(render);
+    // Only request a new animation frame if not in single frame mode
+    if (!singleFrame) {
+      frameId = requestAnimationFrame(render);
+    }
   }
 
-  // Return cleanup function
-  return () => cancelAnimationFrame(frameId);
+  // Return start, stop, and renderSingleFrame functions
+  return {
+    start: () => {
+      // Only start if not already running
+      if (!frameId) {
+        // Reset lastFrameTime so we don't get a huge delta on first frame
+        lastFrameTime = 0;
+        frameId = requestAnimationFrame(render);
+      }
+      return frameId;
+    },
+    stop: () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+        frameId = null;
+      }
+    },
+    renderSingleFrame: () => {
+      // Stop any running animation first
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+        frameId = null;
+      }
+      // Render a single frame without advancing the animation time
+      render(performance.now(), true);
+    }
+  };
 }

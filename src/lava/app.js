@@ -61,13 +61,15 @@ export function startLavaAnimation({
   let animationTime = Math.round(300 * Math.random()); // Randomize the animation start within 5minutes
   let lastFrameTime = 0;
 
-  function render(time) {
+  function render(time, singleFrame = false) {
     // Calculate delta time and add it to our animation time
-    if (lastFrameTime > 0) {
+    if (!singleFrame && lastFrameTime > 0) {
       const deltaTime = (time - lastFrameTime) * 0.001; // Convert to seconds
       animationTime += deltaTime;
     }
-    lastFrameTime = time;
+    if (!singleFrame) {
+      lastFrameTime = time;
+    }
     try {
       const canvasWidth = window.innerWidth;
       const canvasHeight = window.innerHeight;
@@ -93,10 +95,13 @@ export function startLavaAnimation({
       return cancelAnimationFrame(frameId);
     }
 
-    frameId = requestAnimationFrame(render);
+    // Only request a new animation frame if not in single frame mode
+    if (!singleFrame) {
+      frameId = requestAnimationFrame(render);
+    }
   }
 
-  // Return both start and stop functions
+  // Return start, stop, and renderSingleFrame functions
   return {
     start: () => {
       // Only start if not already running
@@ -112,6 +117,15 @@ export function startLavaAnimation({
         cancelAnimationFrame(frameId);
         frameId = null;
       }
+    },
+    renderSingleFrame: () => {
+      // Stop any running animation first
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+        frameId = null;
+      }
+      // Render a single frame without advancing the animation time
+      render(performance.now(), true);
     }
   };
 }

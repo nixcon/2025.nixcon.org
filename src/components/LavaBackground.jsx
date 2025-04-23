@@ -18,6 +18,9 @@ export default function LavaBackground() {
 
     if (isAnimationOn()) {
       animation.start();
+    } else {
+      // Render a single static frame if animation is initially off
+      animation.renderSingleFrame();
     }
   });
 
@@ -32,7 +35,8 @@ export default function LavaBackground() {
     if (isAnimationOn()) {
       animation.start();
     } else {
-      animation.stop();
+      // Render a single static frame instead of stopping completely
+      animation.renderSingleFrame();
     }
   });
 

@@ -68,7 +68,7 @@ export default function Home() {
     <div class="relative min-h-svh text-white">
       {/* Hero section */}
       <section class="flex flex-col gap-5 items-center px-10 h-svh justify-center relative pt-10 pb-2">
-        <div class="flex h-full flex-col items-center justify-end">
+        <div class="flex h-full flex-col items-center justify-center pt-10">
           <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
             <Logo />
           </div>

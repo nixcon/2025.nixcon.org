@@ -57,11 +57,11 @@ function getIconForSection(id) {
 }
 
 export default function Home() {
-  const { isAnimationOn, setIsAnimationOn } = useAnimationStore();
+  const { isAnimationOn, toggleAnimationMode } = useAnimationStore();
 
   // Handle toggle button click
   const handleToggleClick = () => {
-    setIsAnimationOn(!isAnimationOn());
+    toggleAnimationMode();
   };
 
   return (

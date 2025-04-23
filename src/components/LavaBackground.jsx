@@ -1,4 +1,4 @@
-import { onMount, onCleanup, createEffect } from "solid-js";
+import { onMount, onCleanup, createEffect, createSignal } from "solid-js";
 import { startLavaAnimation } from "~/lava/app";
 import { useThemeStore, colorSchemes } from "~/stores/theme";
 import { useAnimationStore } from "~/stores/animation";
@@ -12,6 +12,14 @@ export default function LavaBackground() {
   const { isAnimationOn } = useAnimationStore();
   let animation = null;
 
+  // Handle window resize
+  const handleResize = () => {
+    // If animation is stopped, render a single frame to update with new dimensions
+    if (animation && !isAnimationOn()) {
+      animation.renderSingleFrame();
+    }
+  };
+
   onMount(() => {
     const colors = colorSchemes[currentTheme()];
     animation = startLavaAnimation(colors);
@@ -22,10 +30,15 @@ export default function LavaBackground() {
       // Render a single static frame if animation is initially off
       animation.renderSingleFrame();
     }
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
   });
 
   onCleanup(() => {
     if (animation) animation.stop();
+    // Remove resize event listener
+    window.removeEventListener('resize', handleResize);
   });
 
   // Effect to start/stop animation when isAnimationOn changes

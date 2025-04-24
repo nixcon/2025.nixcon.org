@@ -13,7 +13,6 @@ export default defineConfig({
     }
   },
   server: {
-    baseURL: "/2025.nixcon.org",
     prerender: {
       crawlLinks: true,
 

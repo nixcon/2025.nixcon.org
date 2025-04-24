@@ -100,7 +100,7 @@ const organizers = [
     matrixUrl: "https://matrix.to/#/%40a-kenji:matrix.org",
     discourse: "a-kenji",
     discourseUrl: "https://discourse.nixos.org/u/a-kenji",
-    responsibilities: ["Program", "Unassigned"]
+    responsibilities: ["Program", "Perk delivery"]
   },
   {
     name: "Lassulus",

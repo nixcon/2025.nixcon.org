@@ -96,6 +96,14 @@ export default function App() {
                 >
                   Legal disclosure
                 </A>
+                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                <A
+                  href="/privacy"
+                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                  aria-label="Privacy policy"
+                >
+                  Privacy Policy
+                </A>
               </div>
             </footer>
           </>

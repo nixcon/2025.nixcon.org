@@ -14,7 +14,7 @@ export default function Legal() {
 
             <div class="w-full max-w-2xl">
               <div class="prose prose-invert mx-auto">
-                <p class="text-lg mb-6">This event is hosted by:</p>
+                <p class="text-lg mb-6">This website and event is hosted by:</p>
 
                 <div class="mb-6">
                   <p>Stichting NixOS Foundation</p>

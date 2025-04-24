@@ -49,6 +49,14 @@ export function startLavaAnimation({
   // Get the canvas element and WebGL context
   const canvas = document.getElementById('background');
   const gl = canvas.getContext('webgl');
+  if (! gl) {
+    // There's probably a better way to handle this
+    return {
+      start: () => { },
+      stop: () => { },
+      renderSingleFrame: () => { }
+    };
+  }
   const programInfo = TWGL.createProgramInfo(gl, [vertexShader, fragmentShader]);
 
   const arrays = {

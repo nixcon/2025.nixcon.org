@@ -255,7 +255,7 @@ export default function Organizers() {
             </div>
 
             <p class="text-center mt-6">
-              Co-organised with OST Eastern Switzerland University of Applied Sciences.
+              Co-organised with <a href="https://ost.ch/ifs">OST Eastern Switzerland University of Applied Sciences</a>
               <br />
               For any questions about the organizing team, please contact <a href="mailto:nixcon@nixos.org" class="underline hover:text-white/80">nixcon@nixos.org</a>
             </p>

@@ -63,6 +63,14 @@ const organizers = [
     responsibilities: ["Website"]
   },
   {
+    name: "Farhad",
+    github: "fmehta",
+    githubUrl: "https://github.com/fmehta",
+    discourse: "fmehta",
+    discourseUrl: "https://discourse.nixos.org/u/fmehta",
+    responsibilities: ["Date, venue"]
+  },
+  {
     name: "Ida",
     github: "idabzo",
     githubUrl: "https://github.com/idabzo",

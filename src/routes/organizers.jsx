@@ -1,6 +1,7 @@
 import { BsPeopleFill } from 'solid-icons/bs';
 import { FaBrandsGithub, FaBrandsDiscourse } from 'solid-icons/fa';
 import { SiMatrix } from 'solid-icons/si';
+import PageLayout from '~/components/PageLayout';
 
 // Define the organizer type
 const organizers = [
@@ -184,84 +185,79 @@ const organizers = [
 
 export default function Organizers() {
   return (
-    <div class="relative min-h-svh text-white p-5 pt-20">
-      {/* Content */}
-      <div class="max-w-6xl mx-auto p-8 glass mt-20">
-        <div class="w-full mx-auto space-y-8 px-4">
-          <div class="flex flex-col items-center gap-5">
-            <h1 class="text-4xl font-bold flex items-center gap-3">
-              <BsPeopleFill class="text-3xl" />
-              Organizers
-            </h1>
+    <PageLayout>
+      <div class="flex flex-col items-center gap-5">
+        <h1 class="text-4xl font-bold flex items-center gap-3">
+          <BsPeopleFill class="text-3xl" />
+          Organizers
+        </h1>
 
-            <p class="text-center text-lg mb-6">
-              NixCon 2025 is organized by a dedicated team of volunteers from the Nix community.
-            </p>
+        <p class="text-center text-lg mb-6">
+          NixCon 2025 is organized by a dedicated team of volunteers from the Nix community.
+        </p>
 
-            {/* Organizers Grid */}
-            <div class="w-full">
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {organizers.map((organizer) => (
-                  <div class="p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-                    <div class="flex flex-col items-center">
-                      {/* GitHub Profile Picture */}
-                      <div class="w-24 h-24 rounded-full bg-white/20 mb-3 overflow-hidden">
-                        <img
-                          src={`https://github.com/${organizer.github}.png`}
-                          alt={`${organizer.name}'s profile picture`}
-                          class="w-full h-full object-cover"
-                          onError={(e) => {
-                            // Fallback if image fails to load
-                            const target = e.target;
-                            target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff' opacity='0.5'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E";
-                          }}
-                        />
-                      </div>
+        {/* Organizers Grid */}
+        <div class="w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {organizers.map((organizer) => (
+              <div class="p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                <div class="flex flex-col items-center">
+                  {/* GitHub Profile Picture */}
+                  <div class="w-24 h-24 rounded-full bg-white/20 mb-3 overflow-hidden">
+                    <img
+                      src={`https://github.com/${organizer.github}.png`}
+                      alt={`${organizer.name}'s profile picture`}
+                      class="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback if image fails to load
+                        const target = e.target;
+                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff' opacity='0.5'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E";
+                      }}
+                    />
+                  </div>
 
-                      {/* Name */}
-                      <h3 class="text-xl font-bold">{organizer.name}</h3>
+                  {/* Name */}
+                  <h3 class="text-xl font-bold">{organizer.name}</h3>
 
-                      {/* Responsibilities */}
-                      <div class="mt-2 mb-3">
-                        <div class="flex flex-wrap justify-center gap-1">
-                          {organizer.responsibilities.map((responsibility) => (
-                            <span class="px-2 py-1 text-xs bg-white/20 rounded-full">{responsibility}</span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Social Links */}
-                      <div class="flex gap-3 mt-2">
-                        <a href={organizer.githubUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" title={`GitHub: ${organizer.github}`}>
-                          <FaBrandsGithub class="text-xl" />
-                        </a>
-
-                        {organizer.matrixUrl && (
-                          <a href={organizer.matrixUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" title={`Matrix: ${organizer.matrix}`}>
-                            <SiMatrix class="text-xl" />
-                          </a>
-                        )}
-
-                        {organizer.discourseUrl && (
-                          <a href={organizer.discourseUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" title={`Discourse: ${organizer.discourse}`}>
-                            <FaBrandsDiscourse class="text-xl" />
-                          </a>
-                        )}
-                      </div>
+                  {/* Responsibilities */}
+                  <div class="mt-2 mb-3">
+                    <div class="flex flex-wrap justify-center gap-1">
+                      {organizer.responsibilities.map((responsibility) => (
+                        <span class="px-2 py-1 text-xs bg-white/20 rounded-full">{responsibility}</span>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            <p class="text-center mt-6">
-              Co-organised with <a href="https://ost.ch/ifs" class="underline hover:text-white/80">OST Eastern Switzerland University of Applied Sciences</a>
-              <br />
-              For any questions about the organizing team, please contact <a href="mailto:nixcon@nixos.org" class="underline hover:text-white/80">nixcon@nixos.org</a>
-            </p>
+                  {/* Social Links */}
+                  <div class="flex gap-3 mt-2">
+                    <a href={organizer.githubUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" title={`GitHub: ${organizer.github}`}>
+                      <FaBrandsGithub class="text-xl" />
+                    </a>
+
+                    {organizer.matrixUrl && (
+                      <a href={organizer.matrixUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" title={`Matrix: ${organizer.matrix}`}>
+                        <SiMatrix class="text-xl" />
+                      </a>
+                    )}
+
+                    {organizer.discourseUrl && (
+                      <a href={organizer.discourseUrl} target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white" title={`Discourse: ${organizer.discourse}`}>
+                        <FaBrandsDiscourse class="text-xl" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        <p class="text-center mt-6">
+          Co-organised with <a href="https://ost.ch/ifs" class="underline hover:text-white/80">OST Eastern Switzerland University of Applied Sciences</a>
+          <br />
+          For any questions about the organizing team, please contact <a href="mailto:nixcon@nixos.org" class="underline hover:text-white/80">nixcon@nixos.org</a>
+        </p>
       </div>
-    </div>
+    </PageLayout>
   );
 }

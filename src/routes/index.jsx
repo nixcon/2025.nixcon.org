@@ -27,7 +27,7 @@ function ContentSection(props) {
   return (
     <section id={props.id} class="group">
       <div class="flex flex-col items-center gap-5">
-        <h2 class="text-4xl font-bold flex items-center gap-2">
+        <h2 class="text-2xl md:text-4xl font-bold flex items-center gap-2">
           {getIconForSection(props.id)}
           {props.title}
         </h2>
@@ -41,17 +41,17 @@ function ContentSection(props) {
 function getIconForSection(id) {
   switch (id) {
     case 'location':
-      return <BsGeoFill class="text-3xl" />; // Using filled pin icon for consistency with hero section
+      return <BsGeoFill class="text-xl md:text-3xl" />; // Using filled pin icon for consistency with hero section
     case 'tickets':
-      return <BsTicketFill class="text-3xl" />; // Using filled version
+      return <BsTicketFill class="text-xl md:text-3xl" />; // Using filled version
     case 'coc':
-      return <BsFileTextFill class="text-3xl" />; // Using filled version
+      return <BsFileTextFill class="text-xl md:text-3xl" />; // Using filled version
     case 'faq':
-      return <BsQuestionCircleFill class="text-3xl" />; // Using filled version
+      return <BsQuestionCircleFill class="text-xl md:text-3xl" />; // Using filled version
     case 'chat':
-      return <BsChatDotsFill class="text-3xl" />; // Using filled version
+      return <BsChatDotsFill class="text-xl md:text-3xl" />; // Using filled version
     case 'schedule':
-      return <BsCalendarEventFill class="text-3xl" />; // Using filled version
+      return <BsCalendarEventFill class="text-xl md:text-3xl" />; // Using filled version
     default:
       return null;
   }
@@ -70,7 +70,7 @@ export default function Home() {
       {/* Hero section */}
       <section class="flex flex-col gap-5 items-center px-10 h-svh justify-center relative pt-10 pb-2">
         <div class="flex h-full flex-col items-center justify-center pt-10">
-          <div class="h-[320px] sm:h-[360px] md:h-[400px] flex">
+          <div class="h-[240px] sm:h-[360px] md:h-[400px] flex">
             <Logo />
           </div>
           <button
@@ -82,17 +82,17 @@ export default function Home() {
           </button>
         </div>
 
-        <div class="flex flex-row flex-wrap justify-center gap-6 md:gap-10 text-2xl font-medium">
-          <p class="flex items-center gap-3">
-            <span class="text-xl bg-white/10 p-2 rounded-full"><BsSnow /></span>
+        <div class="flex flex-row flex-wrap justify-center gap-4 md:gap-10 text-lg md:text-2xl font-medium">
+          <p class="flex items-center gap-2 md:gap-3">
+            <span class="text-base md:text-xl bg-white/10 p-1.5 md:p-2 rounded-full"><BsSnow /></span>
             <span>NixCon 2025</span>
           </p>
-          <p class="flex items-center gap-3">
-            <span class="text-xl bg-white/10 p-2 rounded-full"><BsGeoFill /></span>
+          <p class="flex items-center gap-2 md:gap-3">
+            <span class="text-base md:text-xl bg-white/10 p-1.5 md:p-2 rounded-full"><BsGeoFill /></span>
             <span>Switzerland</span>
           </p>
-          <p class="flex items-center gap-3">
-            <span class="text-xl bg-white/10 p-2 rounded-full"><BsCalendarEventFill /></span>
+          <p class="flex items-center gap-2 md:gap-3">
+            <span class="text-base md:text-xl bg-white/10 p-1.5 md:p-2 rounded-full"><BsCalendarEventFill /></span>
             <span>September 5-7, 2025</span>
           </p>
         </div>
@@ -100,8 +100,9 @@ export default function Home() {
         {/* Arrow indicator */}
         <div class="">
           <a href="#tickets" class="flex flex-col items-center text-white hover:text-white">
-            <div class="bg-white/10 p-2 rounded-full">
-              <BsChevronDown size={28} class="translate-y-[1px]" />
+            <div class="bg-white/10 p-1.5 md:p-2 rounded-full">
+              <BsChevronDown size={24} class="md:hidden translate-y-[1px]" />
+              <BsChevronDown size={28} class="hidden md:block translate-y-[1px]" />
             </div>
           </a>
         </div>

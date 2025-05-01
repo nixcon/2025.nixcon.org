@@ -5,8 +5,8 @@ export default function Privacy() {
   return (
     <PageLayout>
       <div class="flex flex-col items-center gap-5">
-        <h1 class="text-4xl font-bold flex items-center gap-3">
-          <BsFileTextFill class="text-3xl" />
+        <h1 class="text-2xl md:text-4xl font-bold flex items-center gap-3">
+          <BsFileTextFill class="text-xl md:text-3xl" />
           Privacy Policy
         </h1>
 

@@ -20,6 +20,7 @@ import {
   BsPauseFill
 } from 'solid-icons/bs';
 import { Logo } from "~/components/Logo";
+import PageLayout from "~/components/PageLayout";
 
 // Content section component
 function ContentSection(props) {
@@ -107,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* Nav - Reordered by user interest frequency */}
-      <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-medium text-lg md:text-xl px-2 pb-8">
+      <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-medium text-lg md:text-xl px-2 pb-4">
         <a href="#tickets" class="group flex items-center gap-2 uppercase hover:underline">
           <span class="block group-hover:hidden"><BsTicket /></span>
           <span class="hidden group-hover:block"><BsTicketFill /></span>
@@ -140,8 +141,8 @@ export default function Home() {
         </a>
       </nav>
 
-      {/* Glass container for the whole page content */}
-      <div class="max-w-3xl mx-auto p-8 glass">
+      {/* Apply PageLayout to the main content with reduced spacing */}
+      <PageLayout reducedSpacing={true}>
         {/* Content sections - Reordered by user interest frequency */}
         <div class="w-full mx-auto space-y-12 px-4">
           {/* Tickets - Most important section */}
@@ -226,7 +227,7 @@ export default function Home() {
             </div>
           </ContentSection>
         </div>
-      </div>
+      </PageLayout>
 
       <div class="h-20"></div>
     </div>

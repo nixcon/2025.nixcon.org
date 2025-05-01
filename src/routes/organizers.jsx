@@ -198,7 +198,7 @@ export default function Organizers() {
 
         {/* Organizers Grid */}
         <div class="w-full">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {organizers.map((organizer) => (
               <div class="p-4 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
                 <div class="flex flex-col items-center">

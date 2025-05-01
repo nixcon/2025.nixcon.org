@@ -55,7 +55,7 @@ export default function LavaBackground() {
 
   return (
     <>
-      <canvas id="background" class="fixed inset-0 w-screen h-screen" />
+      <canvas id="background" class="fixed inset-0 w-screen h-svh" />
     </>
   );
 }

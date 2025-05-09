@@ -189,15 +189,23 @@ export default function Home() {
           {/* Chat */}
           <ContentSection id="chat" title="Chat">
             <div class="flex flex-col items-center gap-3 w-full max-w-md">
-              <p class="text-center">Join our community chat to connect with other attendees!</p>
-              <p class="text-center">For everything NixCon-related and announcements there is a Matrix room you can join at #nixcon:matrix.org</p>
+              <p class="text-center">Join our community chat to connect with other attendees! The Matrix room is the place to go for announcements and everything NixCon-related.</p>
               <a
                 href="https://matrix.to/#/#nixcon:matrix.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
               >
-                Join Matrix Room
+                Join Matrix room
+              </a>
+              <p class="text-center mt-4">If you want to support the event as a helping hand on site, we are happy to hear from you in the dedicated Matrix orga room. Thanks!</p>
+              <a
+                href="https://matrix.to/#/#nixcon2025-orga:lassul.us"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+              >
+                Join Matrix orga room
               </a>
             </div>
           </ContentSection>

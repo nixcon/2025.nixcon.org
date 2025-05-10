@@ -1,8 +1,36 @@
-import { FaSolidHotel } from 'solid-icons/fa';
-import { FaRegularComments } from 'solid-icons/fa';
+import { FaSolidComments, FaSolidHotel, FaSolidLink } from 'solid-icons/fa';
+import { FaSolidMapLocationDot } from 'solid-icons/fa'
+import { For } from 'solid-js';
 import PageLayout from '~/components/PageLayout';
 
 export default function Hotels() {
+  // Sorted by confirmation date
+  const hotelDeals = [
+    {
+      name: "The Yarn",
+      additionalInformation: "Breakfast is included.",
+      prices: [],
+      travelTime: "Travel time by train can be as low as 30 minutes.",
+      website: "https://theyarn.ch/",
+      mapUrl: "https://maps.app.goo.gl/6a5Cfi281uYqgtpu5",
+      bookingInfo: "Book via email at corporate@theyarn.ch, mentioning you are attending the NixCon conference.",
+      imagePath: "/the-yarn-rates.png",
+      imageAlt: "The Yarn Hotel Room Rates"
+    },
+    {
+      name: "Hotel Swiss Star",
+      additionalInformation: "",
+      prices: [
+        "Single room incl. breakfast CHF 150.00/night",
+        "Double room incl. breakfast CHF 190.00/night"
+      ],
+      travelTime: "Travel time by train to OST is about 28 minutes.",
+      website: "https://www.hotel-swiss-star.ch",
+      mapUrl: "https://maps.app.goo.gl/RDurEWjULhBkgX3M7",
+      bookingInfo: "Book directly on the hotel website using promo code \"NixCon\"."
+    },
+  ];
+
   return (
     <PageLayout>
       <div class="flex flex-col items-center gap-5">
@@ -11,64 +39,97 @@ export default function Hotels() {
           Hotel Recommendations
         </h1>
 
-        <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 w-full">
-          <p class="text-center text-lg mb-4">
-            We're in the process of reaching out to hotels and will publish a list of accommodations with potential discounts or NixCon reserved rooms soon.
-          </p>
+        {/* Hotel Listings */}
+        <div class="w-full space-y-6">
+          <For each={hotelDeals}>
+            {(hotel) => (
+              <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                <h3 class="text-2xl font-bold mb-2">{hotel.name}</h3>
 
-          <div class="flex justify-center mt-6">
+                <p class="mb-4">
+                  {hotel.additionalInformation}
+                </p>
+
+                {hotel.prices.length > 0 && (
+                  <div class="mb-4">
+                    <p class="font-semibold mb-1">Prices:</p>
+                    <ul class="list-disc pl-5">
+                      <For each={hotel.prices}>
+                        {(price) => <li>{price}</li>}
+                      </For>
+                    </ul>
+                  </div>
+                )}
+
+                <p class="mb-4">{hotel.travelTime}</p>
+
+                {hotel.bookingInfo && (
+                  <p class="mb-4 font-medium bg-white/10 p-2 rounded">
+                    <span class="font-bold">Booking:</span> {hotel.bookingInfo}
+                  </p>
+                )}
+
+                {hotel.imagePath && (
+                  <details class="mb-4 bg-white/5 rounded-lg overflow-hidden">
+                    <summary class="p-3 cursor-pointer hover:bg-white/10 transition-colors font-medium">
+                      View Room Rates
+                    </summary>
+                    <div class="p-3">
+                      <img
+                        src={hotel.imagePath}
+                        alt={hotel.imageAlt}
+                        class="w-full max-w-2xl mx-auto rounded-lg border border-white/20"
+                      />
+                    </div>
+                  </details>
+                )}
+
+                <div class="flex flex-wrap gap-4">
+                  <a
+                    href={hotel.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+                  >
+                    <FaSolidLink /> Visit Website
+                  </a>
+                  <a
+                    href={hotel.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+                  >
+                    <FaSolidMapLocationDot /> View on Map
+                  </a>
+                </div>
+              </div>
+            )}
+          </For>
+        </div>
+
+        <div class="mt-6 text-center">
+          <h3 class="text-xl font-bold mb-4">Need Accommodation Assistance?</h3>
+
+          <div class="flex flex-col justify-center items-center gap-4">
             <a
               href="https://matrix.to/#/#nixcon-accommodation:nixos.org"
               target="_blank"
               rel="noopener noreferrer"
               class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
             >
-              <FaRegularComments />
+              <FaSolidComments />
               Join our Matrix room to coordinate accommodation
+            </a>
+
+            <a
+              href="mailto:nixcon@nixos.org"
+              class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+            >
+              <FaSolidLink />
+              Contact us at nixcon@nixos.org
             </a>
           </div>
         </div>
-
-        {/* Hotel Listings - Empty for now, ready to be populated */}
-        <div class="w-full space-y-6 hidden">
-          {/* Template for hotel entries */}
-          {/* 
-              <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-                <h3 class="text-2xl font-bold mb-2">[Hotel Name]</h3>
-                <p class="text-lg mb-2">[Star Rating]</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                  <p><span class="font-semibold">Distance to venue:</span> [Distance]</p>
-                  <p><span class="font-semibold">Price range:</span> [Price]</p>
-                  <p><span class="font-semibold">Availability:</span> [Rooms left]</p>
-                </div>
-                <p class="mb-4">
-                  [Hotel description and special offers for NixCon attendees]
-                </p>
-                <div class="flex flex-wrap gap-4">
-                  <a
-                    href="[Website URL]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium"
-                  >
-                    Visit Website
-                  </a>
-                  <a
-                    href="[Map URL]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium"
-                  >
-                    View on Map
-                  </a>
-                </div>
-              </div>
-              */}
-        </div>
-
-        <p class="text-center mt-6">
-          For assistance with accommodation, please contact <a href="mailto:nixcon@nixos.org" class="underline hover:text-white/80">nixcon@nixos.org</a>
-        </p>
       </div>
     </PageLayout>
   );

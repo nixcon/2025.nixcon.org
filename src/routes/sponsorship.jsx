@@ -22,7 +22,6 @@ function sponsorLink(tier, amount) {
   - Company Name and Website:
   - Desired Tier: ${tier}
   - Desired Amount: ${amount} EUR
-  - (If in the EU) VAT ID:
   `
 
   let title = "NixCon 2025 Sponsorship: <Your Company Name>"

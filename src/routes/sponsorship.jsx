@@ -53,7 +53,7 @@ export default function Sponsorship() {
               <li>Supporting the conference and official Nix projects</li>
               <li>Confirmation of donation via OpenCollective</li>
             </ul>
-            <a href="https://opencollective.com/nixos" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
+            <a href="https://opencollective.com/nixos/projects/nixcon-2025/donate" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
               Donate
             </a>
           </div>

@@ -149,11 +149,16 @@ export default function Home() {
           {/* Tickets - Most important section */}
           <ContentSection id="tickets" title="Tickets">
             <div class="">
-              <p class="text-center text-lg mb-4">Ticket information coming soon!</p>
+              <p class="text-center text-lg">Tickets are available now!</p>
               <div class="flex justify-center">
-                <button disabled class="px-6 py-3 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-bold opacity-70 cursor-not-allowed">
-                  Get Your Tickets
-                </button>
+              <a
+                href="https://tickets.nixcon.org/2025/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+              >
+                Get your tickets
+              </a>
               </div>
             </div>
           </ContentSection>

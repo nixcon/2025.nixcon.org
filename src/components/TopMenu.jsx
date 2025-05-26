@@ -68,15 +68,15 @@ export default function TopMenu() {
               Sponsorship
             </A>
 
-            {/* Hotels */}
+            {/* Accommodation */}
             <A
               href="/hotels"
               class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
                 isActive("/hotels") ? "underline" : ""
               }`}
-              aria-label="Hotels"
+              aria-label="Accommodation"
             >
-              Hotels
+              Accommodation
             </A>
 
             {/* Organizers */}

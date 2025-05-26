@@ -73,19 +73,19 @@ export default function MobileMenu() {
               Sponsorship
             </A>
 
-            {/* Hotels */}
+            {/* Accommodation */}
             <A
               href="/hotels"
               class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
                 isActive("/hotels") ? "underline" : ""
               }`}
-              aria-label="Hotels"
+              aria-label="Accommodation"
               onClick={() => {
                 document.getElementById("mobile-menu-toggle").checked = false;
               }}
             >
               <FaSolidHotel />
-              Hotels
+              Accommodation
             </A>
 
             {/* Organizers */}

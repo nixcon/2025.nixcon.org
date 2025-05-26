@@ -29,6 +29,20 @@ export default function Hotels() {
       mapUrl: "https://maps.app.goo.gl/RDurEWjULhBkgX3M7",
       bookingInfo: "Book directly on the hotel website using promo code \"NixCon\"."
     },
+    {
+      name: "Hotel Residence Loren",
+      additionalInformation:
+        "Underground parking is available for CHF 10 per night. Cancellation is possible until seven days before arrival.",
+      prices: [
+        "Double room for one person incl. breakfast: CHF 125.00/night",
+        "Doue om for two persons incl. breakfast: CHF 150.00/night",
+      ],
+      bookingInfo:
+        'Book needs to be done via email at info@hotel-residence-loren.ch and mention "NixCon 2025"',
+      website: "https://www.hotel-residence-loren.ch/",
+      mapUrl: "https://maps.app.goo.gl/cZF7fvNNgwutw3qh6",
+      travelTime: "Travel time by train to OST can be as low as 37 minutes.",
+    },
   ];
 
   return (

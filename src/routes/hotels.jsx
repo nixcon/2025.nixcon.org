@@ -136,8 +136,22 @@ export default function Hotels() {
         </div>
 
         <div class="mt-6 text-center">
-          <h3 class="text-xl font-bold mb-4">Need Accommodation Assistance?</h3>
+          <h3 class="text-xl font-bold mb-4">Camping</h3>
+          <div class="flex flex-col justify-center items-center gap-4">
+            <p>
+              There is a camping area in the town of Jona which is close to the conference venue.
+              Unfortunately the website does not provide any information in English.
+            </p>
+            <a
+              href="https://www.rapperswil-jona.ch/naherholungimfreien/7647"
+              class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+            >
+              <FaSolidLink />
+              Camping Information
+            </a>
 
+          </div>
+          <h3 class="text-xl font-bold mb-4">Community</h3>
           <div class="flex flex-col justify-center items-center gap-4">
             <a
               href="https://matrix.to/#/#nixcon-accommodation:nixos.org"
@@ -149,6 +163,10 @@ export default function Hotels() {
               Join our Matrix room to coordinate accommodation
             </a>
 
+          </div>
+          <h3 class="text-xl font-bold mb-4">Need Accommodation Assistance?</h3>
+
+          <div class="flex flex-col justify-center items-center gap-4">
             <a
               href="mailto:nixcon@nixos.org"
               class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"

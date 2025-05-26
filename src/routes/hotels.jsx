@@ -35,7 +35,7 @@ export default function Hotels() {
         "Underground parking is available for CHF 10 per night. Cancellation is possible until seven days before arrival.",
       prices: [
         "Double room for one person incl. breakfast: CHF 125.00/night",
-        "Doue om for two persons incl. breakfast: CHF 150.00/night",
+        "Double room for two persons incl. breakfast: CHF 150.00/night",
       ],
       bookingInfo:
         'Book needs to be done via email at info@hotel-residence-loren.ch and mention "NixCon 2025"',

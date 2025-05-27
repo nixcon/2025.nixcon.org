@@ -43,6 +43,20 @@ export default function Hotels() {
       mapUrl: "https://maps.app.goo.gl/cZF7fvNNgwutw3qh6",
       travelTime: "Travel time by train to OST can be as low as 37 minutes.",
     },
+    {
+      name: "Aabach Hotel",
+      additionalInformation:
+        "The offer is only valid until the 4th of August. Free parking and a gym are available. A restaurant and a bistro with a quiet sun terrasse are available in the same building.",
+      prices: [
+        "Double room for one person incl. breakfast: CHF 145.00/night + CHF 3.5 city tax/night and person",
+        "Double room for two persons incl. breakfast: CHF 160.00/night + CHF 3.5 city tax/night and person",
+      ],
+      bookingInfo:
+        'Book via email at info@aabach-hotel.ch and mention "NixCon 2025"',
+      website: "https://www.aabach-hotel.ch/",
+      mapUrl: "https://maps.app.goo.gl/J9sjKHhDE2jxT3326",
+      travelTime: "Travel time by train to OST 35 minutes.",
+    },
   ];
 
   return (

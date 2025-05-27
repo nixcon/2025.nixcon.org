@@ -38,7 +38,7 @@ export default function Hotels() {
         "Double room for two persons incl. breakfast: CHF 150.00/night",
       ],
       bookingInfo:
-        'Book needs to be done via email at info@hotel-residence-loren.ch and mention "NixCon 2025"',
+        'Book via email at info@hotel-residence-loren.ch and mention "NixCon 2025"',
       website: "https://www.hotel-residence-loren.ch/",
       mapUrl: "https://maps.app.goo.gl/cZF7fvNNgwutw3qh6",
       travelTime: "Travel time by train to OST can be as low as 37 minutes.",

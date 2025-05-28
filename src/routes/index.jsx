@@ -213,12 +213,10 @@ export default function Home() {
             <div class="flex flex-col items-center gap-3 w-full max-w-md">
               <p class="text-center">Our community guidelines and code of conduct ensure a respectful and inclusive environment for all attendees.</p>
               <a
-                href="/coc.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/coc"
                 class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
               >
-                Download Code of Conduct
+                View Code of Conduct
               </a>
             </div>
           </ContentSection>

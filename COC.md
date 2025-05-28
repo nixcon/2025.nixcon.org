@@ -1,4 +1,4 @@
-**NixCon 2025 - Code of Conduct (Minimal Base)**
+**NixCon 2025 - Code of Conduct**
 
 This Code of Conduct outlines our expectations for all participants at NixCon. We are committed to providing a respectful and inclusive experience for everyone.
 

@@ -1,5 +1,5 @@
 import { A } from "@solidjs/router";
-import { BsExclamationTriangleFill } from 'solid-icons/bs';
+import { BsExclamationTriangleFill } from '@aminya/solid-icons/bs/BsExclamationTriangleFill';
 import PageLayout from '~/components/PageLayout';
 
 export default function NotFound() {

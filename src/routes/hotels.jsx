@@ -121,45 +121,60 @@ export default function Hotels() {
           </For>
         </div>
 
-        <div class="mt-6 text-center">
-          <h3 class="text-xl font-bold mb-4">Camping</h3>
-          <div class="flex flex-col justify-center items-center gap-4">
-            <p>
-              There is a camping area in the town of Jona which is close to the conference venue.
-              Unfortunately the website does not provide any information in English.
-            </p>
-            <a
-              href="https://www.rapperswil-jona.ch/naherholungimfreien/7647"
-              class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
-            >
-              <FaSolidLink />
-              Camping Information
-            </a>
-
+        {/* Additional Accommodation Information */}
+        <div class="w-full space-y-8 mt-12">
+          {/* Camping Section */}
+          <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
+            <h3 class="text-xl font-bold mb-4 text-center">Camping</h3>
+            <div class="flex flex-col justify-center items-center gap-4">
+              <p class="text-center max-w-2xl">
+                There is a camping area in the town of Jona which is close to the conference venue.
+                Unfortunately the website does not provide any information in English.
+              </p>
+              <a
+                href="https://www.rapperswil-jona.ch/naherholungimfreien/7647"
+                class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+              >
+                <FaSolidLink />
+                Camping Information
+              </a>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-4">Community</h3>
-          <div class="flex flex-col justify-center items-center gap-4">
-            <a
-              href="https://matrix.to/#/#nixcon-accommodation:nixos.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
-            >
-              <FaSolidComments />
-              Join our Matrix room to coordinate accommodation
-            </a>
 
+          {/* Community Section */}
+          <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
+            <h3 class="text-xl font-bold mb-4 text-center">Community</h3>
+            <div class="flex flex-col justify-center items-center gap-4">
+              <p class="text-center max-w-2xl">
+                Connect with other attendees to coordinate shared accommodation options.
+              </p>
+              <a
+                href="https://matrix.to/#/#nixcon-accommodation:nixos.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+              >
+                <FaSolidComments />
+                Join our Matrix room to coordinate accommodation
+              </a>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-4">Need Accommodation Assistance?</h3>
 
-          <div class="flex flex-col justify-center items-center gap-4">
-            <a
-              href="mailto:nixcon@nixos.org"
-              class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
-            >
-              <FaSolidLink />
-              Contact us at nixcon@nixos.org
-            </a>
+          {/* Assistance Section */}
+          <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
+            <h3 class="text-xl font-bold mb-4 text-center">Need Accommodation Assistance?</h3>
+            <div class="flex flex-col justify-center items-center gap-4">
+              <p class="text-center max-w-2xl">
+                If you need help finding suitable accommodation or have any questions, please don't hesitate to contact us.
+              </p>
+              <a
+                href="mailto:nixcon@nixos.org"
+                class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
+              >
+                <FaSolidLink />
+                Contact us at nixcon@nixos.org
+              </a>
+            </div>
           </div>
         </div>
       </div>

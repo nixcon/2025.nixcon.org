@@ -65,8 +65,8 @@ export default function Hotels() {
 
   return (
     <PageLayout>
-      <div class="flex flex-col items-center gap-5">
-        <h1 class="text-2xl md:text-4xl font-bold flex items-center gap-3">
+      <div class="flex flex-col items-center gap-16">
+        <h1 class="text-2xl md:text-4xl font-bold flex items-center gap-3 -mb-10">
           <FaSolidHotel class="text-xl md:text-3xl" />
           Regional hotels offering a discount
         </h1>
@@ -139,8 +139,10 @@ export default function Hotels() {
           </For>
         </div>
 
+        <hr class="h-[1px] w-full border-white/10" />
+
         {/* Additional Accommodation Information */}
-        <div class="w-full space-y-8 mt-12">
+        <div class="w-full space-y-8">
           {/* Camping Section */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
             <h3 class="text-xl font-bold mb-4 text-center flex items-center justify-center gap-2">

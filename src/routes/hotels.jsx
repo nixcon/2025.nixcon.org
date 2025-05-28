@@ -2,6 +2,8 @@ import { FaSolidComments } from '@aminya/solid-icons/fa/FaSolidComments';
 import { FaSolidHotel } from '@aminya/solid-icons/fa/FaSolidHotel';
 import { FaSolidLink } from '@aminya/solid-icons/fa/FaSolidLink';
 import { FaSolidMapLocationDot } from '@aminya/solid-icons/fa/FaSolidMapLocationDot';
+import { FaSolidCampground } from '@aminya/solid-icons/fa/FaSolidCampground';
+import { FaSolidCircleQuestion } from '@aminya/solid-icons/fa/FaSolidCircleQuestion';
 import { For } from 'solid-js';
 import PageLayout from '~/components/PageLayout';
 
@@ -141,7 +143,10 @@ export default function Hotels() {
         <div class="w-full space-y-8 mt-12">
           {/* Camping Section */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
-            <h3 class="text-xl font-bold mb-4 text-center">Camping</h3>
+            <h3 class="text-xl font-bold mb-4 text-center flex items-center justify-center gap-2">
+              <FaSolidCampground />
+              Camping
+            </h3>
             <div class="flex flex-col justify-center items-center gap-4">
               <p class="text-center max-w-2xl">
                 There is a camping area in the town of Jona which is close to the conference venue.
@@ -159,7 +164,10 @@ export default function Hotels() {
 
           {/* Community Section */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
-            <h3 class="text-xl font-bold mb-4 text-center">Community</h3>
+            <h3 class="text-xl font-bold mb-4 text-center flex items-center justify-center gap-2">
+              <FaSolidComments />
+              Community
+            </h3>
             <div class="flex flex-col justify-center items-center gap-4">
               <p class="text-center max-w-2xl">
                 Connect with other attendees to coordinate shared accommodation options.
@@ -170,7 +178,7 @@ export default function Hotels() {
                 rel="noopener noreferrer"
                 class="px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium flex items-center gap-2"
               >
-                <FaSolidComments />
+                <FaSolidLink />
                 Join our Matrix room to coordinate accommodation
               </a>
             </div>
@@ -178,7 +186,10 @@ export default function Hotels() {
 
           {/* Assistance Section */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20">
-            <h3 class="text-xl font-bold mb-4 text-center">Need Accommodation Assistance?</h3>
+            <h3 class="text-xl font-bold mb-4 text-center flex items-center justify-center gap-2">
+              <FaSolidCircleQuestion />
+              Need Accommodation Assistance?
+            </h3>
             <div class="flex flex-col justify-center items-center gap-4">
               <p class="text-center max-w-2xl">
                 If you need help finding suitable accommodation or have any questions, please don't hesitate to contact us.

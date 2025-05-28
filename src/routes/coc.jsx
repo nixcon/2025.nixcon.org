@@ -70,8 +70,6 @@ export default function CodeOfConduct() {
             <p class="mb-2">If you experience or witness behavior that violates this Code of Conduct, or if you need assistance for any reason:</p>
             <ul class={listClasses}>
               <li>Please contact event organizers or designated support staff.</li>
-              <li><em>[Placeholder: Specific instructions on how to identify and contact organizers/support staff for THIS event will be detailed here. E.g., "Event staff can be identified by [specific attire/badge]" or "Contact us via [email/phone/reporting tool]".]</em></li>
-              <li><em>[Placeholder: Mention availability and location of any safe spaces if applicable for THIS event.]</em></li>
               <li>All reports will be treated with discretion. Event organizers are empowered to take appropriate actions in response to violations.</li>
             </ul>
           </div>

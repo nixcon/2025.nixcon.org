@@ -1,5 +1,7 @@
-import { FaSolidComments, FaSolidHotel, FaSolidLink } from 'solid-icons/fa';
-import { FaSolidMapLocationDot } from 'solid-icons/fa'
+import { FaSolidComments } from '@aminya/solid-icons/fa/FaSolidComments';
+import { FaSolidHotel } from '@aminya/solid-icons/fa/FaSolidHotel';
+import { FaSolidLink } from '@aminya/solid-icons/fa/FaSolidLink';
+import { FaSolidMapLocationDot } from '@aminya/solid-icons/fa/FaSolidMapLocationDot';
 import { For } from 'solid-js';
 import PageLayout from '~/components/PageLayout';
 

@@ -1,4 +1,4 @@
-import { BsFileTextFill } from 'solid-icons/bs';
+import { BsFileTextFill } from '@aminya/solid-icons/bs/BsFileTextFill';
 import PageLayout from '~/components/PageLayout';
 
 export default function Privacy() {

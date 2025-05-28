@@ -1,8 +1,11 @@
 import { useLocation } from "@solidjs/router";
 import { A } from "@solidjs/router";
-import { BsHouseFill, BsPeopleFill, BsList, BsX } from "solid-icons/bs";
-import { FaSolidHotel } from "solid-icons/fa";
-import { BiSolidHeartCircle } from "solid-icons/bi";
+import { BsHouseFill } from "@aminya/solid-icons/bs/BsHouseFill";
+import { BsPeopleFill } from "@aminya/solid-icons/bs/BsPeopleFill";
+import { BsList } from "@aminya/solid-icons/bs/BsList";
+import { BsX } from "@aminya/solid-icons/bs/BsX";
+import { FaSolidHotel } from "@aminya/solid-icons/fa/FaSolidHotel";
+import { BiSolidHeartCircle } from "@aminya/solid-icons/bi/BiSolidHeartCircle";
 import { LogoMenu } from "./Logo";
 
 export default function MobileMenu() {
@@ -46,9 +49,8 @@ export default function MobileMenu() {
             {/* Home */}
             <A
               href="/"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/") ? "underline" : ""
+                }`}
               aria-label="Home"
               onClick={() => {
                 document.getElementById("mobile-menu-toggle").checked = false;
@@ -61,9 +63,8 @@ export default function MobileMenu() {
             {/* Sponsorship */}
             <A
               href="/sponsorship"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/sponsorship") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/sponsorship") ? "underline" : ""
+                }`}
               aria-label="Sponsorship"
               onClick={() => {
                 document.getElementById("mobile-menu-toggle").checked = false;
@@ -76,9 +77,8 @@ export default function MobileMenu() {
             {/* Accommodation */}
             <A
               href="/hotels"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/hotels") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/hotels") ? "underline" : ""
+                }`}
               aria-label="Accommodation"
               onClick={() => {
                 document.getElementById("mobile-menu-toggle").checked = false;
@@ -91,9 +91,8 @@ export default function MobileMenu() {
             {/* Organizers */}
             <A
               href="/organizers"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/organizers") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/organizers") ? "underline" : ""
+                }`}
               aria-label="Organizers"
               onClick={() => {
                 document.getElementById("mobile-menu-toggle").checked = false;

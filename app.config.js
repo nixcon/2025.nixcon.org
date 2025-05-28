@@ -8,9 +8,6 @@ export default defineConfig({
       tailwindcss(),
       glslPlugin()
     ],
-    optimizeDeps: {
-      exclude: ['solid-icons'], // See https://stackoverflow.com/a/79316833
-    }
   },
   server: {
     prerender: {

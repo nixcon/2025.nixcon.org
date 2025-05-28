@@ -1,24 +1,22 @@
 import { A } from "@solidjs/router";
 import { createEffect, onMount } from "solid-js";
 import { useAnimationStore } from "~/stores/animation";
-import {
-  BsTicket,
-  BsFileText,
-  BsQuestionCircle,
-  BsChatDots,
-  BsCalendar3Event,
-  BsSnow,
-  BsGeoFill,
-  BsTicketFill,
-  BsFileTextFill,
-  BsQuestionCircleFill,
-  BsChatDotsFill,
-  BsCalendarEventFill,
-  BsGeo,
-  BsChevronDown,
-  BsPlayFill,
-  BsPauseFill
-} from 'solid-icons/bs';
+import { BsTicket } from '@aminya/solid-icons/bs/BsTicket';
+import { BsFileText } from '@aminya/solid-icons/bs/BsFileText';
+import { BsQuestionCircle } from '@aminya/solid-icons/bs/BsQuestionCircle';
+import { BsChatDots } from '@aminya/solid-icons/bs/BsChatDots';
+import { BsCalendar3Event } from '@aminya/solid-icons/bs/BsCalendar3Event';
+import { BsSnow } from '@aminya/solid-icons/bs/BsSnow';
+import { BsGeoFill } from '@aminya/solid-icons/bs/BsGeoFill';
+import { BsTicketFill } from '@aminya/solid-icons/bs/BsTicketFill';
+import { BsFileTextFill } from '@aminya/solid-icons/bs/BsFileTextFill';
+import { BsQuestionCircleFill } from '@aminya/solid-icons/bs/BsQuestionCircleFill';
+import { BsChatDotsFill } from '@aminya/solid-icons/bs/BsChatDotsFill';
+import { BsCalendarEventFill } from '@aminya/solid-icons/bs/BsCalendarEventFill';
+import { BsGeo } from '@aminya/solid-icons/bs/BsGeo';
+import { BsChevronDown } from '@aminya/solid-icons/bs/BsChevronDown';
+import { BsPlayFill } from '@aminya/solid-icons/bs/BsPlayFill';
+import { BsPauseFill } from '@aminya/solid-icons/bs/BsPauseFill';
 import { Logo } from "~/components/Logo";
 import PageLayout from "~/components/PageLayout";
 
@@ -151,14 +149,14 @@ export default function Home() {
             <div class="">
               <p class="text-center text-lg">Tickets are available now!</p>
               <div class="flex justify-center">
-              <a
-                href="https://tickets.nixcon.org/2025/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
-              >
-                Get your tickets
-              </a>
+                <a
+                  href="https://tickets.nixcon.org/2025/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+                >
+                  Get your tickets
+                </a>
               </div>
             </div>
           </ContentSection>

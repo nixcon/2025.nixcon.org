@@ -1,4 +1,4 @@
-import { BiSolidHeartCircle } from 'solid-icons/bi';
+import { BiSolidHeartCircle } from '@aminya/solid-icons/bi/BiSolidHeartCircle';
 import PageLayout from '~/components/PageLayout';
 
 // Expandable footnote component

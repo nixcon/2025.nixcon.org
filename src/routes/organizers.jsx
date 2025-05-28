@@ -1,6 +1,7 @@
-import { BsPeopleFill } from 'solid-icons/bs';
-import { FaBrandsGithub, FaBrandsDiscourse } from 'solid-icons/fa';
-import { SiMatrix } from 'solid-icons/si';
+import { BsPeopleFill } from '@aminya/solid-icons/bs/BsPeopleFill';
+import { FaBrandsGithub } from '@aminya/solid-icons/fa/FaBrandsGithub';
+import { FaBrandsDiscourse } from '@aminya/solid-icons/fa/FaBrandsDiscourse';
+import { SiMatrix } from '@aminya/solid-icons/si/SiMatrix';
 import PageLayout from '~/components/PageLayout';
 
 // Define the organizer type

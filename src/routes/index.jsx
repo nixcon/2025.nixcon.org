@@ -103,13 +103,9 @@ export default function Home() {
         </div>
 
         {/* Arrow indicator */}
-        <div class="">
-          <a href="#tickets" class="flex flex-col items-center text-white hover:text-white">
-            <div class="bg-white/10 p-1.5 md:p-2 rounded-full">
-              <BsChevronDown size={24} class="md:hidden translate-y-[1px]" />
-              <BsChevronDown size={28} class="hidden md:block translate-y-[1px]" />
-            </div>
-          </a>
+        {/* Transparent down chevron, not clickable */}
+        <div class="flex justify-center items-center pt-2 pb-2">
+          <BsChevronDown size={28} class="text-white opacity-30" />
         </div>
       </section>
 

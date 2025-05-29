@@ -2,6 +2,7 @@ import { useLocation } from "@solidjs/router";
 import { A } from "@solidjs/router";
 import { BsHouseFill } from "@aminya/solid-icons/bs/BsHouseFill";
 import { BsPeopleFill } from "@aminya/solid-icons/bs/BsPeopleFill";
+import { BsFileTextFill } from "@aminya/solid-icons/bs/BsFileTextFill";
 import { BsList } from "@aminya/solid-icons/bs/BsList";
 import { BsX } from "@aminya/solid-icons/bs/BsX";
 import { FaSolidHotel } from "@aminya/solid-icons/fa/FaSolidHotel";
@@ -101,6 +102,7 @@ export default function MobileMenu() {
               <BsPeopleFill />
               Organizers
             </A>
+
           </nav>
         </div>
       </div>

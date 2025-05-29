@@ -47,7 +47,7 @@ export default function Sponsorship() {
         <div class="w-full space-y-6">
           {/* Non-sponsorship donation */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-            <h3 class="text-2xl font-bold mb-2">Non-sponsorship donation</h3>
+            <h3 class="text-2xl font-bold mb-2">💖 Non-sponsorship donation</h3>
             <p class="text-xl mb-4">0+ EUR</p>
             <ul class="list-disc list-inside space-y-2 mb-4">
               <li>Supporting the conference and official Nix projects</li>
@@ -60,7 +60,7 @@ export default function Sponsorship() {
 
           {/* Bronze Tier */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-            <h3 class="text-2xl font-bold mb-2">Bronze</h3>
+            <h3 class="text-2xl font-bold mb-2">🥉 Bronze</h3>
             <p class="text-xl mb-4">1024+ EUR</p>
             <ul class="list-disc list-inside space-y-2 mb-4">
               <li>Linked logo on the website</li>
@@ -75,7 +75,7 @@ export default function Sponsorship() {
 
           {/* Silver Tier */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-            <h3 class="text-2xl font-bold mb-2">Silver</h3>
+            <h3 class="text-2xl font-bold mb-2">🥈 Silver</h3>
             <p class="text-xl mb-4">2048+ EUR</p>
             <ul class="list-disc list-inside space-y-2 mb-4">
               <li>Everything from Bronze</li>
@@ -91,7 +91,7 @@ export default function Sponsorship() {
 
           {/* Gold Tier */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-            <h3 class="text-2xl font-bold mb-2">Gold</h3>
+            <h3 class="text-2xl font-bold mb-2">🥇 Gold</h3>
             <p class="text-xl mb-4">4096+ EUR</p>
             <ul class="list-disc list-inside space-y-2 mb-4">
               <li>Everything from Silver</li>
@@ -106,7 +106,7 @@ export default function Sponsorship() {
 
           {/* Diamond Tier */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-            <h3 class="text-2xl font-bold mb-2">Diamond</h3>
+            <h3 class="text-2xl font-bold mb-2">💎 Diamond</h3>
             <p class="text-xl mb-4">8192+ EUR</p>
             <ul class="list-disc list-inside space-y-2 mb-4">
               <li>Everything from Gold</li>
@@ -123,7 +123,7 @@ export default function Sponsorship() {
 
           {/* Custom Tier */}
           <div class="p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
-            <h3 class="text-2xl font-bold mb-2">Custom</h3>
+            <h3 class="text-2xl font-bold mb-2">✨ Custom</h3>
             <p class="text-xl mb-4">Sponsor in a more custom way, such as</p>
             <ul class="list-disc list-inside space-y-2 mb-4">
               <li>Food, drinks, services, equipment</li>

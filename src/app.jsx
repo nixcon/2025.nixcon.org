@@ -9,6 +9,7 @@ import { BsFullscreenExit } from '@aminya/solid-icons/bs/BsFullscreenExit';
 import TopMenu from "~/components/TopMenu";
 import MobileMenu from "~/components/MobileMenu";
 import LavaBackground from "~/components/LavaBackground";
+import SponsorsDisplay from "~/components/SponsorsDisplay"; // Added import
 import "./app.css";
 
 // Create client-only versions of components that need browser APIs
@@ -83,6 +84,9 @@ export default function App() {
 
             {/* Routes */}
             <Suspense>{props.children}</Suspense>
+
+            {/* Sponsors Display */}
+            <SponsorsDisplay />
 
             {/* Footer */}
             <footer class="w-full py-6 my-6 text-center relative">

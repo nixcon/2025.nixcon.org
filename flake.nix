@@ -42,7 +42,8 @@
             ];
 
             shellHook = ''
-              echo "To get startet run \`just install\` followed by \`just dev\`"
+              just install
+              echo "To get startet run \`just dev\`"
             '';
           };
         }

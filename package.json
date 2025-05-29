@@ -1,11 +1,6 @@
 {
   "name": "nixcon-2025",
   "type": "module",
-  "scripts": {
-    "dev": "vinxi dev --port 1234",
-    "build": "vinxi build",
-    "start": "vinxi start"
-  },
   "dependencies": {
     "@aminya/solid-icons": "^2.0.12",
     "@solidjs/router": "^0.15.3",

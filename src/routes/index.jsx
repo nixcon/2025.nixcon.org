@@ -6,6 +6,7 @@ import { BsFileText } from '@aminya/solid-icons/bs/BsFileText';
 import { BsQuestionCircle } from '@aminya/solid-icons/bs/BsQuestionCircle';
 import { BsChatDots } from '@aminya/solid-icons/bs/BsChatDots';
 import { BsCalendar3Event } from '@aminya/solid-icons/bs/BsCalendar3Event';
+import { BsEasel3 } from '@aminya/solid-icons/bs/BsEasel3';
 import { BsSnow } from '@aminya/solid-icons/bs/BsSnow';
 import { BsGeoFill } from '@aminya/solid-icons/bs/BsGeoFill';
 import { BsTicketFill } from '@aminya/solid-icons/bs/BsTicketFill';
@@ -13,6 +14,7 @@ import { BsFileTextFill } from '@aminya/solid-icons/bs/BsFileTextFill';
 import { BsQuestionCircleFill } from '@aminya/solid-icons/bs/BsQuestionCircleFill';
 import { BsChatDotsFill } from '@aminya/solid-icons/bs/BsChatDotsFill';
 import { BsCalendarEventFill } from '@aminya/solid-icons/bs/BsCalendarEventFill';
+import { BsEasel3Fill } from '@aminya/solid-icons/bs/BsEasel3Fill';
 import { BsGeo } from '@aminya/solid-icons/bs/BsGeo';
 import { BsChevronDown } from '@aminya/solid-icons/bs/BsChevronDown';
 import { BsPlayFill } from '@aminya/solid-icons/bs/BsPlayFill';
@@ -50,6 +52,8 @@ function getIconForSection(id) {
       return <BsChatDotsFill class="text-xl md:text-3xl" />; // Using filled version
     case 'schedule':
       return <BsCalendarEventFill class="text-xl md:text-3xl" />; // Using filled version
+    case 'cfp':
+      return <BsEasel3Fill class="text-xl md:text-3xl" />; // Using filled version
     default:
       return null;
   }
@@ -113,10 +117,10 @@ export default function Home() {
       <PageLayout reducedSpacing={true}>
         {/* Nav - Reordered by user interest frequency */}
         <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-medium px-2 pb-4">
-          <a href="#schedule" class="group flex items-center gap-2 uppercase hover:underline">
-            <span class="block group-hover:hidden"><BsCalendar3Event /></span>
-            <span class="hidden group-hover:block"><BsCalendarEventFill /></span>
-            Schedule
+          <a href="#cfp" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsEasel3 /></span>
+            <span class="hidden group-hover:block"><BsEasel3Fill /></span>
+            CfP
           </a>
           <a href="#location" class="group flex items-center gap-2 uppercase hover:underline">
             <span class="block group-hover:hidden"><BsGeo /></span>
@@ -147,10 +151,18 @@ export default function Home() {
         <hr class="h-[1px] w-full border-white/10 my-8" /> {/* Added divider */}
         {/* Content sections - Reordered by user interest frequency */}
         <div class="w-full mx-auto space-y-12 px-4">
-          {/* Schedule */}
-          <ContentSection id="schedule" title="Schedule">
-            <div class="w-full max-w-md">
-              <p class="text-center text-lg">Conference schedule will be announced soon.</p>
+          {/* CfP */}
+          <ContentSection id="cfp" title="Call for presentations">
+            <div class="flex flex-col items-center gap-3 w-full max-w-md">
+              <p class="text-center text-lg">We don't do papers, but you may now submit your talk applications!</p>
+              <a
+                href="https://talks.nixcon.org/nixcon-2025/cfp"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+              >
+                Submit your application
+              </a>
             </div>
           </ContentSection>
 

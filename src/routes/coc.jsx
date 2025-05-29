@@ -19,6 +19,7 @@ export default function CodeOfConduct() {
 
           <div class={cubContainerClasses}>
             <p class="font-semibold text-lg mb-2">NixCon 2025 - Code of Conduct</p>
+            <p class="text-sm mb-2">Last updated: May 29, 2025</p>
             <p>This Code of Conduct outlines our expectations for all participants at NixCon. We are committed to providing a respectful and inclusive experience for everyone.</p>
           </div>
 

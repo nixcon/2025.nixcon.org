@@ -72,6 +72,15 @@ export default function App() {
                 >
                   Privacy Policy
                 </A>
+                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                <A
+                  href="/coc"
+                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                  aria-label="Code of Conduct"
+                >
+                  Code of Conduct
+                </A>
+
               </div>
             </footer>
           </>

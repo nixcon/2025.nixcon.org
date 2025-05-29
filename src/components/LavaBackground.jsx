@@ -2,6 +2,10 @@ import { onMount, onCleanup, createEffect, createSignal } from "solid-js";
 import { startLavaAnimation } from "~/lava/app";
 import { useThemeStore, colorSchemes } from "~/stores/theme";
 import { useAnimationStore } from "~/stores/animation";
+import { useFullscreenStore } from "~/stores/fullscreen";
+import { Logo } from "~/components/Logo";
+import { BsFullscreen } from '@aminya/solid-icons/bs/BsFullscreen';
+import { BsFullscreenExit } from '@aminya/solid-icons/bs/BsFullscreenExit';
 
 /**
  * A component that renders the lava animation background.
@@ -10,7 +14,10 @@ import { useAnimationStore } from "~/stores/animation";
 export default function LavaBackground() {
   const { currentTheme } = useThemeStore();
   const { isAnimationOn } = useAnimationStore();
+  const { isFullscreen, toggleFullscreen } = useFullscreenStore();
+
   let animation = null;
+
 
   // Handle window resize
   const handleResize = () => {
@@ -55,7 +62,30 @@ export default function LavaBackground() {
 
   return (
     <>
-      <canvas id="background" class="fixed inset-0 w-screen h-screen" />
+      <div id="background-container" class="fixed inset-0 w-screen h-screen">
+        <canvas id="background" class="w-full h-full" />
+        {isFullscreen() && (
+          <div
+            id="fullscreen-logo"
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 pointer-events-none"
+          >
+            <Logo />
+          </div>
+        )}
+
+        {/* Exit Fullscreen button - desktop only */}
+        {isFullscreen() &&
+          <button
+            onClick={() => toggleFullscreen('background-container')}
+            class="fixed top-4 right-4 z-[9999] p-2 text-white/0 hover:text-white/80 transition-opacity hidden md:block cursor-pointer"
+            aria-label={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
+            title={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
+          >
+            {isFullscreen() ? <BsFullscreenExit size={20} /> : <BsFullscreen size={20} />}
+          </button>
+        }
+
+      </div>
     </>
   );
 }

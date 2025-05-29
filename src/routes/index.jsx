@@ -79,7 +79,14 @@ export default function Home() {
             {!isAnimationOn() ? <BsPlayFill size={24} /> : <BsPauseFill size={24} />}
           </button>
         </div>
-
+        <a
+          href="https://tickets.nixcon.org/2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="my-8 px-8 py-3 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white text-xl font-semibold flex items-center gap-2"
+        >
+          <BsTicketFill /> Get Your Tickets Now!
+        </a>
         <div class="flex flex-row flex-wrap justify-center gap-4 md:gap-10 text-lg md:text-2xl font-medium">
           <p class="flex items-center gap-2 md:gap-3">
             <span class="text-base md:text-xl bg-white/10 p-1.5 md:p-2 rounded-full"><BsSnow /></span>
@@ -106,63 +113,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Nav - Reordered by user interest frequency */}
-      <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-medium text-lg md:text-xl px-2 pb-4">
-        <a href="#tickets" class="group flex items-center gap-2 uppercase hover:underline">
-          <span class="block group-hover:hidden"><BsTicket /></span>
-          <span class="hidden group-hover:block"><BsTicketFill /></span>
-          Tickets
-        </a>
-        <a href="#schedule" class="group flex items-center gap-2 uppercase hover:underline">
-          <span class="block group-hover:hidden"><BsCalendar3Event /></span>
-          <span class="hidden group-hover:block"><BsCalendarEventFill /></span>
-          Schedule
-        </a>
-        <a href="#location" class="group flex items-center gap-2 uppercase hover:underline">
-          <span class="block group-hover:hidden"><BsGeo /></span>
-          <span class="hidden group-hover:block"><BsGeoFill /></span>
-          Location
-        </a>
-        <a href="#chat" class="group flex items-center gap-2 uppercase hover:underline">
-          <span class="block group-hover:hidden"><BsChatDots /></span>
-          <span class="hidden group-hover:block"><BsChatDotsFill /></span>
-          Chat
-        </a>
-        <a href="#faq" class="group flex items-center gap-2 uppercase hover:underline">
-          <span class="block group-hover:hidden"><BsQuestionCircle /></span>
-          <span class="hidden group-hover:block"><BsQuestionCircleFill /></span>
-          FAQ
-        </a>
-        <a href="#coc" class="group flex items-center gap-2 uppercase hover:underline">
-          <span class="block group-hover:hidden"><BsFileText /></span>
-          <span class="hidden group-hover:block"><BsFileTextFill /></span>
-          CoC
-        </a>
-      </nav>
-
       {/* Apply PageLayout to the main content with reduced spacing */}
       <PageLayout reducedSpacing={true}>
+        {/* Nav - Reordered by user interest frequency */}
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 font-medium px-2 pb-4">
+          <a href="#schedule" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsCalendar3Event /></span>
+            <span class="hidden group-hover:block"><BsCalendarEventFill /></span>
+            Schedule
+          </a>
+          <a href="#location" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsGeo /></span>
+            <span class="hidden group-hover:block"><BsGeoFill /></span>
+            Location
+          </a>
+          <a href="#chat" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsChatDots /></span>
+            <span class="hidden group-hover:block"><BsChatDotsFill /></span>
+            Chat
+          </a>
+          <a href="#faq" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsQuestionCircle /></span>
+            <span class="hidden group-hover:block"><BsQuestionCircleFill /></span>
+            FAQ
+          </a>
+          <a href="#coc" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsFileText /></span>
+            <span class="hidden group-hover:block"><BsFileTextFill /></span>
+            CoC
+          </a>
+          <a href="#tickets" class="group flex items-center gap-2 uppercase hover:underline">
+            <span class="block group-hover:hidden"><BsTicket /></span>
+            <span class="hidden group-hover:block"><BsTicketFill /></span>
+            Tickets
+          </a>
+        </nav>
+        <hr class="h-[1px] w-full border-white/10 my-8" /> {/* Added divider */}
         {/* Content sections - Reordered by user interest frequency */}
         <div class="w-full mx-auto space-y-12 px-4">
-          {/* Tickets - Most important section */}
-          <ContentSection id="tickets" title="Tickets">
-            <div class="">
-              <p class="text-center text-lg">Tickets are available now!</p>
-              <div class="flex justify-center">
-                <a
-                  href="https://tickets.nixcon.org/2025/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
-                >
-                  Get your tickets
-                </a>
-              </div>
-            </div>
-          </ContentSection>
-
-          <hr class="h-[1px] w-full border-white/10" />
-
           {/* Schedule */}
           <ContentSection id="schedule" title="Schedule">
             <div class="w-full max-w-md">
@@ -236,6 +224,23 @@ export default function Home() {
               >
                 Download Code of Conduct
               </a>
+            </div>
+          </ContentSection>
+          <hr class="h-[1px] w-full border-white/10" />
+          {/* Tickets - Moved to bottom */}
+          <ContentSection id="tickets" title="Tickets">
+            <div class="flex flex-col items-center gap-3">
+              <p class="text-center text-lg">Tickets are available now!</p>
+              <div class="flex justify-center">
+                <a
+                  href="https://tickets.nixcon.org/2025/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-white"
+                >
+                  Get your tickets
+                </a>
+              </div>
             </div>
           </ContentSection>
         </div>

@@ -1,8 +1,11 @@
-dev:
-  bun run dev
+default:
+  @just --list
 
-build:
-  bun run build
-  
+dev: 
+  bunx vinxi dev --port 1234
+
+build: 
+  bunx vinxi build
+
 install:
   bun install

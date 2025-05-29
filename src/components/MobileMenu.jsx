@@ -103,19 +103,6 @@ export default function MobileMenu() {
               Organizers
             </A>
 
-            {/* Code of Conduct */}
-            <A
-              href="/coc"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/coc") ? "underline" : ""
-                }`}
-              aria-label="Code of Conduct"
-              onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false;
-              }}
-            >
-              <BsFileTextFill />
-              Code of Conduct
-            </A>
           </nav>
         </div>
       </div>

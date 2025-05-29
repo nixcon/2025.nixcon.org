@@ -84,15 +84,6 @@ export default function TopMenu() {
             >
               Organizers
             </A>
-            {/* Code of Conduct */}
-            <A
-              href="/coc"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive("/coc") ? "underline" : ""
-                }`}
-              aria-label="Code of Conduct"
-            >
-              CoC
-            </A>
           </nav>
         </div>
       </div>

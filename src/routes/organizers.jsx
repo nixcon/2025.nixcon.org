@@ -6,6 +6,7 @@ import PageLayout from '~/components/PageLayout';
 
 // Define the organizer type
 const organizers = [
+  // vv Main organisers vv
   {
     name: "Alex",
     github: "ners",
@@ -16,6 +17,38 @@ const organizers = [
     discourseUrl: "https://discourse.nixos.org/u/ners",
     responsibilities: ["Program", "Date, venue", "Website"]
   },
+  {
+    name: "John",
+    github: "john-rodewald",
+    githubUrl: "https://github.com/john-rodewald",
+    matrix: "@john-rodewald:nixos.dev",
+    matrixUrl: "https://matrix.to/#/%40john-rodewald:nixos.dev",
+    discourse: "john-rodewald",
+    discourseUrl: "https://discourse.nixos.org/u/john-rodewald",
+    responsibilities: ["Tickets", "Food", "A/V"]
+  },
+  {
+    name: "Lassulus",
+    github: "lassulus",
+    githubUrl: "https://github.com/lassulus",
+    matrix: "@lassulus:lassul.us",
+    matrixUrl: "https://matrix.to/#/%40lassulus:lassul.us",
+    discourse: "lassulus",
+    discourseUrl: "https://discourse.nixos.org/u/lassulus",
+    responsibilities: ["Program", "Tickets"]
+  },
+  {
+    name: "Silvan",
+    github: "infinisil",
+    githubUrl: "https://github.com/infinisil",
+    matrix: "@infinisil:matrix.org",
+    matrixUrl: "https://matrix.to/#/%40infinisil:matrix.org",
+    discourse: "infinisil",
+    discourseUrl: "https://discourse.nixos.org/u/infinisil",
+    responsibilities: ["General administration", "Hotels", "Sponsorships", "Letters of Invitation"]
+  },
+  // ^^ Main organisers ^^
+  // TODO: Indicate on the website
   {
     name: "Andreas",
     github: "Nebucatnetzer",
@@ -34,16 +67,6 @@ const organizers = [
     matrixUrl: "https://matrix.to/#/%40andi:kack.it",
     discourse: "andir",
     discourseUrl: "https://discourse.nixos.org/u/andir",
-    responsibilities: ["A/V"]
-  },
-  {
-    name: "Antoine",
-    github: "nlewo",
-    githubUrl: "https://github.com/nlewo",
-    matrix: "@lewo:matrix.org",
-    matrixUrl: "https://matrix.to/#/%40lewo:matrix.org",
-    discourse: "lewo",
-    discourseUrl: "https://discourse.nixos.org/u/lewo",
     responsibilities: ["A/V"]
   },
   {
@@ -76,16 +99,6 @@ const organizers = [
     responsibilities: ["Date, venue"]
   },
   {
-    name: "Ida",
-    github: "idabzo",
-    githubUrl: "https://github.com/idabzo",
-    matrix: "@idabzo:matrix.org",
-    matrixUrl: "https://matrix.to/#/%40idabzo:matrix.org",
-    discourse: "idabzo",
-    discourseUrl: "https://discourse.nixos.org/u/idabzo",
-    responsibilities: ["Website"]
-  },
-  {
     name: "hrmny",
     github: "ForsakenHarmony",
     githubUrl: "https://github.com/ForsakenHarmony",
@@ -94,16 +107,6 @@ const organizers = [
     discourse: "hrmny",
     discourseUrl: "https://discourse.nixos.org/u/hrmny",
     responsibilities: ["Tickets", "A/V"]
-  },
-  {
-    name: "John",
-    github: "john-rodewald",
-    githubUrl: "https://github.com/john-rodewald",
-    matrix: "@john-rodewald:nixos.dev",
-    matrixUrl: "https://matrix.to/#/%40john-rodewald:nixos.dev",
-    discourse: "john-rodewald",
-    discourseUrl: "https://discourse.nixos.org/u/john-rodewald",
-    responsibilities: ["Tickets", "Food", "A/V"]
   },
   {
     name: "Kenji",
@@ -116,26 +119,6 @@ const organizers = [
     responsibilities: ["Program", "Perk delivery"]
   },
   {
-    name: "Lassulus",
-    github: "lassulus",
-    githubUrl: "https://github.com/lassulus",
-    matrix: "@lassulus:lassul.us",
-    matrixUrl: "https://matrix.to/#/%40lassulus:lassul.us",
-    discourse: "lassulus",
-    discourseUrl: "https://discourse.nixos.org/u/lassulus",
-    responsibilities: ["Program", "Tickets"]
-  },
-  {
-    name: "Pablo",
-    github: "pinpox",
-    githubUrl: "https://github.com/pinpox",
-    matrix: "@pinpox:matrix.org",
-    matrixUrl: "https://matrix.to/#/%40pinpox:matrix.org",
-    discourse: "pinpox",
-    discourseUrl: "https://discourse.nixos.org/u/pinpox",
-    responsibilities: ["Website"]
-  },
-  {
     name: "Picnoir",
     github: "picnoir",
     githubUrl: "https://github.com/picnoir",
@@ -143,6 +126,14 @@ const organizers = [
     matrixUrl: "https://matrix.to/#/%40picnoir:alternativebit.fr",
     discourse: "picnoir",
     discourseUrl: "https://discourse.nixos.org/u/picnoir",
+    responsibilities: ["A/V"]
+  },
+  {
+    name: "Ral",
+    // github: "",
+    // githubUrl: "https://github.com/",
+    matrix: "@ral:fairydust.space",
+    matrixUrl: "https://matrix.to/#/%40ral:fairydust.space",
     responsibilities: ["A/V"]
   },
   {
@@ -156,16 +147,6 @@ const organizers = [
     responsibilities: ["Date, venue"]
   },
   {
-    name: "Ron",
-    github: "refroni",
-    githubUrl: "https://github.com/refroni",
-    matrix: "@ronef:matrix.org",
-    matrixUrl: "https://matrix.to/#/%40ronef:matrix.org",
-    discourse: "ron",
-    discourseUrl: "https://discourse.nixos.org/u/ron",
-    responsibilities: ["Sponsorships"]
-  },
-  {
     name: "Sebastian",
     github: "ra33it0",
     githubUrl: "https://github.com/ra33it0",
@@ -175,16 +156,6 @@ const organizers = [
     discourseUrl: "https://discourse.nixos.org/u/ra33it0",
     responsibilities: ["Program", "Sponsorships"]
   },
-  {
-    name: "Silvan",
-    github: "infinisil",
-    githubUrl: "https://github.com/infinisil",
-    matrix: "@infinisil:matrix.org",
-    matrixUrl: "https://matrix.to/#/%40infinisil:matrix.org",
-    discourse: "infinisil",
-    discourseUrl: "https://discourse.nixos.org/u/infinisil",
-    responsibilities: ["General administration", "Hotels", "Sponsorships", "Letters of Invitation"]
-  }
 ];
 
 export default function Organizers() {

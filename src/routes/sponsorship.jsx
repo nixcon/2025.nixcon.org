@@ -66,7 +66,7 @@ export default function Sponsorship() {
               <li>Linked logo on the website</li>
               <li>Linked shout-out or repost from official social media accounts</li>
               <li>Possibility to distribute your own stickers/swag/merch at the venue</li>
-              <li>Tickets: 1+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually when ticket sales open." /></li>
+              <li>Tickets: 1+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually for 256 EUR in the ticket shop." /></li>
             </ul>
             <a href={sponsorLink("Bronze", 1024)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
               Contact Us
@@ -82,7 +82,7 @@ export default function Sponsorship() {
               <li>Shout-out in the opening</li>
               <li>Slot on break slideshow (provide a slide in advance)</li>
               <li>Possibility to distribute flyers (provide them in advance) to all attendees in bag</li>
-              <li>Tickets: 2+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually when ticket sales open." /></li>
+              <li>Tickets: 2+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually for 256 EUR in the ticket shop." /></li>
             </ul>
             <a href={sponsorLink("Silver", 2048)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
               Contact Us
@@ -97,7 +97,7 @@ export default function Sponsorship() {
               <li>Everything from Silver</li>
               <li>5 minute lightning talk slot</li>
               <li>Dedicated space for a booth <ExpandableFootnote number="2" content="These perks may be limited in availability." /></li>
-              <li>Tickets: 4+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually when ticket sales open." /></li>
+              <li>Tickets: 4+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually for 256 EUR in the ticket shop." /></li>
             </ul>
             <a href={sponsorLink("Gold", 4096)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
               Contact Us
@@ -114,7 +114,7 @@ export default function Sponsorship() {
               <li>1 minute presentation slot (provide the slides in advance) in the conference opening</li>
               <li>Intro of all recordings show your name/logo</li>
               <li>Possibility to distribute items (provide them in advance) to all attendees in bag</li>
-              <li>Tickets: 8+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually when ticket sales open." /></li>
+              <li>Tickets: 8+ corporate tickets <ExpandableFootnote number="1" content="One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually for 256 EUR in the ticket shop." /></li>
             </ul>
             <a href={sponsorLink("Diamond", 8192)} class="inline-block px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-medium">
               Contact Us

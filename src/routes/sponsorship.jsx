@@ -138,7 +138,7 @@ export default function Sponsorship() {
         {/* General Info */}
         <div class="mt-12 w-full">
           <ol class="list-decimal text-xs list-inside space-y-2 mb-4">
-            <li id="corporate-tickets">One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually when ticket sales open.</li>
+            <li id="corporate-tickets">One corporate ticket per 1024 EUR. Only corporate tickets come with company name/logo recognition on the badge. Corporate tickets can also be bought individually for 256 EUR in the ticket shop.</li>
             <li id="limited">These perks may be limited in availability.</li>
             <li id="production">These perks require production and cannot be guaranteed if too late.</li>
             <li>Sponsors can be tier-limited or rejected by the Nix Steering Committee for any reason.</li>

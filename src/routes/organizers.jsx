@@ -91,7 +91,6 @@ const organizers = [
     name: "Farhad",
     github: "fmehta",
     githubUrl: "https://github.com/fmehta",
-    matrix: "@farhad_mehta:matrix.org",
     discourse: "fmehta",
     discourseUrl: "https://discourse.nixos.org/u/fmehta",
     matrix: "@farhad_mehta:matrix.org",

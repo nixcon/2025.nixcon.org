@@ -96,6 +96,21 @@ export default function MobileMenu() {
             >
               Organizers
             </A>
+
+            {/* FAQ */}
+            <A
+              href="/faq"
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
+                isActive("/faq") ? "underline" : ""
+              }`}
+              aria-label="FAQ"
+              onClick={() => {
+                document.getElementById("mobile-menu-toggle").checked = false
+              }}
+            >
+              <FaSolidCircleQuestion />
+              FAQ
+            </A>
           </nav>
         </div>
       </div>

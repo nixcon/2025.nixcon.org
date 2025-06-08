@@ -43,7 +43,6 @@ export default function App() {
       </button>
 
       <Router
-        base="/2025.nixcon.org"
         root={(props) => (
           <>
             {/* Menus */}

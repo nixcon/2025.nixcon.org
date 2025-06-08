@@ -1,0 +1,65 @@
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-32921fbf-09c5-80be-8006-4dd2f67c94bb"
+  viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink" fill="white" version="1.1">
+  <g id="shape-32921fbf-09c5-80be-8006-4dd2f67c94bb">
+    <defs>
+      <clipPath id="frame-clip-32921fbf-09c5-80be-8006-4dd2f67c94bb-render-1" class="frame-clip frame-clip-def">
+        <rect rx="0" ry="0" x="0" y="0" width="500" height="499.9999999999998"
+          transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" />
+      </clipPath>
+    </defs>
+    <g class="frame-container-wrapper">
+      <g class="frame-container-blur">
+        <g class="frame-container-shadows">
+          <g clip-path="url(#frame-clip-32921fbf-09c5-80be-8006-4dd2f67c94bb-render-1)" fill="white">
+            <g class="frame-children">
+              <g id="shape-32921fbf-09c5-80be-8006-4dd2d51881ed" rx="0" ry="0" fill="">
+                <g id="shape-32921fbf-09c5-80be-8006-4dd2d5190b0e">
+                  <g class="fills" id="fills-32921fbf-09c5-80be-8006-4dd2d5190b0e">
+                    <path
+                      d="M114.583,304.125L142.361,256.014L263.889,466.500L208.333,466.500L180.556,418.389L152.778,466.500L125.000,466.500L111.111,442.444L152.778,370.278Z"
+                      fill="" />
+                  </g>
+                </g>
+                <g id="shape-32921fbf-09c5-80be-8006-4dd2d51941df">
+                  <g class="fills" id="fills-32921fbf-09c5-80be-8006-4dd2d51941df">
+                    <path
+                      d="M135.417,159.792L190.972,159.792L69.444,370.278L41.667,322.167L69.444,274.056L13.889,274.056L0.000,250.000L13.889,225.944L97.222,225.944Z"
+                      fill="" />
+                  </g>
+                </g>
+                <g id="shape-32921fbf-09c5-80be-8006-4dd2d51941e0">
+                  <g class="fills" id="fills-32921fbf-09c5-80be-8006-4dd2d51941e0">
+                    <path
+                      d="M270.833,105.667L298.611,153.778L55.556,153.778L83.333,105.667L138.889,105.667L111.111,57.556L125.000,33.500L152.778,33.500L194.444,105.667Z"
+                      fill="" />
+                  </g>
+                </g>
+                <g id="shape-32921fbf-09c5-80be-8006-4dd2d51941e1">
+                  <g class="fills" id="fills-32921fbf-09c5-80be-8006-4dd2d51941e1">
+                    <path
+                      d="M385.417,195.875L357.639,243.986L236.111,33.500L291.667,33.500L319.444,81.611L347.222,33.500L375.000,33.500L388.889,57.556L347.222,129.722Z"
+                      fill="" />
+                  </g>
+                </g>
+                <g id="shape-32921fbf-09c5-80be-8006-4dd2d5198d8f">
+                  <g class="fills" id="fills-32921fbf-09c5-80be-8006-4dd2d5198d8f">
+                    <path
+                      d="M364.583,340.208L309.028,340.208L430.556,129.722L458.333,177.833L430.556,225.944L486.111,225.944L500.000,250.000L486.111,274.056L402.778,274.056Z"
+                      fill="" />
+                  </g>
+                </g>
+                <g id="shape-32921fbf-09c5-80be-8006-4dd2d5198d90">
+                  <g class="fills" id="fills-32921fbf-09c5-80be-8006-4dd2d5198d90">
+                    <path
+                      d="M229.167,394.333L201.389,346.222L444.444,346.222L416.667,394.333L361.111,394.333L388.889,442.444L375.000,466.500L347.222,466.500L305.556,394.333Z"
+                      fill="" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,27 +1,39 @@
-import { A } from "@solidjs/router";
-import { BsExclamationTriangleFill } from '@aminya/solid-icons/bs/BsExclamationTriangleFill';
-import PageLayout from '~/components/PageLayout';
+import PageLayout from "~/components/PageLayout"
+import { Section } from "~/components/Section"
+import { Paragraph, SecondaryButtonLink, Title } from "~/components/Ui"
 
 export default function NotFound() {
   return (
-    <PageLayout>
-      <div class="flex flex-col items-center gap-5">
-        <h1 class="text-2xl md:text-4xl font-bold flex items-center gap-3">
-          <BsExclamationTriangleFill class="text-xl md:text-3xl" />
-          Page Not Found
-        </h1>
+    <div class="relative min-h-svh text-white">
+      <PageLayout reducedSpacing={true}>
+        <div class="text-center">
+          {" "}
+          {/* Centering container for the whole content */}
+          <Section title="" align="center">
+            {" "}
+            {/* Using Section, align center for its content */}
+            <div class="flex flex-col items-center gap-5">
+              <Title className="mb-4">
+                {/* Removed icon and alignment classes, kept mb-4 */}
+                Page Not Found
+              </Title>
 
-        <p class="text-center text-lg mb-6">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
+              <Paragraph class="text-lg">
+                {" "}
+                {/* Ensured text-lg for consistency */}
+                The page you're looking for doesn't exist or has been moved.
+              </Paragraph>
 
-        <A
-          href="/"
-          class="px-6 py-3 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-white font-bold"
-        >
-          Return to Home
-        </A>
-      </div>
-    </PageLayout>
-  );
+              <SecondaryButtonLink href="/" class="mt-4">
+                {" "}
+                {/* Added mt-4 */}
+                Return to Home
+              </SecondaryButtonLink>
+            </div>
+          </Section>
+        </div>
+      </PageLayout>
+      <div class="h-20"></div> {/* Consistent bottom spacing */}
+    </div>
+  )
 }

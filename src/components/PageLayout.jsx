@@ -1,4 +1,3 @@
-
 /**
  * A reusable page layout component for consistent page structure.
  *
@@ -9,16 +8,16 @@
  * the navigation menu and the main content. Other pages maintain the default spacing.
  */
 export default function PageLayout(props) {
-  const topPadding = props.reducedSpacing ? "pt-4" : "pt-20";
-  const topMargin = props.reducedSpacing ? "mt-4" : "mt-20";
+  const pt = props.reducedSpacing ? "pt-30" : "pt-60"
 
   return (
-    <div class={`relative min-h-screen text-white p-5 ${topPadding}`}>
-      <div class={`max-w-3xl mx-auto p-8 glass ${topMargin}`}>
-        <div class="w-full mx-auto space-y-8 px-4">
-          {props.children}
-        </div>
+    <div class={`relative min-h-screen text-white w-full`}>
+      <div
+        class={`p-5 sm:p-10 lg:p-30 ${pt} backdrop-blur-md w-full grain border border-white/10`}
+        style={{ "background-color": "var(--theme-background-translucent)" }}
+      >
+        <div class="max-w-3xl mx-auto">{props.children}</div>
       </div>
     </div>
-  );
+  )
 }

@@ -17,8 +17,8 @@ export const sponsors = [
   // },
   {
     name: "Flox",
-    logoUrl: "https://2025.nixcon.org/flox.png",
+    logoUrl: "/2025.nixcon.org/flox.png",
     websiteUrl: "https://flox.dev/",
     tier: "Diamond",
   },
-];
+]

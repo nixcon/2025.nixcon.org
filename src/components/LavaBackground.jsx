@@ -1,64 +1,75 @@
-import { onMount, onCleanup, createEffect, createSignal } from "solid-js";
-import { startLavaAnimation } from "~/lava/app";
-import { useThemeStore, colorSchemes } from "~/stores/theme";
-import { useAnimationStore } from "~/stores/animation";
-import { useFullscreenStore } from "~/stores/fullscreen";
-import { Logo } from "~/components/Logo";
-import { BsFullscreen } from '@aminya/solid-icons/bs/BsFullscreen';
-import { BsFullscreenExit } from '@aminya/solid-icons/bs/BsFullscreenExit';
+import { BsFullscreen } from "@aminya/solid-icons/bs/BsFullscreen"
+import { BsFullscreenExit } from "@aminya/solid-icons/bs/BsFullscreenExit"
+import { createEffect, createSignal, onCleanup, onMount } from "solid-js"
+import { Logo } from "~/components/Logo"
+import { startLavaAnimation } from "~/lava/app"
+import { useAnimationStore } from "~/stores/animation"
+import { useFullscreenStore } from "~/stores/fullscreen"
+import { colorSchemes, useThemeStore } from "~/stores/theme"
 
 /**
  * A component that renders the lava animation background.
  * This component should only be rendered on the client side.
  */
 export default function LavaBackground() {
-  const { currentTheme } = useThemeStore();
-  const { isAnimationOn } = useAnimationStore();
-  const { isFullscreen, toggleFullscreen } = useFullscreenStore();
+  const { currentTheme } = useThemeStore()
+  const { isAnimationOn } = useAnimationStore()
+  const { isFullscreen, toggleFullscreen } = useFullscreenStore()
 
-  let animation = null;
-
+  let animation = null
 
   // Handle window resize
   const handleResize = () => {
     // If animation is stopped, render a single frame to update with new dimensions
     if (animation && !isAnimationOn()) {
-      animation.renderSingleFrame();
+      animation.renderSingleFrame()
     }
-  };
+  }
 
   onMount(() => {
-    const colors = colorSchemes[currentTheme()];
-    animation = startLavaAnimation(colors);
+    const colors = colorSchemes[currentTheme()]
+    animation = startLavaAnimation(colors)
 
     if (isAnimationOn()) {
-      animation.start();
+      animation.start()
     } else {
       // Render a single static frame if animation is initially off
-      animation.renderSingleFrame();
+      animation.renderSingleFrame()
     }
 
     // Add resize event listener
-    window.addEventListener('resize', handleResize);
-  });
+    window.addEventListener("resize", handleResize)
+  })
 
   onCleanup(() => {
-    if (animation) animation.stop();
+    if (animation) animation.stop()
     // Remove resize event listener
-    window.removeEventListener('resize', handleResize);
-  });
+    window.removeEventListener("resize", handleResize)
+  })
 
   // Effect to start/stop animation when isAnimationOn changes
   createEffect(() => {
-    if (!animation) return;
+    if (!animation) return
 
     if (isAnimationOn()) {
-      animation.start();
+      animation.start()
     } else {
       // Render a single static frame instead of stopping completely
-      animation.renderSingleFrame();
+      animation.renderSingleFrame()
     }
-  });
+  })
+
+  // Effect to update colors when currentTheme changes
+  createEffect(() => {
+    if (!animation) return
+
+    const newThemeName = currentTheme()
+    const newColors = colorSchemes[newThemeName]
+
+    if (newColors) {
+      animation.updateColors(newColors)
+    }
+  })
 
   return (
     <>
@@ -74,18 +85,17 @@ export default function LavaBackground() {
         )}
 
         {/* Exit Fullscreen button - desktop only */}
-        {isFullscreen() &&
+        {isFullscreen() && (
           <button
-            onClick={() => toggleFullscreen('background-container')}
+            onClick={() => toggleFullscreen("background-container")}
             class="fixed top-4 right-4 z-[9999] p-2 text-white/0 hover:text-white/80 transition-opacity hidden md:block cursor-pointer"
             aria-label={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
             title={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
           >
             {isFullscreen() ? <BsFullscreenExit size={20} /> : <BsFullscreen size={20} />}
           </button>
-        }
-
+        )}
       </div>
     </>
-  );
+  )
 }

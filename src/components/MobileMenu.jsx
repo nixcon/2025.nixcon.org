@@ -1,30 +1,31 @@
-import { useLocation } from "@solidjs/router";
-import { A } from "@solidjs/router";
-import { BsHouseFill } from "@aminya/solid-icons/bs/BsHouseFill";
-import { BsPeopleFill } from "@aminya/solid-icons/bs/BsPeopleFill";
-import { BsFileTextFill } from "@aminya/solid-icons/bs/BsFileTextFill";
-import { BsList } from "@aminya/solid-icons/bs/BsList";
-import { BsX } from "@aminya/solid-icons/bs/BsX";
-import { FaSolidHotel } from "@aminya/solid-icons/fa/FaSolidHotel";
-import { BiSolidHeartCircle } from "@aminya/solid-icons/bi/BiSolidHeartCircle";
-import { LogoMenu } from "./Logo";
+import { BiSolidHeartCircle } from "@aminya/solid-icons/bi/BiSolidHeartCircle"
+import { BsFileTextFill } from "@aminya/solid-icons/bs/BsFileTextFill"
+import { BsHouseFill } from "@aminya/solid-icons/bs/BsHouseFill"
+import { BsList } from "@aminya/solid-icons/bs/BsList"
+import { BsPeopleFill } from "@aminya/solid-icons/bs/BsPeopleFill"
+import { BsX } from "@aminya/solid-icons/bs/BsX"
+import { FaSolidHotel } from "@aminya/solid-icons/fa/FaSolidHotel"
+import { useLocation } from "@solidjs/router"
+import { A } from "@solidjs/router"
+import { LogoMenu } from "./Logo"
+import { useScrollPosition } from "./TopMenu"
 
 export default function MobileMenu() {
-  const location = useLocation();
-  const isActive = (path) => location.pathname === path;
+  const location = useLocation()
+  const isActive = (path) => location.pathname === path
+  const scrolled = useScrollPosition(120)
 
   return (
     <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
       {/* Checkbox for the toggle - placed at the top level */}
-      <input
-        type="checkbox"
-        id="mobile-menu-toggle"
-        class="hidden peer"
-        aria-label="Toggle menu"
-      />
+      <input type="checkbox" id="mobile-menu-toggle" class="hidden peer" aria-label="Toggle menu" />
 
       {/* Header with background */}
-      <div class="glass !rounded-none !px-4 !py-2 flex justify-between items-center">
+      <div
+        class={`!rounded-none !px-4 !py-2 flex justify-between items-center peer-checked:!border-transparent peer-checked:!shadow-none ${
+          scrolled() ? "glass !border-0" : "border-0 border-transparent peer-checked:glassutility"
+        }`}
+      >
         {/* Logo on the left */}
         <A href="/" aria-label="Home">
           <div class="h-6">
@@ -33,11 +34,7 @@ export default function MobileMenu() {
         </A>
 
         {/* Burger Button on the right - using checkbox hack */}
-        <label
-          for="mobile-menu-toggle"
-          class="text-white p-2 cursor-pointer block"
-          aria-label="Toggle menu"
-        >
+        <label for="mobile-menu-toggle" class="text-white p-2 cursor-pointer block" aria-label="Toggle menu">
           <BsList size={30} class="peer-checked:hidden" />
           <BsX size={30} class="hidden peer-checked:block" />
         </label>
@@ -50,11 +47,12 @@ export default function MobileMenu() {
             {/* Home */}
             <A
               href="/"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
+                isActive("/") ? "underline" : ""
+              }`}
               aria-label="Home"
               onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false;
+                document.getElementById("mobile-menu-toggle").checked = false
               }}
             >
               <BsHouseFill />
@@ -64,11 +62,12 @@ export default function MobileMenu() {
             {/* Sponsorship */}
             <A
               href="/sponsorship"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/sponsorship") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
+                isActive("/sponsorship") ? "underline" : ""
+              }`}
               aria-label="Sponsorship"
               onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false;
+                document.getElementById("mobile-menu-toggle").checked = false
               }}
             >
               <BiSolidHeartCircle />
@@ -78,11 +77,12 @@ export default function MobileMenu() {
             {/* Accommodation */}
             <A
               href="/hotels"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/hotels") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
+                isActive("/hotels") ? "underline" : ""
+              }`}
               aria-label="Accommodation"
               onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false;
+                document.getElementById("mobile-menu-toggle").checked = false
               }}
             >
               <FaSolidHotel />
@@ -92,20 +92,20 @@ export default function MobileMenu() {
             {/* Organizers */}
             <A
               href="/organizers"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/organizers") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
+                isActive("/organizers") ? "underline" : ""
+              }`}
               aria-label="Organizers"
               onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false;
+                document.getElementById("mobile-menu-toggle").checked = false
               }}
             >
               <BsPeopleFill />
               Organizers
             </A>
-
           </nav>
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -10,6 +10,7 @@
     "types": [
       "solid-js",
       "solid-js/web"
-    ]
+    ],
+    "checkJs": true,
   }
 }

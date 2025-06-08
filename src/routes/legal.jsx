@@ -1,37 +1,38 @@
-import { BsFileTextFill } from '@aminya/solid-icons/bs/BsFileTextFill';
-import PageLayout from '~/components/PageLayout';
+import PageLayout from "~/components/PageLayout"
+import { Section } from "~/components/Section"
+import { Paragraph, Title } from "~/components/Ui"
 
 export default function Legal() {
   return (
-    <PageLayout>
-      <div class="flex flex-col items-center gap-5">
-        <h1 class="text-2xl md:text-4xl font-bold flex items-center gap-3">
-          <BsFileTextFill class="text-xl md:text-3xl" />
-          Legal Disclosure
-        </h1>
+    <div class="relative min-h-svh text-white">
+      <PageLayout reducedSpacing={true}>
+        <Title>Legal Disclosure</Title>
 
-        <div class="w-full max-w-2xl">
-          <div class="prose prose-invert mx-auto">
-            <p class="text-lg mb-6">This website and event is hosted by:</p>
-
-            <div class="mb-6">
-              <p>Stichting NixOS Foundation</p>
-              <p>Korte Lijnbaanssteeg 1-4318</p>
-              <p>1012 SL, Amsterdam</p>
-              <p>The Netherlands</p>
-            </div>
-
-            <div class="mb-6">
-              <p>KvK 63520583</p>
-              <p>VAT: NL855271851B01</p>
-            </div>
-
-            <div class="mb-6">
-              <p>E-Mail: <a href="mailto:foundation@nixos.org" class="text-white underline hover:text-white/80">foundation@nixos.org</a></p>
-            </div>
+        <Section title="Hosted by">
+          <Paragraph>This website and event is hosted by:</Paragraph>
+          <div class="mt-4">
+            <Paragraph>Stichting NixOS Foundation</Paragraph>
+            <Paragraph>Korte Lijnbaanssteeg 1-4318</Paragraph>
+            <Paragraph>1012 SL, Amsterdam</Paragraph>
+            <Paragraph>The Netherlands</Paragraph>
           </div>
-        </div>
-      </div>
-    </PageLayout>
-  );
+
+          <div class="mt-4">
+            <Paragraph>KvK 63520583</Paragraph>
+            <Paragraph>VAT: NL855271851B01</Paragraph>
+          </div>
+
+          <div class="mt-4">
+            <Paragraph>
+              E-Mail:{" "}
+              <a href="mailto:foundation@nixos.org" class="underline hover:text-white/80 transition-colors">
+                foundation@nixos.org
+              </a>
+            </Paragraph>
+          </div>
+        </Section>
+      </PageLayout>
+      <div class="h-20"></div>
+    </div>
+  )
 }

@@ -2,21 +2,21 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/2025.nixcon.org/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype-variations");
+  src: url("/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype-variations");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("/2025.nixcon.org/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype-variations");
+  src: url("/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype-variations");
   font-weight: 100 900;
   font-style: italic;
 }
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/2025.nixcon.org/DM_Mono/DMMono-Regular.ttf") format("truetype");
+  src: url("/DM_Mono/DMMono-Regular.ttf") format("truetype");
   font-weight: normal;
   /* 400 */
   font-style: normal;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/2025.nixcon.org/DM_Mono/DMMono-Italic.ttf") format("truetype");
+  src: url("/DM_Mono/DMMono-Italic.ttf") format("truetype");
   font-weight: normal;
   /* 400 */
   font-style: italic;
@@ -32,28 +32,28 @@
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/2025.nixcon.org/DM_Mono/DMMono-Light.ttf") format("truetype");
+  src: url("/DM_Mono/DMMono-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/2025.nixcon.org/DM_Mono/DMMono-LightItalic.ttf") format("truetype");
+  src: url("/DM_Mono/DMMono-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/2025.nixcon.org/DM_Mono/DMMono-Medium.ttf") format("truetype");
+  src: url("/DM_Mono/DMMono-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/2025.nixcon.org/DM_Mono/DMMono-MediumItalic.ttf") format("truetype");
+  src: url("/DM_Mono/DMMono-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }
@@ -112,7 +112,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/2025.nixcon.org/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
+  background-image: url("/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
   background-repeat: repeat;
   background-attachment: fixed;
   opacity: 0.8;
@@ -148,7 +148,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/2025.nixcon.org/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
+  background-image: url("/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
   background-repeat: repeat;
   background-attachment: fixed;
   opacity: 0.8;

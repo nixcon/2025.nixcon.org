@@ -17,7 +17,7 @@ export default function Hotels() {
       website: "https://theyarn.ch/",
       mapUrl: "https://maps.app.goo.gl/6a5Cfi281uYqgtpu5",
       bookingInfo: "Book via email at corporate@theyarn.ch, mentioning you are attending the NixCon conference.",
-      imagePath: "/2025.nixcon.org/the-yarn-rates.png", // Assuming this path is correct relative to public dir or base URL
+      imagePath: "/the-yarn-rates.png",
       imageAlt: "The Yarn Hotel Room Rates",
     },
     {

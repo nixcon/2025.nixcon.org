@@ -7,7 +7,6 @@ export default defineConfig({
     plugins: [tailwindcss(), glslPlugin()],
   },
   server: {
-    baseURL: "/2025.nixcon.org",
     prerender: {
       crawlLinks: true,
     },

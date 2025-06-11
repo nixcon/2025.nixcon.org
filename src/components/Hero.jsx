@@ -1,4 +1,5 @@
 import { Logo } from "./Logo"
+import { PlayPause } from "./PlayPause"
 import { Paragraph, Title } from "./Ui"
 
 const claim =
@@ -14,7 +15,10 @@ export function Hero() {
       </div>
 
       <div class="sm:w-2/3 flex flex-col h-full justify-between items-end">
-        <Paragraph className="sm:m-auto sm:text-lg p-10">{claim}</Paragraph>
+        <div class="sm:m-auto p-10">
+          <Paragraph className="sm:text-lg">{claim}</Paragraph>
+          <PlayPause />
+        </div>
 
         <div class="">
           <div class="text-[25px] sm:text-[] md:text-[52px] font-bold">5-7 September, 2025</div>

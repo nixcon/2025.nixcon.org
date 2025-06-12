@@ -53,6 +53,6 @@ export const faqItems = [
   {
     question: "Where can I buy groceries?",
     answer:
-      "There are various stores in the city and right next to the train station is a small 'Coop' that is even open on Sundays: https://www.openstreetmap.org/way/192142413",
+      "There are various stores in the city. The main chains are called 'Migros' and 'Coop'. Right next to the train station is a small 'Coop' that is even open on Sundays: https://www.openstreetmap.org/way/192142413",
   },
 ];

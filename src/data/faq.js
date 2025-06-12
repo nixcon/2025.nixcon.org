@@ -50,4 +50,9 @@ export const faqItems = [
     answer:
       "Send an email to nixcon@nixos.org and describe your situation and we see what we can do.",
   },
+  {
+    question: "Where can I buy groceries?",
+    answer:
+      "There are various stores in the city and right next to the train station is a small 'Coop' that is even open on Sundays: https://www.openstreetmap.org/way/192142413",
+  },
 ];

@@ -1,6 +1,7 @@
-import { createSignal, onMount, onCleanup } from "solid-js";
-import { A, useLocation } from "@solidjs/router";
-import { LogoMenu } from "./Logo";
+import { A, useLocation } from "@solidjs/router"
+import { createSignal, onCleanup, onMount } from "solid-js"
+import { LogoMenu } from "./Logo"
+import { ButtonLink } from "./Ui"
 
 /**
  * Custom hook to track scroll position
@@ -9,57 +10,58 @@ import { LogoMenu } from "./Logo";
  * @param {number} threshold Scroll position threshold in pixels
  * @returns {() => boolean} Signal that returns true when scrolled past threshold
  */
-function useScrollPosition(threshold = 0) {
-  const [scrolled, setScrolled] = createSignal(false);
+export function useScrollPosition(threshold = 0) {
+  const [scrolled, setScrolled] = createSignal(false)
 
   onMount(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > threshold);
-    };
+      setScrolled(window.scrollY > threshold)
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
     // Check initial scroll position
-    handleScroll();
+    handleScroll()
 
     onCleanup(() => {
-      window.removeEventListener("scroll", handleScroll);
-    });
-  });
+      window.removeEventListener("scroll", handleScroll)
+    })
+  })
 
-  return scrolled;
+  return scrolled
 }
 
 export default function TopMenu() {
-  const location = useLocation();
-  const isActive = (path) => location.pathname === path;
-  const scrolled = useScrollPosition(120);
+  const location = useLocation()
+  const isActive = (path) => location.pathname === path
+  const scrolled = useScrollPosition(120)
 
   return (
     <div class="fixed top-0 left-0 right-0 z-50 hidden md:block">
-      <div class="max-w-3xl mx-auto p-2.5">
+      <div class="w-full">
         <div
-          class={`flex items-center justify-center h-16 ${scrolled() ? "glass" : ""
-            }`}
+          class={`w-full flex justify-between items-center gap-10 pl-6 pr-5 h-[72px] ${
+            scrolled() ? "glass" : "border border-transparent"
+          }`}
         >
           {/* Navigation Links */}
-          <nav class="flex items-center space-x-10">
-            {/* Home with Logo */}
-            <A
-              href="/"
-              class={`text-white hover:text-white/80 transition-all duration-75 ${isActive("/") ? "underline" : ""
-                }`}
-              aria-label="Home"
-            >
-              <div class="h-6">
-                <LogoMenu />
-              </div>
-            </A>
+          {/* Home with Logo */}
+          <A
+            href="/"
+            class={`text-white hover:text-white/80 transition-all duration-75 ${isActive("/") ? "underline" : ""}`}
+            aria-label="Home"
+          >
+            <div class="h-6">
+              <LogoMenu />
+            </div>
+          </A>
 
+          <nav class="flex gap-10 ml-auto">
             {/* Sponsorship */}
             <A
               href="/sponsorship"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive("/sponsorship") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+                isActive("/sponsorship") ? "underline" : ""
+              }`}
               aria-label="Sponsorship"
             >
               Sponsorship
@@ -68,8 +70,9 @@ export default function TopMenu() {
             {/* Accommodation */}
             <A
               href="/hotels"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive("/hotels") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+                isActive("/hotels") ? "underline" : ""
+              }`}
               aria-label="Accommodation"
             >
               Accommodation
@@ -78,15 +81,20 @@ export default function TopMenu() {
             {/* Organizers */}
             <A
               href="/organizers"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive("/organizers") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+                isActive("/organizers") ? "underline" : ""
+              }`}
               aria-label="Organizers"
             >
               Organizers
             </A>
           </nav>
+
+          <ButtonLink href="https://tickets.nixcon.org/2025/" aria-label="Tickets" target="_blank">
+            GET TICKETS
+          </ButtonLink>
         </div>
       </div>
     </div>
-  );
+  )
 }

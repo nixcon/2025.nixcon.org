@@ -1,32 +1,109 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Inter";
+  src: url("/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/DM_Mono/DMMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  /* 400 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/DM_Mono/DMMono-Italic.ttf") format("truetype");
+  font-weight: normal;
+  /* 400 */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/DM_Mono/DMMono-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/DM_Mono/DMMono-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/DM_Mono/DMMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/DM_Mono/DMMono-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@tailwind utilities;
+
 @layer theme, base, components, utilities;
 
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities);
+@theme {
+  --font-mono: "DM Mono", "Space Mono", "monospace";
+
+  --animate-test: test 1s linear infinite;
+
+  @keyframes test {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* @import "tailwindcss/theme.css" layer(theme); */
+/* @import "tailwindcss/preflight.css" layer(base); */
+/* @import "tailwindcss/utilities.css" layer(utilities); */
 
 body {
-  background-color: #661A66;
-  background-image:
-    radial-gradient(circle 60vw at 67% 12%, #FF5500 0%, transparent 70%),
-    radial-gradient(ellipse 45vw 30vw at 23% 37%, rgba(255, 85, 0, 0.8) 0%, transparent 80%),
-    radial-gradient(circle 40vw at 91% 63%, #661A66 0%, transparent 65%),
-    radial-gradient(ellipse 50vw 35vw at 8% 82%, rgba(102, 26, 102, 0.9) 0%, transparent 75%),
-    radial-gradient(circle 65vw at 74% 39%, #FF5500 0%, transparent 85%),
-    radial-gradient(ellipse 55vw 40vw at 32% 19%, rgba(102, 26, 102, 0.7) 0%, transparent 70%);
+  font-family: "Inter", sans-serif;
+  background-color: var(--theme-background);
   background-attachment: fixed;
   background-size: 100% 100%;
 }
 
-/* Glass container with noisy texture overlay */
-.glass {
-  @apply px-0 py-8 bg-[#661A66]/50 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl;
-  @apply sm:p-8;
+@utility glassutility {
+  @apply backdrop-blur-md;
   position: relative;
+  background-color: var(--theme-background-translucent);
+  background-image: url("/2025.nixcon.org/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
+  background-repeat: repeat;
 }
 
 
+/* Glass container with noisy texture overlay */
+.glass {
+  @apply backdrop-blur-md border border-white/10 shadow-xl;
+  position: relative;
+  background-color: var(--theme-background-translucent);
+}
 
 .glass::before {
   content: "";
@@ -37,7 +114,8 @@ body {
   bottom: 0;
   background-image: url("/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
   background-repeat: repeat;
-  opacity: 0.3;
+  background-attachment: fixed;
+  opacity: 0.8;
   pointer-events: none;
   z-index: 1;
   border-radius: inherit;
@@ -54,4 +132,28 @@ body {
 
 .debug>* {
   border: 2px dashed red;
+}
+
+.grain {
+  position: relative;
+  /* Ensure pseudo-element is positioned relative to this */
+  z-index: 0;
+  /* Ensure content is above the pseudo-element */
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/noisy-texture-100x100-o4-d10-c-f34379-t1.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  opacity: 0.8;
+  z-index: -1;
+  /* Place the pseudo-element behind the content */
+  pointer-events: none;
+  /* Make sure it doesn't interfere with interactions */
 }

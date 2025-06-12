@@ -81,8 +81,9 @@ export default function TopMenu() {
             {/* FAQ */}
             <A
               href="/faq"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive("/faq") ? "underline" : ""
-                }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+                isActive("/faq") ? "underline" : ""
+              }`}
               aria-label="FAQ"
             >
               FAQ

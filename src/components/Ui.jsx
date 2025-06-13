@@ -20,6 +20,18 @@ export function SecondaryButton(props) {
   )
 }
 
+export function SecondaryButtonWithoutFlake(props) {
+  const { class: className, ...rest } = props
+  return (
+    <button
+      class="group w-fit text-sm sm:text-base bg-transparent border border-white hover:bg-gray-50/10 transition rounded-full h-10.5 whitespace-nowrap pl-5 pr-4 flex flex-row justify-center items-center gap-3 cursor-pointer font-mono text-white uppercase"
+      {...rest}
+    >
+      {props.children}
+    </button>
+  )
+}
+
 export function ButtonLink(props) {
   return (
     <a {...props}>

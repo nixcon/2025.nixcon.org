@@ -47,7 +47,7 @@ export default function TopMenu() {
           {/* Home with Logo */}
           <A
             href="/"
-            class={`text-white hover:text-white/80 transition-all duration-75 ${isActive("/") ? "underline" : ""}`}
+            class={`text-white hover:underline transition-all duration-75 ${isActive("/") ? "underline" : ""}`}
             aria-label="Home"
           >
             <div class="h-6">
@@ -59,7 +59,7 @@ export default function TopMenu() {
             {/* Sponsorship */}
             <A
               href="/sponsorship"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${
                 isActive("/sponsorship") ? "underline" : ""
               }`}
               aria-label="Sponsorship"
@@ -70,7 +70,7 @@ export default function TopMenu() {
             {/* Accommodation */}
             <A
               href="/hotels"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${
                 isActive("/hotels") ? "underline" : ""
               }`}
               aria-label="Accommodation"
@@ -81,7 +81,7 @@ export default function TopMenu() {
             {/* Organizers */}
             <A
               href="/organizers"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${
                 isActive("/organizers") ? "underline" : ""
               }`}
               aria-label="Organizers"

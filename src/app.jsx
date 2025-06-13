@@ -33,14 +33,14 @@ export default function App() {
       <ClientLavaBackground />
 
       {/* Fullscreen button - desktop only */}
-      <button
+      {/* <button
         onClick={() => toggleFullscreen("background-container")}
         class="fixed top-4 right-4 z-[9999] p-2 text-white/0 hover:text-white/80 transition-opacity hidden md:block cursor-pointer"
         aria-label={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
         title={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
       >
         {isFullscreen() ? <BsFullscreenExit size={20} /> : <BsFullscreen size={20} />}
-      </button>
+      </button> */}
 
       <Router
         root={(props) => (

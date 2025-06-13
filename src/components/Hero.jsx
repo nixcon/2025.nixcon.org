@@ -15,13 +15,13 @@ export function Hero() {
       </div>
 
       <div class="sm:w-2/3 flex flex-col h-full justify-between items-end">
-        <div class="sm:m-auto p-10">
+        <div class="sm:m-auto p-10 flex flex-col gap-5">
           <Paragraph className="sm:text-lg">{claim}</Paragraph>
           <PlayPause />
         </div>
 
         <div class="">
-          <div class="text-[25px] sm:text-[] md:text-[52px] font-bold">5-7 September, 2025</div>
+          <div class="text-[24.5px] sm:text-[33px] md:text-[49px] font-bold -mb-2 uppercase">5-7 September 2025</div>
           <Title>SWITZERLAND</Title>
         </div>
       </div>

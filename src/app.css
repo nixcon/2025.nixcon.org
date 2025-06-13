@@ -15,55 +15,41 @@
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("/DM_Mono/DMMono-Regular.ttf") format("truetype");
-  font-weight: normal;
-  /* 400 */
+  font-family: 'Hack';
+  src: url('/Hack/fonts/hack-regular-subset.woff2?sha=3114f1256') format('woff2'), url('/Hack/fonts/hack-regular-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("/DM_Mono/DMMono-Italic.ttf") format("truetype");
-  font-weight: normal;
-  /* 400 */
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("/DM_Mono/DMMono-Light.ttf") format("truetype");
-  font-weight: 300;
+  font-family: 'Hack';
+  src: url('/Hack/fonts/hack-bold-subset.woff2?sha=3114f1256') format('woff2'), url('/Hack/fonts/hack-bold-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("/DM_Mono/DMMono-LightItalic.ttf") format("truetype");
-  font-weight: 300;
+  font-family: 'Hack';
+  src: url('/Hack/fonts/hack-italic-subset.woff2?sha=3114f1256') format('woff2'), url('/Hack/fonts/hack-italic-webfont.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("/DM_Mono/DMMono-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("/DM_Mono/DMMono-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
+  font-family: 'Hack';
+  src: url('/Hack/fonts/hack-bolditalic-subset.woff2?sha=3114f1256') format('woff2'), url('/Hack/fonts/hack-bolditalic-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
   font-style: italic;
 }
+
+
 
 @tailwind utilities;
 
 @layer theme, base, components, utilities;
 
 @theme {
-  --font-mono: "DM Mono", "Space Mono", "monospace";
+  --font-mono: "Hack", "Space Mono", "monospace";
 
   --animate-test: test 1s linear infinite;
 

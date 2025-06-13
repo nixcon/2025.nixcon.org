@@ -10,6 +10,11 @@ import { A } from "@solidjs/router"
 import { LogoMenu } from "./Logo"
 import { useScrollPosition } from "./TopMenu"
 
+const closeMenu = () => {
+  /** @ts-expect-error */
+  document.getElementById("mobile-menu-toggle").checked = false
+}
+
 export default function MobileMenu() {
   const location = useLocation()
   const isActive = (path) => location.pathname === path
@@ -51,11 +56,8 @@ export default function MobileMenu() {
                 isActive("/") ? "underline" : ""
               }`}
               aria-label="Home"
-              onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false
-              }}
+              onClick={closeMenu}
             >
-              <BsHouseFill />
               Home
             </A>
 
@@ -66,11 +68,8 @@ export default function MobileMenu() {
                 isActive("/sponsorship") ? "underline" : ""
               }`}
               aria-label="Sponsorship"
-              onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false
-              }}
+              onClick={closeMenu}
             >
-              <BiSolidHeartCircle />
               Sponsorship
             </A>
 
@@ -81,11 +80,8 @@ export default function MobileMenu() {
                 isActive("/hotels") ? "underline" : ""
               }`}
               aria-label="Accommodation"
-              onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false
-              }}
+              onClick={closeMenu}
             >
-              <FaSolidHotel />
               Accommodation
             </A>
 
@@ -96,11 +92,8 @@ export default function MobileMenu() {
                 isActive("/organizers") ? "underline" : ""
               }`}
               aria-label="Organizers"
-              onClick={() => {
-                document.getElementById("mobile-menu-toggle").checked = false
-              }}
+              onClick={closeMenu}
             >
-              <BsPeopleFill />
               Organizers
             </A>
           </nav>

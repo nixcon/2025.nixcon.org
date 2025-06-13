@@ -76,6 +76,10 @@ body {
   background-size: 100% 100%;
 }
 
+::selection {
+  @apply bg-amber-500;
+}
+
 @utility glassutility {
   @apply backdrop-blur-md;
   position: relative;

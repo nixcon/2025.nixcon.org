@@ -1,7 +1,7 @@
 import { marked } from "marked"
 import PageLayout from "~/components/PageLayout"
 import { Section } from "~/components/Section"
-import { faqItems } from "~/data/faq.js"
+import faqMarkdown from "~/data/faq.md?raw" // Import the raw markdown content
 
 const renderer = new marked.Renderer()
 renderer.link = ({ href, text }) => {
@@ -15,21 +15,10 @@ export default function FaqPage() {
         {/* <SubTitle>FAQ</SubTitle> */}
 
         <Section title="FAQ">
-          {faqItems.map((item, index) => (
-            <div class="py-5 first:pt-0">
-              <div class="text-xl font-semibold">
-                {/* You can add an icon here for open/close state if desired */}
-                {item.question}
-              </div>
-              <div class="pt-4 text-white/90">
-                {/* Added padding and slightly lighter text for answer */}
-                <article
-                  class="prose prose-neutral prose-invert prose-p:text-white prose-li:text-white prose-li:list-['-']  prose-li:leading-4 prose-ul:text-green-400 prose-li:marker:text-white"
-                  innerHTML={marked.parse(item.answer, { async: false, gfm: true, renderer: renderer })}
-                />
-              </div>
-            </div>
-          ))}
+          <article
+            class="max-w-lg mx-auto prose prose-neutral prose-invert prose-p:text-white prose-li:text-white prose-li:list-['-']  prose-li:leading-4 prose-ul:text-green-400 prose-li:marker:text-white prose-headings:mt-30"
+            innerHTML={marked.parse(faqMarkdown, { async: false, gfm: true, renderer: renderer })}
+          />
         </Section>
       </PageLayout>
       <div class="h-20"></div>

@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router"
 import { TicketCard } from "~/components/Cards.jsx"
 import { Hero } from "~/components/Hero"
 import PageLayout from "~/components/PageLayout"
@@ -95,7 +96,19 @@ export default function Home() {
               buttonText="GET PERSONAL TICKET"
               buttonLink="https://tickets.nixcon.org/2025/"
               note={
-                "Note: If you have contributed to official Nix projects, you may be eligible for a free ticket. Click here to check your eligibility."
+                <span>
+                  Note: If you have contributed to official Nix projects, you may be eligible for a free ticket.
+                  <br></br>
+                  <a
+                    href="https://tickets.nixcon.org/redirect/?url=https%3A//vouchers.nixcon.org%3A84Zmw0AjEfTeWf5bdBkDdtAORfFh41vl3riICIcK3C4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="underline"
+                  >
+                    Click here
+                  </a>{" "}
+                  to check your eligibility.
+                </span>
               }
             />
             <TicketCard
@@ -105,7 +118,13 @@ export default function Home() {
               buttonText="GET CORPORATE TICKET"
               buttonLink="https://tickets.nixcon.org/2025/"
               note={
-                "Note: If your organization is sponsoring NixCon, you already get a contingent of some corporate tickets."
+                <span>
+                  Note: If your organization is{" "}
+                  <A href="/sponsorship" aria-label="Sponsorship" class="underline">
+                    sponsoring NixCon
+                  </A>{" "}
+                  , you already get a contingent of some corporate tickets.
+                </span>
               }
             />
           </div>

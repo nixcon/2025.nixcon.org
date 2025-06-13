@@ -1,6 +1,9 @@
 import { Logo } from "./Logo"
-import { PlayPause } from "./PlayPause"
 import { Paragraph, Title } from "./Ui"
+
+import { clientOnly } from "@solidjs/start"
+
+const ClientPlayPause = clientOnly(() => import("~/components/PlayPause"))
 
 const claim =
   "Join the Nix community for hands-on learning, inspiring talks, and real connections — whether you're just getting started or deep into declarative dreams."
@@ -17,7 +20,7 @@ export function Hero() {
       <div class="sm:w-2/3 flex flex-col h-full justify-between items-end">
         <div class="sm:m-auto p-10 flex flex-col gap-5">
           <Paragraph className="sm:text-lg">{claim}</Paragraph>
-          <PlayPause />
+          <ClientPlayPause />
         </div>
 
         <div class="">

@@ -3,7 +3,7 @@ import { BsPlayFill } from "@aminya/solid-icons/bs/BsPlayFill"
 import { useAnimationStore } from "~/stores/animation"
 import { SecondaryButtonWithoutFlake } from "./Ui"
 
-export function PlayPause() {
+export default function PlayPause() {
   const { isAnimationOn, toggleAnimationMode } = useAnimationStore()
 
   // Handle toggle button click
@@ -11,11 +11,9 @@ export function PlayPause() {
     toggleAnimationMode()
   }
 
-  const playPauseIcon = !isAnimationOn() ? <BsPlayFill size={24} /> : <BsPauseFill size={24} />
-
   return (
     <SecondaryButtonWithoutFlake onClick={handleToggleClick} aria-label="Toggle animation">
-      Blobble {playPauseIcon}
+      Blobble {isAnimationOn() ? <BsPauseFill size={24} /> : <BsPlayFill size={24} />}
     </SecondaryButtonWithoutFlake>
   )
 }

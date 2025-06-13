@@ -1,7 +1,12 @@
+import { marked } from "marked"
 import PageLayout from "~/components/PageLayout"
 import { Section } from "~/components/Section"
-import { Paragraph, SubTitle, Title } from "~/components/Ui"
 import { faqItems } from "~/data/faq.js"
+
+const renderer = new marked.Renderer()
+renderer.link = ({ href, text }) => {
+  return `<a target="_blank" rel="noopener noreferrer" href="${href}">${text}</a>`
+}
 
 export default function FaqPage() {
   return (
@@ -18,7 +23,10 @@ export default function FaqPage() {
               </div>
               <div class="pt-4 text-white/90">
                 {/* Added padding and slightly lighter text for answer */}
-                <Paragraph>{item.answer}</Paragraph>
+                <article
+                  class="prose prose-neutral prose-invert prose-p:text-white prose-li:text-white prose-li:list-['-']  prose-li:leading-4 prose-ul:text-green-400 prose-li:marker:text-white"
+                  innerHTML={marked.parse(item.answer, { async: false, gfm: true, renderer: renderer })}
+                />
               </div>
             </div>
           ))}

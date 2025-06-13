@@ -16,7 +16,7 @@ export default function FaqPage() {
 
         <Section title="FAQ">
           <article
-            class="max-w-lg mx-auto prose prose-neutral prose-invert prose-p:text-white prose-li:text-white prose-li:list-['-']  prose-li:leading-4 prose-ul:text-green-400 prose-li:marker:text-white prose-headings:mt-30"
+            class="prose prose-neutral prose-invert prose-p:text-white prose-li:text-white prose-li:list-['-']  prose-li:leading-4 prose-li:marker:text-white prose-headings:mt-30 lg:prose-lg"
             innerHTML={marked.parse(faqMarkdown, { async: false, gfm: true, renderer: renderer })}
           />
         </Section>

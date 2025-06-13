@@ -53,7 +53,7 @@ export default function SponsorsDisplay() {
               <Show when={shouldShowSection}>
                 <section
                   classList={{
-                    "my-20 min-h-60": true,
+                    "my-20": true,
                     // "bg-blue-500/50": tier === "Diamond",
                     // "bg-yellow-500/50": tier === "Gold",
                     // "bg-gray-500/50": tier === "Silver",

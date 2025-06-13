@@ -21,7 +21,7 @@ export const colorSchemes = {
     backgroundColor: [0.427, 0.157, 0.851],
     lavaColor: [2.0, 0.8, -0.6],
     cssBackgroundColor: "#6d28d9",
-    cssLavaColor: "#FF5500",
+    cssLavaColor: "#F59E0B",
   },
   Ocean: {
     backgroundColor: [0.05, 0.08, 0.25], // Added cyan-blue tint

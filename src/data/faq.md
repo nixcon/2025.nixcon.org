@@ -50,12 +50,12 @@ They are regional hotels which agreed to give us a discount and/or reserved a co
 There is a [camping place in the city](https://www.rapperswil-jona.ch/naherholungimfreien/7647) which you have to reserve in advance.
 
 
-## I didn't see the voucher and payed for the ticket, what do I do?
+## I didn't see the voucher and paid for the ticket, what do I do?
 
 Send an email to nixcon@nixos.org.
 
 
-## I can't afford the ticket but I'm not alligable for a ticket?
+## I can't afford the ticket but I'm not eligible for a ticket?
 
 Send an email to nixcon@nixos.org and describe your situation and we see what we can do.
 

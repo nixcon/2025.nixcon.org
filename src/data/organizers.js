@@ -109,7 +109,7 @@ export const organizers = [
     name: "hrmny",
     github: "ForsakenHarmony",
     githubUrl: "https://github.com/ForsakenHarmony",
-    matrix: "@hrmny:matrix.org",
+    matrix: "@hrmny:c-base.org",
     matrixUrl: "https://matrix.to/#/%40hrmny:c-base.org", // Note: Original had matrix.org, then c-base.org. Keeping c-base.org as per last entry.
     discourse: "hrmny",
     discourseUrl: "https://discourse.nixos.org/u/hrmny",

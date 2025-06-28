@@ -17,7 +17,7 @@ export const sponsors = [
   // },
   {
     name: "Flox",
-    logoUrl: "/flox.png",
+    logoUrl: "/flox.svg",
     websiteUrl: "https://flox.dev/",
     tier: "Diamond",
   },

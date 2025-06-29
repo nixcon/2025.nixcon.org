@@ -1,3 +1,4 @@
+import { Countdown } from "./Countdown"
 import { Logo } from "./Logo"
 import { Paragraph, Title } from "./Ui"
 
@@ -23,8 +24,9 @@ export function Hero() {
           <ClientPlayPause />
         </div>
 
-        <div class="">
-          <div class="text-[24.5px] sm:text-[33px] md:text-[49px] font-bold -mb-2 uppercase">5-7 September 2025</div>
+        <div class="flex flex-col">
+          <Countdown />
+          <div class="text-[24.5px] sm:text-[33px] md:text-[49px] font-bold -my-2 uppercase">5-7 September 2025</div>
           <Title>SWITZERLAND</Title>
         </div>
       </div>

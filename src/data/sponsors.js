@@ -21,10 +21,10 @@ export const sponsors = [
     websiteUrl: "https://flox.dev/",
     tier: "Diamond",
   },
-  {
-    name: "Clan",
-    logoUrl: "/clan.svg",
-    websiteUrl: "https://clan.lol/",
-    tier: "Diamond",
-  },
+  // {
+  //   name: "Clan",
+  //   logoUrl: "/clan.svg",
+  //   websiteUrl: "https://clan.lol/",
+  //   tier: "Diamond",
+  // },
 ]

@@ -20,7 +20,7 @@ import vertexShader from "./glsl/vertex.glsl?raw"
  * @param {Object} options Configuration options
  * @param {number[]} [options.backgroundColor=[0.4, 0.1, 0.4]] Background color as RGB array
  * @param {number[]} [options.lavaColor=[2.0, 0.8, -0.6]] Lava color as RGB array
- * @returns {{start: () => (number | undefined), stop: () => void, renderSingleFrame: () => void, updateColors: (newColors: {backgroundColor?: number[], lavaColor?: number[]}) => void}} An object with animation control functions.
+ * @returns {{start: () => (number | undefined), stop: () => void, renderSingleFrame: () => void, updateColors: (newColors: {backgroundColor?: number[], lavaColor?: number[]}) => void, webglNotAvailable: boolean}} An object with animation control functions.
  * @throws {Error} If WebGL context cannot be obtained or shader compilation fails
  */
 export function startLavaAnimation(initialOptions = {}) {
@@ -50,9 +50,10 @@ export function startLavaAnimation(initialOptions = {}) {
       stop: () => {},
       renderSingleFrame: () => {},
       updateColors: () => {},
+      webglNotAvailable: true,
     }
   }
-  // Now that we've checked, TypeScript might be happier, or at least the JS is more robust.
+  
   const gl = canvas.getContext("webgl")
   if (!gl) {
     console.error("WebGL context not available on the canvas element.")
@@ -61,6 +62,7 @@ export function startLavaAnimation(initialOptions = {}) {
       stop: () => {},
       renderSingleFrame: () => {},
       updateColors: () => {},
+      webglNotAvailable: true,
     }
   }
   const programInfo = TWGL.createProgramInfo(gl, [vertexShader, fragmentShader])
@@ -117,6 +119,7 @@ export function startLavaAnimation(initialOptions = {}) {
 
   // Return start, stop, and renderSingleFrame functions
   return {
+    webglNotAvailable: false,
     start: () => {
       // Only start if not already running
       if (!frameId) {

@@ -27,4 +27,10 @@ export const sponsors = [
     websiteUrl: "https://clan.lol/",
     tier: "Diamond",
   },
+  {
+    name: "Framework",
+    logoUrl: "/framework.png",
+    websiteUrl: "https://frame.work/",
+    tier: "Silver",
+  },
 ]

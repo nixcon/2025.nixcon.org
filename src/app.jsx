@@ -3,11 +3,12 @@ import { BsFullscreenExit } from "@aminya/solid-icons/bs/BsFullscreenExit"
 import { A, Router } from "@solidjs/router"
 import { clientOnly } from "@solidjs/start"
 import { FileRoutes } from "@solidjs/start/router"
-import { Suspense } from "solid-js"
+import { Show, Suspense } from "solid-js"
 import MobileMenu from "~/components/MobileMenu"
 import SponsorsDisplay from "~/components/SponsorsDisplay" // Added import
 import TopMenu from "~/components/TopMenu"
 import { useFullscreenStore } from "~/stores/fullscreen"
+import { useAnimationStore } from "~/stores/animation"
 import { colorSchemes, useThemeStore } from "~/stores/theme"
 import "./app.css"
 
@@ -19,6 +20,7 @@ const ClientAnimationModeToggle = clientOnly(() => import("~/components/Animatio
 export default function App() {
   const { isFullscreen, toggleFullscreen } = useFullscreenStore()
   const { currentTheme } = useThemeStore()
+  const { webglNotAvailable } = useAnimationStore()
 
   return (
     <>
@@ -58,8 +60,10 @@ export default function App() {
             {/* Footer */}
             <footer class="w-full py-6 my-6 text-center relative">
               <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg flex flex-col md:flex-row items-center justify-center gap-4">
-                <ClientAnimationModeToggle />
-                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                <Show when={!webglNotAvailable()}>
+                  <ClientAnimationModeToggle />
+                  <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                </Show>
                 <A
                   href="/legal"
                   class="text-white/80 hover:text-white transition-colors text-base font-medium"

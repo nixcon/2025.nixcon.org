@@ -33,4 +33,10 @@ export const sponsors = [
     websiteUrl: "https://frame.work/",
     tier: "Silver",
   },
+  {
+    name: "Cyberus",
+    logoUrl: "/cyberus.svg",
+    websiteUrl: "https://cyberus-technology.de/en",
+    tier: "Gold",
+  },
 ]

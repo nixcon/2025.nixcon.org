@@ -33,4 +33,10 @@ export const sponsors = [
     websiteUrl: "https://frame.work/",
     tier: "Silver",
   },
+  {
+    name: "Garnix",
+    logoUrl: "/garnix.svg",
+    websiteUrl: "https://garnix.io/",
+    tier: "Silver",
+  },
 ]

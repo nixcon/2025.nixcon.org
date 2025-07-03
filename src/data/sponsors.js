@@ -45,4 +45,10 @@ export const sponsors = [
     websiteUrl: "https://nixcademy.com/",
     tier: "Gold",
   },
+  {
+    name: "Garnix",
+    logoUrl: "/garnix.svg",
+    websiteUrl: "https://garnix.io/",
+    tier: "Silver",
+  },
 ]

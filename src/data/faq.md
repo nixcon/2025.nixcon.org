@@ -25,6 +25,8 @@ Please provide:
 
 The following site (in German) provides a [list of public parking spaces](https://www.rapperswil-jona.ch/parkiermoeglichkeiten) available in the city. The campus itself doesn't have any long time parking spaces.
 
+In general we recommend that you arrive by public transport.
+The venue is right next to the train station and trains are frequent and punctual.
 
 ## How do I plan and book public transport?
 

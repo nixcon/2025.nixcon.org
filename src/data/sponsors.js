@@ -39,4 +39,10 @@ export const sponsors = [
     websiteUrl: "https://cyberus-technology.de/en",
     tier: "Gold",
   },
+  {
+    name: "Nixcademy",
+    logoUrl: "/nixcademy.svg",
+    websiteUrl: "https://nixcademy.com/",
+    tier: "Gold",
+  },
 ]

@@ -106,7 +106,7 @@ export const organizers = [
     responsibilities: ["Date, venue"],
   },
   {
-    name: "Gerd Flaig",
+    name: "Gerd",
     github: "gefla",
     githubUrl: "https://github.com/gefla",
     matrix: "@gefla:matrix.org",

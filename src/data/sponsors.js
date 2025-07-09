@@ -4,6 +4,7 @@
  * @property {string | null} logoUrl - The URL of the sponsor's logo. Null if no logo.
  * @property {string} websiteUrl - The URL to the sponsor's website.
  * @property {'Diamond' | 'Gold' | 'Silver' | 'Bronze' | 'Custom'} tier - The sponsorship tier.
+ * @property {boolean} invert - Invert black logos to match white foreground color
  */
 
 /** @type {Sponsor[]} */
@@ -14,41 +15,48 @@ export const sponsors = [
   //   logoUrl: "https://example.com/logo.png",
   //   websiteUrl: "https://example.com",
   //   tier: "Gold",
+  //   invert: false,
   // },
   {
     name: "Flox",
     logoUrl: "/flox.svg",
     websiteUrl: "https://flox.dev/",
     tier: "Diamond",
+    invert: true,
   },
   {
     name: "Clan",
     logoUrl: "/clan.svg",
     websiteUrl: "https://clan.lol/",
     tier: "Diamond",
+    invert: false,
   },
   {
     name: "Framework",
     logoUrl: "/framework.png",
     websiteUrl: "https://frame.work/",
     tier: "Silver",
+    invert: false,
   },
   {
     name: "Cyberus",
     logoUrl: "/cyberus.svg",
     websiteUrl: "https://cyberus-technology.de/en",
     tier: "Gold",
+    invert: true,
   },
   {
     name: "Nixcademy",
     logoUrl: "/nixcademy.svg",
     websiteUrl: "https://nixcademy.com/",
     tier: "Gold",
+    invert: false,
   },
   {
     name: "Garnix",
     logoUrl: "/garnix.svg",
     websiteUrl: "https://garnix.io/",
     tier: "Silver",
+    invert: false,
   },
 ]

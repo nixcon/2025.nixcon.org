@@ -111,8 +111,8 @@ export const organizers = [
     githubUrl: "https://github.com/gefla",
     matrix: "@gefla:matrix.org",
     matrixUrl: "https://matrix.to/#/%40gefla:matrix.org",
-    // discourse: "???",
-    // discourseUrl: "https://discourse.nixos.org/u/???",
+    discourse: "gefla",
+    discourseUrl: "https://discourse.nixos.org/u/gefla",
     responsibilities: ["A/V"],
   },
   {

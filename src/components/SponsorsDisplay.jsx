@@ -87,20 +87,21 @@ export default function SponsorsDisplay() {
                             title={sponsor.name}
                             class="group block transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                           >
-                            <div class="relative p-6 bg-white/10 hover:bg-white/15 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <div class="relative p-6 md:px-12 bg-white/10 hover:bg-white/15 backdrop-blur-lg rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg hover:shadow-xl">
                               <div
                                 class="flex items-center justify-center"
                                 classList={{
                                   "w-24 h-16 md:w-32 md:h-20": tier === "Bronze",
                                   "w-28 h-20 md:w-36 md:h-24": tier === "Silver" || tier === "Custom",
                                   "w-32 h-20 md:w-40 md:h-24": tier === "Gold",
-                                  "w-36 h-24 md:w-44 md:h-28": tier === "Diamond"
+                                  "w-36 h-24 md:w-44 md:h-28": tier === "Diamond",
+                                  "invert": sponsor.invert,
                                 }}
                               >
                                 <img
                                   src={sponsor.logoUrl}
                                   alt={`${sponsor.name} logo`}
-                                  class="max-w-full max-h-full object-contain drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300 brightness-105 contrast-110 saturate-95 group-hover:brightness-110 group-hover:contrast-125 group-hover:saturate-100"
+                                  class="max-w-full max-h-full object-contain transition-all duration-300 brightness-105 contrast-110 saturate-95 group-hover:brightness-110 group-hover:contrast-125 group-hover:saturate-100"
                                 />
                               </div>
                               {/* Subtle gradient overlay for better logo visibility */}

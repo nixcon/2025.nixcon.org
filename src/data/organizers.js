@@ -106,6 +106,16 @@ export const organizers = [
     responsibilities: ["Date, venue"],
   },
   {
+    name: "Gerd Flaig",
+    github: "gefla",
+    githubUrl: "https://github.com/gefla",
+    matrix: "@gefla:matrix.org",
+    matrixUrl: "https://matrix.to/#/%40gefla:matrix.org",
+    // discourse: "???",
+    // discourseUrl: "https://discourse.nixos.org/u/???",
+    responsibilities: ["A/V"],
+  },
+  {
     name: "hrmny",
     github: "ForsakenHarmony",
     githubUrl: "https://github.com/ForsakenHarmony",

@@ -59,4 +59,11 @@ export const sponsors = [
     tier: "Silver",
     invert: false,
   },
+  {
+    name: "Helsinki",
+    logoUrl: "/helsinki.svg",
+    websiteUrl: "https://helsinki-systems.de/",
+    tier: "Bronze",
+    invert: false,
+  },
 ]

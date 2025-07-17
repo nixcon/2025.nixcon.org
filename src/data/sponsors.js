@@ -46,6 +46,13 @@ export const sponsors = [
     invert: true,
   },
   {
+    name: "Determinate Systems",
+    logoUrl: "/determinate_system.svg",
+    websiteUrl: "https://determinate.systems/",
+    tier: "Diamond",
+    invert: false,
+  },
+  {
     name: "Nixcademy",
     logoUrl: "/nixcademy.svg",
     websiteUrl: "https://nixcademy.com/",

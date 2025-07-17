@@ -80,4 +80,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "PDT Partners",
+    logoUrl: "/PDT.svg",
+    websiteUrl: "https://www.pdtpartners.com/",
+    tier: "Gold",
+    invert: false,
+  },
 ]

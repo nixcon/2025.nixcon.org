@@ -53,6 +53,13 @@ export const sponsors = [
     invert: false,
   },
   {
+    name: "SoCal NUG",
+    logoUrl: "/socalnug.png",
+    websiteUrl: "https://socal-nug.com/",
+    tier: "Bronze",
+    invert: false,
+  },
+  {
     name: "Garnix",
     logoUrl: "/garnix.svg",
     websiteUrl: "https://garnix.io/",

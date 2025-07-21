@@ -2,6 +2,7 @@ import { A } from "@solidjs/router"
 import { TicketCard } from "~/components/Cards.jsx"
 import { Hero } from "~/components/Hero"
 import PageLayout from "~/components/PageLayout"
+import { ProposalCountdown } from "~/components/ProposalCountdown"
 import { Section } from "~/components/Section"
 import { Paragraph, SecondaryButtonLink, SubTitle } from "~/components/Ui"
 import { useThemeStore } from "~/stores/theme"
@@ -18,14 +19,25 @@ export default function Home() {
         {/* CfP */}
         <Section id="cfp" title="Call for presentations">
           <Paragraph>We don't do papers, but you may now submit your talk applications!</Paragraph>
-          <SecondaryButtonLink
-            href="https://talks.nixcon.org/nixcon-2025/cfp"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="ml-auto"
-          >
-            Submit your application
-          </SecondaryButtonLink>
+
+          <Paragraph>Submissions close in</Paragraph>
+          <div class="mx-auto flex flex-col justify-center items-center gap-4">
+            <ProposalCountdown />
+            <span class="text-sm">
+              August 1, 2025 at 03:59 (Europe/Zurich)
+            </span>
+          </div>
+          {/* <Paragraph>Submission deadline: August 1, 2025 at 03:59 (Europe/Zurich)</Paragraph> */}
+
+          <div class="mt-8 flex justify-end">
+            <SecondaryButtonLink
+              href="https://talks.nixcon.org/nixcon-2025/cfp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Submit your application
+            </SecondaryButtonLink>
+          </div>
         </Section>
 
         {/* Location */}

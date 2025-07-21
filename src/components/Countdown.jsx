@@ -54,10 +54,25 @@ export function Countdown() {
   const pad = (num) => num.toString().padStart(2, "0")
 
   return (
-    <div class="font-bold uppercase text-2xl tabular-nums ml-auto text-[24.5px] sm:text-[33px] md:text-[49px]">
-        <span>{days()}</span><span class="font-normal text-xs sm:text-sm pl-1 pr-5">days</span>
-        <span>{pad(hours())}</span><span class="font-normal text-xs sm:text-sm pl-1 pr-5">hours</span>
-        <span>{pad(minutes())}</span><span class="font-normal text-xs sm:text-sm pl-1 pr-2">minutes</span>
+    <div class="font-bold uppercase text-2xl tabular-nums ml-auto text-[24.5px] sm:text-[33px] md:text-[49px] flex gap-2 items-center my-2 font-mono">
+      <div class="flex flex-col justify-center items-center border rounded-lg p-1 sm:p-2 w-16 h-19 sm:w-18 sm:h-22 md:w-24 md:h-28">
+        <div>{days()}</div>
+        <div class="font-normal text-xs sm:text-sm">days</div>
+      </div>
+
+      <span>:</span>
+
+      <div class="flex flex-col justify-center items-center border rounded-lg p-1 sm:p-2 w-16 h-19 sm:w-18 sm:h-22 md:w-24 md:h-28">
+        <div>{pad(hours())}</div>
+        <div class="font-normal text-xs sm:text-sm">hours</div>
+      </div>
+
+      <span>:</span>
+
+      <div class="flex flex-col justify-center items-center border rounded-lg p-1 sm:p-2 w-16 h-19 sm:w-18 sm:h-22 md:w-24 md:h-28">
+        <div>{pad(minutes())}</div>
+        <div class="font-normal text-xs sm:text-sm">mins</div>
+      </div>
     </div>
   )
 }

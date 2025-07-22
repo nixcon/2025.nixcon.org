@@ -87,4 +87,11 @@ export const sponsors = [
     tier: "Gold",
     invert: false,
   },
+  {
+    name: "Tweag",
+    logoUrl: "/tweag.svg",
+    websiteUrl: "https://www.tweag.io/",
+    tier: "Silver",
+    invert: false,
+  },
 ]

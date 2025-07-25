@@ -94,4 +94,11 @@ export const sponsors = [
     tier: "Silver",
     invert: false,
   },
+  {
+    name: "Numtide",
+    logoUrl: "/numtide.svg",
+    websiteUrl: "https://numtide.com/",
+    tier: "Diamond",
+    invert: false,
+  },
 ]

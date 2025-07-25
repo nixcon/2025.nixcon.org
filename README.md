@@ -8,7 +8,7 @@
 
 ## Development
 
-To get startet run `nix develop`.
+To get started, run `nix develop`.
 
 ## Acknowledgements
 

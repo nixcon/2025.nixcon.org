@@ -108,4 +108,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "Cachix",
+    logoUrl: "/cachix.svg",
+    websiteUrl: "https://cachix.org/",
+    tier: "Gold",
+    invert: false,
+  },
 ]

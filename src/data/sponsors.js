@@ -101,4 +101,11 @@ export const sponsors = [
     tier: "Diamond",
     invert: false,
   },
+  {
+    name: "Ororatech",
+    logoUrl: "/ororatech.svg",
+    websiteUrl: "https://ororatech.com/",
+    tier: "Bronze",
+    invert: false,
+  },
 ]

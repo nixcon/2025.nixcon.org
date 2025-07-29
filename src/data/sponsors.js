@@ -115,4 +115,11 @@ export const sponsors = [
     tier: "Gold",
     invert: false,
   },
+  {
+    name: "Nixbuild",
+    logoUrl: "/nixbuild.svg",
+    websiteUrl: "https://nixbuild.net/",
+    tier: "Silver",
+    invert: true,
+  },
 ]

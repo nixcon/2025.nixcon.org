@@ -87,6 +87,16 @@ export default function App() {
                 >
                   Code of Conduct
                 </A>
+                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                <a
+                  href="https://github.com/nixcon/2025.nixcon.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                  aria-label="GitHub Repository"
+                >
+                  GitHub
+                </a>
               </div>
             </footer>
           </>

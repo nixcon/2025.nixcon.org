@@ -2,7 +2,6 @@ import { A } from "@solidjs/router"
 import { TicketCard } from "~/components/Cards.jsx"
 import { Hero } from "~/components/Hero"
 import PageLayout from "~/components/PageLayout"
-import { ProposalCountdown } from "~/components/ProposalCountdown"
 import { Section } from "~/components/Section"
 import { Paragraph, SecondaryButtonLink, SubTitle } from "~/components/Ui"
 import { useThemeStore } from "~/stores/theme"
@@ -20,22 +19,23 @@ export default function Home() {
         <Section id="cfp" title="Call for presentations">
           <Paragraph>We don't do papers, but you may now submit your talk applications!</Paragraph>
 
-          <Paragraph>Submissions close in</Paragraph>
-          <div class="mx-auto flex flex-col justify-center items-center gap-4">
-            <ProposalCountdown />
-            <span class="text-sm">
-              August 1, 2025 at 03:59 (Europe/Zurich)
-            </span>
-          </div>
-          {/* <Paragraph>Submission deadline: August 1, 2025 at 03:59 (Europe/Zurich)</Paragraph> */}
+          <Paragraph class="text-center font-semibold text-lg">
+            Submissions are now closed
+            <div class="mx-auto flex flex-col justify-center items-center gap-4 font-normal">
+              <span class="text-sm text-center">
+                The submission deadline was August 1, 2025 at 03:59 (Europe/Zurich)
+              </span>
+            </div>
+          </Paragraph>
 
-          <div class="mt-8 flex justify-end">
+          <div class="mt-8 flex flex-col items-end gap-2">
+            <Paragraph class="text-right">Did you submit a proposal?</Paragraph>
             <SecondaryButtonLink
               href="https://talks.nixcon.org/nixcon-2025/cfp"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Submit your application
+              View or edit your submission
             </SecondaryButtonLink>
           </div>
         </Section>

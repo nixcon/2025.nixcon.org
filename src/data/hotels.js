@@ -35,7 +35,7 @@ export const hotelDeals = [
     travelTime: "Travel time by train to OST is about 28 minutes.",
     website: "https://www.hotel-swiss-star.ch",
     mapUrl: "https://maps.app.goo.gl/RDurEWjULhBkgX3M7",
-    bookingInfo: 'Book directly on the hotel website using promo code "NixCon".',
+    bookingInfo: 'Book via email (info@hotel-swiss-star.ch) or phone (+41 44 578 78 00) and mention promo code "NixCon".',
   },
   {
     name: "Hotel Residence Loren",

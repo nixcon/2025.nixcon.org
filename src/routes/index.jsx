@@ -116,10 +116,8 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     class="underline"
-                  >
-                    Click here
-                  </a>{" "}
-                  to check your eligibility.
+                  >Check your eligibility.
+                  </a>
                 </span>
               }
             />

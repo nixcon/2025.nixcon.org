@@ -129,4 +129,11 @@ export const sponsors = [
     tier: "Gold",
     invert: false,
   },
+  {
+    name: "Pareto Security",
+    logoUrl: "/pareto.svg",
+    websiteUrl: "https://paretosecurity.com/",
+    tier: "Bronze",
+    invert: false,
+  },
 ]

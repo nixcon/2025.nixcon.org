@@ -61,7 +61,7 @@ export const sponsors = [
   },
   {
     name: "SoCal NUG",
-    logoUrl: "/socalnug.png",
+    logoUrl: "/socal.svg",
     websiteUrl: "https://socal-nug.com/",
     tier: "Bronze",
     invert: false,

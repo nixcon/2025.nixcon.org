@@ -122,4 +122,11 @@ export const sponsors = [
     tier: "Silver",
     invert: true,
   },
+  {
+    name: "NovaCustom",
+    logoUrl: "/nova_custom.svg",
+    websiteUrl: "https://novacustom.com/",
+    tier: "Gold",
+    invert: false,
+  },
 ]

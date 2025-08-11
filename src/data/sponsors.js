@@ -136,4 +136,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "Janestreet",
+    logoUrl: "/janestreet.svg",
+    websiteUrl: "https://www.janestreet.com/",
+    tier: "Diamond",
+    invert: true,
+  },
 ]

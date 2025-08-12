@@ -15,6 +15,103 @@ export default function Home() {
 
       {/* Apply PageLayout to the main content with reduced spacing */}
       <PageLayout reducedSpacing={true}>
+        {/* Event Details */}
+        <Section id="event-details" title="Event Details">
+          <div class="grid grid-cols-1 gap-6">
+            {/* Schedule Card */}
+            <div class="border border-white text-white rounded-2xl p-6 shadow-md flex flex-col">
+              <h3 class="text-2xl font-bold leading-tight tracking-tight mb-4 uppercase">Schedule</h3>
+              <div class="font-mono space-y-3 flex-1">
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Venue Opens:</span>
+                  <span>9:00 daily</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Doors Close:</span>
+                  <span>Fri/Sat 20:00, Sun 17:00</span>
+                </div>
+                <hr class="border-gray-300" />
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Friday:</span>
+                  <span>Program starts 10:00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Saturday:</span>
+                  <span>Program starts 11:00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Sunday:</span>
+                  <span>No fixed program</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Meals Card */}
+            <div class="border border-white text-white rounded-2xl p-6 shadow-md flex flex-col">
+              <h3 class="text-2xl font-bold leading-tight tracking-tight mb-4 uppercase">Meals</h3>
+              <div class="font-mono flex-1">
+                <table class="w-full border-collapse table-fixed">
+                  <thead>
+                    <tr class="border-b border-gray-300">
+                      <th class="text-left py-2 font-semibold">Meal</th>
+                      <th class="text-left py-2 font-semibold">Friday</th>
+                      <th class="text-left py-2 font-semibold">Saturday</th>
+                      <th class="text-left py-2 font-semibold">Sunday</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-sm">
+                    <tr class="border-b border-gray-300/50">
+                      <td class="py-3 font-semibold">Lunch</td>
+                      <td class="text-left py-3">Included</td>
+                      <td class="text-left py-3">Included</td>
+                      <td class="text-left py-3">Included</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 font-semibold">Dinner</td>
+                      <td class="text-left py-3">Included</td>
+                      <td class="text-left py-3">Included</td>
+                      <td class="text-left py-3">Self-organize</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="mt-4 text-xs space-y-1">
+                  <div>Conference winds down Sunday afternoon/evening</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Facilities & Activities Card */}
+            <div class="border border-white text-white rounded-2xl p-6 shadow-md flex flex-col">
+              <h3 class="text-2xl font-bold leading-tight tracking-tight mb-4 uppercase">Facilities</h3>
+              <div class="font-mono space-y-4 flex-1">
+                <div class="flex items-start gap-3">
+                  <div class="text-2xl">🛠️</div>
+                  <div>
+                    <div class="font-semibold">Hacking Rooms</div>
+                    <div class="text-sm text-white">4 rooms will be available throughout the conference for hacking and building projects</div>
+                  </div>
+                </div>
+                <hr class="border-gray-300" />
+                <div class="flex items-start gap-3">
+                  <div class="text-2xl">🏊‍♂️</div>
+                  <div>
+                    <div class="font-semibold">Lake Swimming</div>
+                    <div class="text-sm text-white mb-2">There is a beach right next to the venue where you can swim</div>
+                    <a
+                      href="https://xn--gfrr-7qa.li/sensor/1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-block bg-blue-900/30 hover:bg-blue-900/50 transition-colors rounded px-2 py-1 text-xs underline"
+                    >
+                      Check water temperature
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
         {/* CfP */}
         <Section id="cfp" title="Call for presentations">
           <Paragraph>We don't do papers, but you may now submit your talk applications!</Paragraph>

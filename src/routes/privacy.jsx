@@ -52,8 +52,36 @@ export default function Privacy() {
 
         <Section title="Cookies and Tracking">
           <Paragraph>
-            This website does not set cookies of any type, does not use any third-party resources/assets, does not
-            employ any trackers and is viewable without JavaScript.
+            This website does not set cookies of any type and does not employ any trackers. However, we do use the
+            pretalx widget service for displaying our conference schedule, which loads external JavaScript from
+            talks.nixcon.org. The main website content is viewable without JavaScript, but the schedule page
+            requires JavaScript to display the pretalx widget.
+          </Paragraph>
+        </Section>
+
+        <Section title="Pretalx Widget">
+          <Paragraph>
+            Our schedule page uses a self-hosted pretalx widget service at{" "}
+            <a
+              href="https://talks.nixcon.org/nixcon-2025/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:text-white/80 transition-colors"
+            >
+              talks.nixcon.org
+            </a>
+            {" "}to display conference schedules and talk information. When you visit the schedule page, your browser
+            will load JavaScript from this service. For information about data handling by our pretalx instance,
+            please see the{" "}
+            <a
+              href="https://talks.nixcon.org/nixcon-2025/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:text-white/80 transition-colors"
+            >
+              pretalx privacy policy
+            </a>
+            .
           </Paragraph>
         </Section>
 

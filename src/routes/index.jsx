@@ -44,6 +44,16 @@ export default function Home() {
                   <span>No fixed program</span>
                 </div>
               </div>
+              <div class="mt-4 pt-4 border-t border-gray-300">
+                <a
+                  href="https://talks.nixcon.org/nixcon-2025/schedule"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block bg-blue-900/30 hover:bg-blue-900/50 transition-colors rounded px-3 py-2 text-sm underline font-semibold"
+                >
+                  View detailed schedule
+                </a>
+              </div>
             </div>
 
             {/* Meals Card */}

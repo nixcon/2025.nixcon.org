@@ -39,9 +39,8 @@ export default function TopMenu() {
     <div class="fixed top-0 left-0 right-0 z-50 hidden md:block">
       <div class="w-full">
         <div
-          class={`w-full flex justify-between items-center gap-10 pl-6 pr-5 h-[72px] ${
-            scrolled() ? "glass" : "border border-transparent"
-          }`}
+          class={`w-full flex justify-between items-center gap-10 pl-6 pr-5 h-[72px] ${scrolled() ? "glass" : "border border-transparent"
+            }`}
         >
           {/* Navigation Links */}
           {/* Home with Logo */}
@@ -56,12 +55,22 @@ export default function TopMenu() {
           </A>
 
           <nav class="flex gap-10 ml-auto">
+            {/* Schedule */}
+            <a
+              href="https://talks.nixcon.org/nixcon-2025/schedule"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white hover:underline transition-all duration-75 font-bold text-lg"
+              aria-label="Schedule"
+            >
+              Schedule
+            </a>
+
             {/* Sponsorship */}
             <A
               href="/sponsorship"
-              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${
-                isActive("/sponsorship") ? "underline" : ""
-              }`}
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/sponsorship") ? "underline" : ""
+                }`}
               aria-label="Sponsorship"
             >
               Sponsorship
@@ -70,9 +79,8 @@ export default function TopMenu() {
             {/* Accommodation */}
             <A
               href="/hotels"
-              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${
-                isActive("/hotels") ? "underline" : ""
-              }`}
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/hotels") ? "underline" : ""
+                }`}
               aria-label="Accommodation"
             >
               Accommodation
@@ -81,9 +89,8 @@ export default function TopMenu() {
             {/* FAQ */}
             <A
               href="/faq"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${
-                isActive("/faq") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg ${isActive("/faq") ? "underline" : ""
+                }`}
               aria-label="FAQ"
             >
               FAQ
@@ -92,9 +99,8 @@ export default function TopMenu() {
             {/* Organizers */}
             <A
               href="/organizers"
-              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${
-                isActive("/organizers") ? "underline" : ""
-              }`}
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/organizers") ? "underline" : ""
+                }`}
               aria-label="Organizers"
             >
               Organizers

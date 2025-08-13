@@ -28,9 +28,8 @@ export default function MobileMenu() {
 
       {/* Header with background */}
       <div
-        class={`!rounded-none !px-4 !py-2 flex justify-between items-center peer-checked:!border-transparent peer-checked:!shadow-none ${
-          scrolled() ? "glass !border-0" : "border-0 border-transparent peer-checked:glassutility"
-        }`}
+        class={`!rounded-none !px-4 !py-2 flex justify-between items-center peer-checked:!border-transparent peer-checked:!shadow-none ${scrolled() ? "glass !border-0" : "border-0 border-transparent peer-checked:glassutility"
+          }`}
       >
         {/* Logo on the left */}
         <A href="/" aria-label="Home">
@@ -53,21 +52,31 @@ export default function MobileMenu() {
             {/* Home */}
             <A
               href="/"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/") ? "underline" : ""
+                }`}
               aria-label="Home"
               onClick={closeMenu}
             >
               Home
             </A>
 
+            {/* Schedule */}
+            <a
+              href="https://talks.nixcon.org/nixcon-2025/schedule"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2"
+              aria-label="Schedule"
+              onClick={closeMenu}
+            >
+              Schedule
+            </a>
+
             {/* Sponsorship */}
             <A
               href="/sponsorship"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/sponsorship") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/sponsorship") ? "underline" : ""
+                }`}
               aria-label="Sponsorship"
               onClick={closeMenu}
             >
@@ -77,9 +86,8 @@ export default function MobileMenu() {
             {/* Accommodation */}
             <A
               href="/hotels"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/hotels") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/hotels") ? "underline" : ""
+                }`}
               aria-label="Accommodation"
               onClick={closeMenu}
             >
@@ -89,9 +97,8 @@ export default function MobileMenu() {
             {/* Organizers */}
             <A
               href="/organizers"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/organizers") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/organizers") ? "underline" : ""
+                }`}
               aria-label="Organizers"
               onClick={closeMenu}
             >
@@ -101,9 +108,8 @@ export default function MobileMenu() {
             {/* FAQ */}
             <A
               href="/faq"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${
-                isActive("/faq") ? "underline" : ""
-              }`}
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/faq") ? "underline" : ""
+                }`}
               aria-label="FAQ"
               onClick={() => {
                 document.getElementById("mobile-menu-toggle").checked = false

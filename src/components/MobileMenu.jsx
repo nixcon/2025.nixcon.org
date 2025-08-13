@@ -22,13 +22,13 @@ export default function MobileMenu() {
   const scrolled = useScrollPosition(120)
 
   return (
-    <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
+    <div class="fixed top-0 left-0 right-0 z-50 md:hidden h-[72px]">
       {/* Checkbox for the toggle - placed at the top level */}
       <input type="checkbox" id="mobile-menu-toggle" class="hidden peer" aria-label="Toggle menu" />
 
       {/* Header with background */}
       <div
-        class={`!rounded-none !px-4 !py-2 flex justify-between items-center peer-checked:!border-transparent peer-checked:!shadow-none ${scrolled() ? "glass !border-0" : "border-0 border-transparent peer-checked:glassutility"
+        class={`!rounded-none !px-4 !py-2 h-[72px] flex justify-between items-center peer-checked:!border-transparent peer-checked:!shadow-none ${scrolled() ? "glass !border-0" : "border-0 border-transparent peer-checked:glassutility"
           }`}
       >
         {/* Logo on the left */}
@@ -61,16 +61,15 @@ export default function MobileMenu() {
             </A>
 
             {/* Schedule */}
-            <a
-              href="https://talks.nixcon.org/nixcon-2025/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2"
+            <A
+              href="/schedule"
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/schedule") ? "underline" : ""
+                }`}
               aria-label="Schedule"
               onClick={closeMenu}
             >
               Schedule
-            </a>
+            </A>
 
             {/* Sponsorship */}
             <A

@@ -56,15 +56,14 @@ export default function TopMenu() {
 
           <nav class="flex gap-10 ml-auto">
             {/* Schedule */}
-            <a
-              href="https://talks.nixcon.org/nixcon-2025/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-white hover:underline transition-all duration-75 font-bold text-lg"
+            <A
+              href="/schedule"
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/schedule") ? "underline" : ""
+                }`}
               aria-label="Schedule"
             >
               Schedule
-            </a>
+            </A>
 
             {/* Sponsorship */}
             <A

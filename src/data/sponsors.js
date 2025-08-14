@@ -143,4 +143,11 @@ export const sponsors = [
     tier: "Diamond",
     invert: true,
   },
+  {
+    name: "ExpressVpn",
+    logoUrl: "/expressvpn.svg",
+    websiteUrl: "https://www.expressvpn.com/",
+    tier: "Diamond",
+    invert: true,
+  },
 ]

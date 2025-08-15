@@ -42,7 +42,7 @@ jobs:
 
           # Take screenshot using Playwright
           cat > screenshot.js << 'EOF'
-          const { chromium } = require('playwright');
+          import { chromium } from 'playwright';
 
           (async () => {
             const browser = await chromium.launch();
@@ -58,8 +58,8 @@ jobs:
             await page.waitForTimeout(3000);
             
             // Take screenshot
-            await page.screenshot({ 
-              path: 'Screenshot.jpg', 
+            await page.screenshot({
+              path: 'Screenshot.jpg',
               type: 'jpeg',
               quality: 90,
               fullPage: false

@@ -148,6 +148,6 @@ export const sponsors = [
     logoUrl: "/expressvpn.svg",
     websiteUrl: "https://www.expressvpn.com/",
     tier: "Diamond",
-    invert: true,
+    invert: false,
   },
 ]

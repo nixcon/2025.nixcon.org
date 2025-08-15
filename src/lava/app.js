@@ -42,36 +42,75 @@ export function startLavaAnimation(initialOptions = {}) {
   ]
 
   // Get the canvas element and WebGL context
-  const canvas = document.getElementById("background")
-  if (!(canvas instanceof HTMLCanvasElement)) {
+  const canvasElement = document.getElementById("background")
+  if (!(canvasElement instanceof HTMLCanvasElement)) {
     console.error("Canvas element #background not found or is not an HTMLCanvasElement.")
     return {
       start: () => undefined,
-      stop: () => {},
-      renderSingleFrame: () => {},
-      updateColors: () => {},
+      stop: () => { },
+      renderSingleFrame: () => { },
+      updateColors: () => { },
       webglNotAvailable: true,
     }
   }
-  
-  const gl = canvas.getContext("webgl")
+
+  // Now we know it's an HTMLCanvasElement
+  const canvas = canvasElement
+
+  // Disable unnecessary context attributes for better performance
+  // Alpha blending against HTML background is not needed for fullscreen canvas
+  // Depth and stencil buffers are not used in this 2D shader effect
+  // Antialiasing is handled by the shader itself
+  const contextAttributes = {
+    alpha: false,
+    antialias: false,
+    depth: false,
+    stencil: false,
+  }
+
+  // Prefer WebGL2 for better performance, fallback to WebGL1
+  // WebGL2 provides free API optimizations even when not using WebGL2-specific features
+  const gl = /** @type {WebGLRenderingContext|WebGL2RenderingContext|null} */ (
+    canvas.getContext("webgl2", contextAttributes) ||
+    canvas.getContext("webgl", contextAttributes)
+  )
+
   if (!gl) {
     console.error("WebGL context not available on the canvas element.")
     return {
       start: () => undefined,
-      stop: () => {},
-      renderSingleFrame: () => {},
-      updateColors: () => {},
+      stop: () => { },
+      renderSingleFrame: () => { },
+      updateColors: () => { },
       webglNotAvailable: true,
     }
   }
   const programInfo = TWGL.createProgramInfo(gl, [vertexShader, fragmentShader])
+
+  // Set up the shader program once - no need to call this every frame
+  gl.useProgram(programInfo.program)
 
   const arrays = {
     position: [-1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0],
   }
 
   const bufferInfo = TWGL.createBufferInfoFromArrays(gl, arrays)
+
+  // Set up buffers and attributes once - no need to call this every frame
+  TWGL.setBuffersAndAttributes(gl, programInfo, bufferInfo)
+
+  // Set canvas size and viewport only when window is resized for better performance
+  function resize() {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    gl.viewport(0, 0, window.innerWidth, window.innerHeight)
+  }
+
+  // Listen for window resize events to update canvas size
+  window.addEventListener('resize', resize)
+
+  // Initialize canvas size
+  resize()
 
   let frameId = null
   let animationTime = Math.round(300 * Math.random()) // Randomize the animation start within 5minutes
@@ -86,24 +125,17 @@ export function startLavaAnimation(initialOptions = {}) {
     if (!singleFrame) {
       lastFrameTime = time
     }
+
+    const uniforms = {
+      uTime: animationTime / 2,
+      uResolution: [window.innerWidth, window.innerHeight],
+      uCameraPosition: cameraPosition,
+      uBackgroundColor: backgroundColor,
+      uLavaColor: lavaColor,
+    }
+
     try {
-      const canvasWidth = window.innerWidth
-      const canvasHeight = window.innerHeight
-
-      gl.canvas.width = canvasWidth
-      gl.canvas.height = canvasHeight
-      gl.viewport(0, 0, canvasWidth, canvasHeight)
-
-      const uniforms = {
-        uTime: animationTime / 2,
-        uResolution: [canvasWidth, canvasHeight],
-        uCameraPosition: cameraPosition,
-        uBackgroundColor: backgroundColor,
-        uLavaColor: lavaColor,
-      }
-
-      gl.useProgram(programInfo.program)
-      TWGL.setBuffersAndAttributes(gl, programInfo, bufferInfo)
+      // useProgram and setBuffersAndAttributes are now called once outside the render loop
       TWGL.setUniforms(programInfo, uniforms)
       TWGL.drawBufferInfo(gl, bufferInfo)
     } catch (error) {

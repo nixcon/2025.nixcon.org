@@ -50,10 +50,37 @@ export default function Privacy() {
           </Paragraph>
         </Section>
 
-        <Section title="Cookies and Tracking">
+        <Section title="Conference Schedule and Pretalx Widget">
           <Paragraph>
-            This website does not set cookies of any type, does not use any third-party resources/assets, does not
-            employ any trackers and is viewable without JavaScript.
+            To display our conference schedule, we use a widget provided by our conference management partner, pretalx.
+            This service is hosted by pretalx on servers within the European Union (Germany). When you visit our
+            schedule page, your browser will load JavaScript and content directly from our event page, which is hosted
+            by pretalx, at{" "}
+            <a
+              href="https://talks.nixcon.org/nixcon-2025/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:text-white/80 transition-colors"
+            >
+              talks.nixcon.org
+            </a>
+            . The main website content is viewable without JavaScript, but the schedule page requires JavaScript to
+            display the pretalx widget.
+          </Paragraph>
+          <Paragraph>
+            The legal basis for this data processing is our legitimate interest in providing a functional and
+            interactive conference schedule to our visitors. This processing involves your IP address being sent to the
+            pretalx service to enable the connection and deliver the content. According to pretalx's policy, they do
+            not log this data for attendees viewing the schedule. For more information, please see the{" "}
+            <a
+              href="https://talks.nixcon.org/nixcon-2025/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:text-white/80 transition-colors"
+            >
+              pretalx privacy policy
+            </a>
+            .
           </Paragraph>
         </Section>
 
@@ -77,5 +104,5 @@ export default function Privacy() {
       </PageLayout>
       <div class="h-20"></div>
     </div>
-  )
+  );
 }

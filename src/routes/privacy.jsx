@@ -50,18 +50,12 @@ export default function Privacy() {
           </Paragraph>
         </Section>
 
-        <Section title="Cookies and Tracking">
+        <Section title="Conference Schedule and Pretalx Widget">
           <Paragraph>
-            This website does not set cookies of any type and does not employ any trackers. However, we do use the
-            pretalx widget service for displaying our conference schedule, which loads external JavaScript from
-            talks.nixcon.org. The main website content is viewable without JavaScript, but the schedule page
-            requires JavaScript to display the pretalx widget.
-          </Paragraph>
-        </Section>
-
-        <Section title="Pretalx Widget">
-          <Paragraph>
-            Our schedule page uses a self-hosted pretalx widget service at{" "}
+            To display our conference schedule, we use a widget provided by our conference management partner, pretalx.
+            This service is hosted by pretalx on servers within the European Union (Germany). When you visit our
+            schedule page, your browser will load JavaScript and content directly from our event page, which is hosted
+            by pretalx, at{" "}
             <a
               href="https://talks.nixcon.org/nixcon-2025/"
               target="_blank"
@@ -70,9 +64,14 @@ export default function Privacy() {
             >
               talks.nixcon.org
             </a>
-            {" "}to display conference schedules and talk information. When you visit the schedule page, your browser
-            will load JavaScript from this service. For information about data handling by our pretalx instance,
-            please see the{" "}
+            . The main website content is viewable without JavaScript, but the schedule page requires JavaScript to
+            display the pretalx widget.
+          </Paragraph>
+          <Paragraph>
+            The legal basis for this data processing is our legitimate interest in providing a functional and
+            interactive conference schedule to our visitors. This processing involves your IP address being sent to the
+            pretalx service to enable the connection and deliver the content. According to pretalx's policy, they do
+            not log this data for attendees viewing the schedule. For more information, please see the{" "}
             <a
               href="https://talks.nixcon.org/nixcon-2025/privacy"
               target="_blank"
@@ -105,5 +104,5 @@ export default function Privacy() {
       </PageLayout>
       <div class="h-20"></div>
     </div>
-  )
+  );
 }

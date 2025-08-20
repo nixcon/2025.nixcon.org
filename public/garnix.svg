@@ -6,12 +6,16 @@
         stroke-width: 0px;
       }
 
+      .cls-1 {
+        fill: white;
+      }
+
       .cls-2 {
-        fill: #f2f2f2;
+        fill: transparent;
       }
 
       .cls-3 {
-        fill: #221d28;
+        fill: white;
       }
     </style>
   </defs>

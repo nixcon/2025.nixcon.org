@@ -7,30 +7,19 @@
   </g>
   <defs>
     <linearGradient id="b" x1="74.408" x2="42.993" y1="7.791" y2="38.767" gradientUnits="userSpaceOnUse">
-      <stop offset=".114" stop-color="#FAA61A"/>
-      <stop offset=".216" stop-color="#F78C28"/>
-      <stop offset=".404" stop-color="#F3623D"/>
-      <stop offset=".573" stop-color="#F0434D"/>
-      <stop offset=".717" stop-color="#EF3157"/>
-      <stop offset=".818" stop-color="#EE2A5A"/>
+      <stop offset=".114" stop-color="#FFFFFF"/>
+      <stop offset=".818" stop-color="#DCDCDC"/>
     </linearGradient>
     <linearGradient id="c" x1="36.749" x2="2.134" y1="31.94" y2="60.579" gradientUnits="userSpaceOnUse">
-      <stop offset=".078" stop-color="#0D4BA0"/>
-      <stop offset=".249" stop-color="#0A60B1" stop-opacity=".785"/>
-      <stop offset=".6" stop-color="#0296DB" stop-opacity=".343"/>
-      <stop offset=".675" stop-color="#00A2E5" stop-opacity=".248"/>
-      <stop offset=".903" stop-color="#00AEEF" stop-opacity=".1"/>
+      <stop offset=".078" stop-color="#FFFFFF" stop-opacity=".8"/>
+      <stop offset=".903" stop-color="#FFFFFF" stop-opacity=".2"/>
     </linearGradient>
     <linearGradient id="d" x1="54.77" x2="23.354" y1="19.29" y2="50.266" gradientUnits="userSpaceOnUse">
-      <stop offset=".119" stop-color="#D01B8E" stop-opacity=".9"/>
-      <stop offset=".221" stop-color="#B82492" stop-opacity=".886"/>
-      <stop offset=".436" stop-color="#7B3B9E" stop-opacity=".855"/>
-      <stop offset=".745" stop-color="#1A5FB0" stop-opacity=".811"/>
-      <stop offset=".826" stop-color="#0069B5" stop-opacity=".8"/>
+      <stop offset=".119" stop-color="#FFFFFF" stop-opacity=".9"/>
+      <stop offset=".826" stop-color="#E8E8E8" stop-opacity=".8"/>
     </linearGradient>
     <clipPath id="a">
       <path fill="#fff" d="M0 .5h260v69H0z"/>
     </clipPath>
   </defs>
 </svg>
-

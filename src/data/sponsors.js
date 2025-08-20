@@ -150,4 +150,11 @@ export const sponsors = [
     tier: "Diamond",
     invert: false,
   },
+  {
+    name: "Loop Robots",
+    logoUrl: "/looprobots.svg",
+    websiteUrl: "https://www.looprobots.com/",
+    tier: "Bronze",
+    invert: false,
+  },
 ]

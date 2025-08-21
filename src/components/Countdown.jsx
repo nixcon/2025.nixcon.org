@@ -2,7 +2,7 @@ import { createEffect, createSignal, onCleanup } from "solid-js"
 
 export function Countdown() {
   // Set the target date to September 5, 2025 (event start date)
-  const targetDate = new Date("2025-09-05T08:00:00")
+  const targetDate = new Date("2025-09-05T09:00:00")
 
   // Create signals for the countdown values
   const [days, setDays] = createSignal(0)

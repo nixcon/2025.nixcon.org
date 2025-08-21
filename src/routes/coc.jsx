@@ -37,8 +37,9 @@ export default function CodeOfConduct() {
             Take responsibility for your own wellbeing and look after your needs. You can leave any conversation or
             situation at any time if you feel uncomfortable.
           </Paragraph>
-          <Paragraph>Only take pictures or record individuals after obtaining their explicit consent.</Paragraph>
-
+          <Paragraph>Do not photograph or record individuals that are wearing a red lanyard.
+            If a person wearing a red lanyard appears in a crowd photo, either choose a different photo or
+            edit the photo to make the person and their badge unrecognisable.</Paragraph>
           <SubTitle>3. Openness & Support</SubTitle>
           <Paragraph>
             If you are unsure if your behaviour is acceptable, ask. Boundaries and discrimination are defined by those

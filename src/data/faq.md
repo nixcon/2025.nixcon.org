@@ -54,6 +54,29 @@ Send an email to nixcon@nixos.org.
 
 Send an email to nixcon@nixos.org and describe your situation and we see what we can do.
 
+## Where do I get food?
+
+Food will be provided free for all attendees.
+Check the "event details" on the [main page](https://2025.nixcon.org/) for the details.
+
 ## Where can I buy groceries?
 
 There are various stores in the city. The main chains are called *Migros* and *Coop*. Right next to the train station is a small Coop that is even open on Sundays: [Coop location on OpenStreetMap](https://www.openstreetmap.org/way/192142413)
+
+## How long are the doors open?
+
+On Friday, Saturday, and Sunday, the doors are open from 9:00 to 21:00.
+
+## Can I swim in the lake?
+
+Yes, you can, bring your swimwear.
+You can check the water temperature on this [website](https://gfrör.li/sensor/1).
+
+## What power outlets is Switzerland using?
+
+Switzerland uses the [type J](https://www.worldstandards.eu/electricity/plugs-and-sockets/j/) plug. It is compatible with the two-pin type C plug from the EU.
+
+## Are there other things I can do?
+
+Various groups are organising smaller events in the space-time surrounding NixCon.
+If you’re up for some additional adventures, check the [notice board](https://github.com/nixcon/side-quests-2025) or add your own side-quests.

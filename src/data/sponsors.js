@@ -157,4 +157,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "Google",
+    logoUrl: "/google.svg",
+    websiteUrl: "https://opensource.google/",
+    tier: "Silver",
+    invert: false,
+  },
 ]

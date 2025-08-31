@@ -26,10 +26,10 @@ export default function AnimationModeToggle() {
   return (
     <button
       onClick={handleClick}
-      class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors hover:bg-white/10 text-white/80 hover:text-white"
+      class="flex items-center gap-2 rounded-md text-white/80 cursor-pointer hover:text-white"
       aria-label={`Animation mode: ${getAnimationModeDisplayName()}`}
     >
-      <span class="text-sm font-medium">Animation: {getAnimationModeDisplayName()}</span>
+      <span class="font-medium">Animation: {getAnimationModeDisplayName()}</span>
       <span
         class="w-2 h-2 rounded-full transition-colors"
         style={{ "background-color": getIndicatorColor() }}

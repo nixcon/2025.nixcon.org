@@ -32,7 +32,7 @@ export default function App() {
         }
       `}</style>
       {/* Background. Mounting point for lava animation - only rendered on client */}
-      <ClientLavaBackground />
+      {/* <ClientLavaBackground /> */}
 
       {/* Fullscreen button - desktop only */}
       {/* <button
@@ -45,62 +45,88 @@ export default function App() {
       </button> */}
 
       <Router
-        root={(props) => (
-          <>
-            {/* Menus */}
-            <TopMenu />
-            <MobileMenu />
+        root={(props) => {
+          if (props.location.pathname === "/background") {
+            return <Suspense>{props.children}</Suspense>
+          }
 
-            {/* Routes */}
-            <Suspense>{props.children}</Suspense>
 
-            {/* Sponsors Display */}
-            <SponsorsDisplay />
+          return (
+            <>
+              <ClientLavaBackground />
 
-            {/* Footer */}
-            <footer class="w-full py-6 my-6 text-center relative">
-              <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg flex flex-col md:flex-row items-center justify-center gap-4">
-                <Show when={!webglNotAvailable()}>
-                  <ClientAnimationModeToggle />
+              {/* Menus */}
+              <TopMenu />
+              <MobileMenu />
+
+              {/* Routes */}
+              <Suspense>{props.children}</Suspense>
+
+              {/* Sponsors Display */}
+              <SponsorsDisplay />
+
+              {/* Footer */}
+              <footer class="w-full py-6 my-6 relative">
+                <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg flex flex-col md:flex-row items-start justify-between gap-4">
+                  {/* Animation Controls */}
+                  <Show when={!webglNotAvailable()}>
+                    <div class="flex flex-col items-start gap-4">
+                      <ClientAnimationModeToggle />
+                      <A
+                        href="/background"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                        aria-label="Background"
+                        target="_blank"
+                      >
+                        Background
+                      </A>
+                    </div>
+                    <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                  </Show>
+
+                  {/* Legal Links */}
+                  <div class="flex flex-col items-start gap-4">
+                    <A
+                      href="/legal"
+                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                      aria-label="Legal disclosure"
+                    >
+                      Legal disclosure
+                    </A>
+                    <A
+                      href="/privacy"
+                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                      aria-label="Privacy policy"
+                    >
+                      Privacy Policy
+                    </A>
+                    <A
+                      href="/coc"
+                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                      aria-label="Code of Conduct"
+                    >
+                      Code of Conduct
+                    </A>
+                  </div>
+
+                  {/* External Links */}
                   <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                </Show>
-                <A
-                  href="/legal"
-                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                  aria-label="Legal disclosure"
-                >
-                  Legal disclosure
-                </A>
-                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                <A
-                  href="/privacy"
-                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                  aria-label="Privacy policy"
-                >
-                  Privacy Policy
-                </A>
-                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                <A
-                  href="/coc"
-                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                  aria-label="Code of Conduct"
-                >
-                  Code of Conduct
-                </A>
-                <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                <a
-                  href="https://github.com/nixcon/2025.nixcon.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                  aria-label="GitHub Repository"
-                >
-                  GitHub
-                </a>
-              </div>
-            </footer>
-          </>
-        )}
+                  <div class="flex flex-col items-start">
+                    <a
+                      href="https://github.com/nixcon/2025.nixcon.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                      aria-label="GitHub Repository"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </footer>
+            </>
+          )
+        }}
       >
         <FileRoutes />
       </Router>

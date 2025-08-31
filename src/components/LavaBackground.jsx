@@ -6,6 +6,7 @@ import { startLavaAnimation } from "~/lava/app"
 import { useAnimationStore } from "~/stores/animation"
 import { useFullscreenStore } from "~/stores/fullscreen"
 import { colorSchemes, useThemeStore } from "~/stores/theme"
+import { useCanvasSizeStore } from "~/stores/canvasSize"
 
 /**
  * A component that renders the lava animation background.
@@ -15,14 +16,27 @@ export default function LavaBackground() {
   const { currentTheme } = useThemeStore()
   const { isAnimationOn, webglNotAvailable, setWebglNotAvailable } = useAnimationStore()
   const { isFullscreen, toggleFullscreen } = useFullscreenStore()
+  const { selectedPreset, customWidth, customHeight } = useCanvasSizeStore
 
   let animation = null
 
-  // Handle window resize
+  // Handle window resize and canvas size changes
   const handleResize = () => {
     // If animation is stopped, render a single frame to update with new dimensions
     if (animation && !isAnimationOn()) {
       animation.renderSingleFrame()
+    }
+  }
+
+  // Handle canvas size changes from the store
+  const handleCanvasSizeChange = () => {
+    if (animation && !animation.webglNotAvailable) {
+      // Force a resize and re-render
+      const canvas = document.getElementById("background")
+      if (canvas) {
+        // Trigger resize logic in the animation
+        window.dispatchEvent(new Event('resize'))
+      }
     }
   }
 
@@ -76,31 +90,31 @@ export default function LavaBackground() {
     }
   })
 
+  // Effect to handle canvas size changes
+  createEffect(() => {
+    // Track changes to canvas size settings
+    selectedPreset()
+    customWidth()
+    customHeight()
+
+    // Trigger resize when canvas size settings change
+    handleCanvasSizeChange()
+  })
+
   return (
     <Show when={!webglNotAvailable()}>
       <>
-        <div id="background-container" class="fixed inset-0 w-screen h-screen">
-          <canvas id="background" class="w-full h-full" />
-          {isFullscreen() && (
-            <div
-              id="fullscreen-logo"
-              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 pointer-events-none"
-            >
-              <Logo />
-            </div>
-          )}
-
-          {/* Exit Fullscreen button - desktop only */}
-          {isFullscreen() && (
-            <button
-              onClick={() => toggleFullscreen("background-container")}
-              class="fixed top-4 right-4 z-[9999] p-2 text-white/0 hover:text-white/80 transition-opacity hidden md:block cursor-pointer"
-              aria-label={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
-              title={isFullscreen() ? "Exit fullscreen" : "Enter fullscreen and start animation"}
-            >
-              {isFullscreen() ? <BsFullscreenExit size={20} /> : <BsFullscreen size={20} />}
-            </button>
-          )}
+        <div id="background-container" class="fixed inset-0 w-screen h-screen flex items-center justify-center">
+          <canvas
+            id="background"
+            class={selectedPreset() === "Auto (Window Size)" ? "w-full h-full" : ""}
+            style={selectedPreset() !== "Auto (Window Size)" ? {
+              width: `${useCanvasSizeStore.getCurrentDimensions().width}px`,
+              height: `${useCanvasSizeStore.getCurrentDimensions().height}px`,
+              "max-width": "100vw",
+              "max-height": "100vh"
+            } : {}}
+          />
         </div>
       </>
     </Show>

@@ -3,11 +3,13 @@
 // See LICENSE file for details.
 // Modifications
 // - Wrap script into a start function
+// - Add support for custom canvas dimensions
 
 import * as TWGL from "twgl.js"
 
 import fragmentShader from "./glsl/fragment.glsl?raw"
 import vertexShader from "./glsl/vertex.glsl?raw"
+import { useCanvasSizeStore } from "~/stores/canvasSize"
 
 /**
  * Initializes a WebGL-based lava animation in the background canvas.
@@ -66,6 +68,7 @@ export function startLavaAnimation(initialOptions = {}) {
     antialias: false,
     depth: false,
     stencil: false,
+    preserveDrawingBuffer: true,
   }
 
   // Prefer WebGL2 for better performance, fallback to WebGL1
@@ -99,11 +102,12 @@ export function startLavaAnimation(initialOptions = {}) {
   // Set up buffers and attributes once - no need to call this every frame
   TWGL.setBuffersAndAttributes(gl, programInfo, bufferInfo)
 
-  // Set canvas size and viewport only when window is resized for better performance
+  // Set canvas size and viewport using custom dimensions or window size
   function resize() {
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-    gl.viewport(0, 0, window.innerWidth, window.innerHeight)
+    const dimensions = useCanvasSizeStore.getCurrentDimensions()
+    canvas.width = dimensions.width
+    canvas.height = dimensions.height
+    gl.viewport(0, 0, dimensions.width, dimensions.height)
   }
 
   // Listen for window resize events to update canvas size
@@ -126,9 +130,10 @@ export function startLavaAnimation(initialOptions = {}) {
       lastFrameTime = time
     }
 
+    const dimensions = useCanvasSizeStore.getCurrentDimensions()
     const uniforms = {
       uTime: animationTime / 2,
-      uResolution: [window.innerWidth, window.innerHeight],
+      uResolution: [dimensions.width, dimensions.height],
       uCameraPosition: cameraPosition,
       uBackgroundColor: backgroundColor,
       uLavaColor: lavaColor,

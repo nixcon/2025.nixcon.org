@@ -10,6 +10,8 @@ import { BsEye } from "@aminya/solid-icons/bs/BsEye"
 import { BsEyeSlash } from "@aminya/solid-icons/bs/BsEyeSlash"
 import { BsFullscreen } from "@aminya/solid-icons/bs/BsFullscreen"
 import { BsFullscreenExit } from "@aminya/solid-icons/bs/BsFullscreenExit"
+import { BsPlay } from "@aminya/solid-icons/bs/BsPlay"
+import { BsPause } from "@aminya/solid-icons/bs/BsPause"
 import { useAnimationStore } from "~/stores/animation"
 import { colorSchemes, useThemeStore } from "~/stores/theme"
 import { useCanvasSizeStore, PRESET_RESOLUTIONS } from "~/stores/canvasSize"
@@ -22,7 +24,7 @@ const ClientLavaBackground = clientOnly(() => import("~/components/LavaBackgroun
 
 export default function BackgroundPage() {
   const { currentTheme } = useThemeStore()
-  const { webglNotAvailable } = useAnimationStore()
+  const { webglNotAvailable, isAnimationOn, toggleAnimationMode } = useAnimationStore()
   const {
     selectedPreset,
     customWidth,
@@ -317,6 +319,20 @@ export default function BackgroundPage() {
                 </button>
 
                 <Randomize />
+
+                {/* Animation Toggle */}
+                <button
+                  onClick={toggleAnimationMode}
+                  class={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors cursor-pointer ${isAnimationOn()
+                    ? "bg-green-500/30 hover:bg-green-500/40 text-green-100"
+                    : "bg-white/20 hover:bg-white/30"
+                    }`}
+                  aria-label={isAnimationOn() ? "Pause animation" : "Play animation"}
+                  title={isAnimationOn() ? "Pause the lava animation" : "Play the lava animation"}
+                >
+                  {isAnimationOn() ? <BsPause size={16} /> : <BsPlay size={16} />}
+                  <span class="text-sm">{isAnimationOn() ? "Pause Animation" : "Play Animation"}</span>
+                </button>
               </div>
 
               {/* Logo Toggle */}

@@ -46,7 +46,7 @@ export default function App() {
 
       <Router
         root={(props) => {
-          if (props.location.pathname === "/background") {
+          if (props.location.pathname.startsWith("/background")) {
             return <Suspense>{props.children}</Suspense>
           }
 

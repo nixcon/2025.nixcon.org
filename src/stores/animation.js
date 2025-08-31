@@ -33,7 +33,8 @@ const initialAnimationState = initialMode === AnimationModes.ON;
 const [isAnimationOn, setIsAnimationOn] = createSignal(initialAnimationState);
 
 // Signal to track WebGL availability
-const [webglNotAvailable, setWebglNotAvailable] = createSignal(false)
+const [webglNotAvailable, setWebglNotAvailable] = createSignal(false);
+const [shouldRestart, setShouldRestart] = createSignal(false);
 
 export const useAnimationStore = () => {
   // Save mode to localStorage when it changes
@@ -59,6 +60,10 @@ export const useAnimationStore = () => {
     return newMode;
   };
 
+  const restartAnimation = () => {
+    setShouldRestart(true);
+  };
+
   return {
     animationMode,
     isAnimationOn,
@@ -66,6 +71,9 @@ export const useAnimationStore = () => {
     toggleAnimationMode,
     webglNotAvailable,
     setWebglNotAvailable,
+    shouldRestart,
+    setShouldRestart,
+    restartAnimation,
 
     // Helper function to get a display name for the current mode
     getAnimationModeDisplayName: () => {

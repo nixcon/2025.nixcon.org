@@ -14,7 +14,8 @@ import { useAnimationStore } from "~/stores/animation"
 import { colorSchemes, useThemeStore } from "~/stores/theme"
 import { useCanvasSizeStore, PRESET_RESOLUTIONS } from "~/stores/canvasSize"
 import { useFullscreenStore } from "~/stores/fullscreen"
-import { Logo } from "~/components/Logo"
+
+const Randomize = clientOnly(() => import("~/components/Restart"))
 
 // Create client-only version of the background component
 const ClientLavaBackground = clientOnly(() => import("~/components/LavaBackground"))
@@ -314,6 +315,8 @@ export default function BackgroundPage() {
                   {isFullscreen() ? <BsFullscreenExit size={16} /> : <BsFullscreen size={16} />}
                   <span class="text-sm">{isFullscreen() ? "Exit Fullscreen" : "Fullscreen"}</span>
                 </button>
+
+                <Randomize />
               </div>
 
               {/* Logo Toggle */}

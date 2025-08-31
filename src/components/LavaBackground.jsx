@@ -14,7 +14,7 @@ import { useCanvasSizeStore } from "~/stores/canvasSize"
  */
 export default function LavaBackground() {
   const { currentTheme } = useThemeStore()
-  const { isAnimationOn, webglNotAvailable, setWebglNotAvailable } = useAnimationStore()
+  const { isAnimationOn, webglNotAvailable, setWebglNotAvailable, shouldRestart, setShouldRestart } = useAnimationStore()
   const { isFullscreen, toggleFullscreen } = useFullscreenStore()
   const { selectedPreset, customWidth, customHeight } = useCanvasSizeStore
 
@@ -100,6 +100,13 @@ export default function LavaBackground() {
     // Trigger resize when canvas size settings change
     handleCanvasSizeChange()
   })
+
+  createEffect(() => {
+    if (shouldRestart() && animation) {
+      animation.restart();
+      setShouldRestart(false);
+    }
+  });
 
   return (
     <Show when={!webglNotAvailable()}>

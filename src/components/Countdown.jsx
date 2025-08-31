@@ -2,7 +2,7 @@ import { createEffect, createSignal, onCleanup } from "solid-js"
 
 export function Countdown() {
   // Set the target date to September 5, 2025 (event start date)
-  const targetDate = new Date("2025-09-05T09:00:00")
+  const targetDate = new Date("2025-09-05T09:00:00+02:00")
 
   // Create signals for the countdown values
   const [days, setDays] = createSignal(0)
@@ -72,6 +72,13 @@ export function Countdown() {
       <div class="flex flex-col justify-center items-center border rounded-lg p-1 sm:p-2 w-16 h-19 sm:w-18 sm:h-22 md:w-24 md:h-28">
         <div>{pad(minutes())}</div>
         <div class="font-normal text-xs sm:text-sm">mins</div>
+      </div>
+
+      <span>:</span>
+
+      <div class="flex flex-col justify-center items-center border rounded-lg p-1 sm:p-2 w-16 h-19 sm:w-18 sm:h-22 md:w-24 md:h-28">
+        <div>{pad(seconds())}</div>
+        <div class="font-normal text-xs sm:text-sm">secs</div>
       </div>
     </div>
   )

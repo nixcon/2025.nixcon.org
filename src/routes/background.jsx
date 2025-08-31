@@ -94,7 +94,7 @@ export default function BackgroundPage() {
       const stream = canvas.captureStream(recordingFps())
 
       // Check if MediaRecorder is supported
-      if (!MediaRecorder.isTypeSupported('video/webm')) {
+      if (!MediaRecorder.isTypeSupported('video/webm;codecs=vp9')) {
         console.error("WebM video recording is not supported in this browser")
         return
       }
@@ -283,25 +283,30 @@ export default function BackgroundPage() {
                   <span class="text-sm">Screenshot</span>
                 </button>
 
-                <button
-                  onClick={() => {
-                    console.log("Button clicked, isRecording:", isRecording())
-                    if (isRecording()) {
-                      stopRecording()
-                    } else {
-                      startRecording()
-                    }
-                  }}
-                  class={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors cursor-pointer ${isRecording()
-                    ? "bg-red-500/30 hover:bg-red-500/40 text-red-100"
-                    : "bg-white/20 hover:bg-white/30"
-                    }`}
-                  aria-label={isRecording() ? "Stop recording canvas" : "Start recording canvas"}
-                  title={isRecording() ? "Stop recording and download video" : "Start recording the lava animation"}
-                >
-                  {isRecording() ? <BsStopCircle size={16} /> : <BsRecordCircle size={16} />}
-                  <span class="text-sm">{isRecording() ? "Stop Recording" : "Record"}</span>
-                </button>
+                <div class="flex flex-col gap-1">
+                  <button
+                    onClick={() => {
+                      console.log("Button clicked, isRecording:", isRecording())
+                      if (isRecording()) {
+                        stopRecording()
+                      } else {
+                        startRecording()
+                      }
+                    }}
+                    class={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors cursor-pointer ${isRecording()
+                      ? "bg-red-500/30 hover:bg-red-500/40 text-red-100"
+                      : "bg-white/20 hover:bg-white/30"
+                      }`}
+                    aria-label={isRecording() ? "Stop recording canvas" : "Start recording canvas"}
+                    title={isRecording() ? "Stop recording and download video" : "Start recording the lava animation"}
+                  >
+                    {isRecording() ? <BsStopCircle size={16} /> : <BsRecordCircle size={16} />}
+                    <span class="text-sm">{isRecording() ? "Stop Recording" : "Record"}</span>
+                  </button>
+                  <div class="text-xs text-white/60 px-3">
+                    Chromium only
+                  </div>
+                </div>
 
 
                 {/* Fullscrene Toggle */}

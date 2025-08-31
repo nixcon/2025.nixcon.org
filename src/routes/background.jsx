@@ -39,6 +39,9 @@ export default function BackgroundPage() {
   const [isRecording, setIsRecording] = createSignal(false)
   const [mediaRecorder, setMediaRecorder] = createSignal(null)
   const [recordingFps, setRecordingFps] = createSignal(30)
+  const [recordingStartTime, setRecordingStartTime] = createSignal(null)
+  const [recordingDuration, setRecordingDuration] = createSignal(0)
+  const [timerInterval, setTimerInterval] = createSignal(null)
 
   // Sidebar visibility and pin state
   const [isSidebarVisible, setIsSidebarVisible] = createSignal(false)
@@ -78,6 +81,18 @@ export default function BackgroundPage() {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  // Helper function to format duration
+  const formatDuration = (seconds) => {
+    const hours = Math.floor(seconds / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+    const secs = seconds % 60
+
+    if (hours > 0) {
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+    return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
 
   const startRecording = async () => {
@@ -130,19 +145,51 @@ export default function BackgroundPage() {
 
         // Clean up
         URL.revokeObjectURL(link.href)
+
+        // Clean up timer
+        const interval = timerInterval()
+        if (interval) {
+          clearInterval(interval)
+          setTimerInterval(null)
+        }
+
         setIsRecording(false)
         setMediaRecorder(null)
+        setRecordingStartTime(null)
+        setRecordingDuration(0)
         console.log("Recording completed and downloaded")
       }
 
       recorder.onerror = (event) => {
         console.error("Recording error:", event.error)
+
+        // Clean up timer on error
+        const interval = timerInterval()
+        if (interval) {
+          clearInterval(interval)
+          setTimerInterval(null)
+        }
+
         setIsRecording(false)
         setMediaRecorder(null)
+        setRecordingStartTime(null)
+        setRecordingDuration(0)
       }
 
       recorder.onstart = () => {
         console.log("Recording started successfully")
+
+        // Start timer
+        const startTime = Date.now()
+        setRecordingStartTime(startTime)
+        setRecordingDuration(0)
+
+        const interval = setInterval(() => {
+          const elapsed = Math.floor((Date.now() - startTime) / 1000)
+          setRecordingDuration(elapsed)
+        }, 1000)
+
+        setTimerInterval(interval)
       }
 
       // Start recording
@@ -168,9 +215,19 @@ export default function BackgroundPage() {
       recorder.stop()
     } else {
       console.log("No active recording to stop, current state:", recorder?.state)
+
+      // Clean up timer if it's running
+      const interval = timerInterval()
+      if (interval) {
+        clearInterval(interval)
+        setTimerInterval(null)
+      }
+
       // Reset state in case it got out of sync
       setIsRecording(false)
       setMediaRecorder(null)
+      setRecordingStartTime(null)
+      setRecordingDuration(0)
     }
   }
 
@@ -303,6 +360,16 @@ export default function BackgroundPage() {
                     {isRecording() ? <BsStopCircle size={16} /> : <BsRecordCircle size={16} />}
                     <span class="text-sm">{isRecording() ? "Stop Recording" : "Record"}</span>
                   </button>
+
+                  {/* Recording Timer */}
+                  <Show when={isRecording()}>
+                    <div class="px-3 py-1 bg-red-500/20 rounded text-center">
+                      <div class="text-xs text-red-100 font-mono">
+                        {formatDuration(recordingDuration())}
+                      </div>
+                    </div>
+                  </Show>
+
                   <div class="text-xs text-white/60 px-3">
                     Chromium only
                   </div>

@@ -171,4 +171,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "Hercules CI",
+    logoUrl: "/hercules-ci.svg",
+    websiteUrl: "https://hercules-ci.com/",
+    tier: "Bronze",
+    invert: false,
+  },
 ]

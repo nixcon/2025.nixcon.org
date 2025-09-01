@@ -157,4 +157,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "Ampere",
+    logoUrl: "/ampere.svg",
+    websiteUrl: "https://amperecomputing.com/",
+    tier: "Bronze",
+    invert: false,
+  },
 ]

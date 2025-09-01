@@ -163,5 +163,12 @@ export const sponsors = [
     websiteUrl: "https://opensource.google/",
     tier: "Silver",
     invert: false,
+},
+{
+    name: "Ampere",
+    logoUrl: "/ampere.svg",
+    websiteUrl: "https://amperecomputing.com/",
+    tier: "Bronze",
+    invert: false,
   },
 ]

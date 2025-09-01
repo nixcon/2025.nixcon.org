@@ -178,4 +178,11 @@ export const sponsors = [
     tier: "Bronze",
     invert: false,
   },
+  {
+    name: "Firebase",
+    logoUrl: "/firebase.svg",
+    websiteUrl: "https://firebase.studio/",
+    tier: "Silver",
+    invert: false,
+  },
 ]

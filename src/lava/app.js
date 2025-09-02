@@ -20,13 +20,13 @@ import { useCanvasSizeStore } from "~/stores/canvasSize"
  * safely wrapped in the LavaBackground component which is marked as clientOnly.
  *
  * @param {Object} options Configuration options
- * @param {number[]} [options.backgroundColor=[0.4, 0.1, 0.4]] Background color as RGB array
+ * @param {number[]} [options.backgroundColor=[0.427, 0.157, 0.851]] Background color as RGB array
  * @param {number[]} [options.lavaColor=[2.0, 0.8, -0.6]] Lava color as RGB array
  * @returns {{start: () => (number | undefined), stop: () => void, renderSingleFrame: () => void, updateColors: (newColors: {backgroundColor?: number[], lavaColor?: number[]}) => void, restart: () => void, webglNotAvailable: boolean}} An object with animation control functions.
  * @throws {Error} If WebGL context cannot be obtained or shader compilation fails
  */
 export function startLavaAnimation(initialOptions = {}) {
-  let { backgroundColor = [0.4, 0.1, 0.4], lavaColor = [2.0, 0.8, -0.6] } = initialOptions
+  let { backgroundColor = [0.427, 0.157, 0.851], lavaColor = [2.0, 0.8, -0.6] } = initialOptions
   // Calculate camera position
   // based on THREE.Vector3.setFromSphericalCoords(radius, phi, theta)
   const DEG_TO_RAD = Math.PI / 180

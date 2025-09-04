@@ -65,14 +65,14 @@ export default function TopMenu() {
               Schedule
             </A>
 
-            {/* Sponsorship */}
+            {/* Live */}
             <A
-              href="/sponsorship"
-              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/sponsorship") ? "underline" : ""
+              href="/live"
+              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/live") ? "underline" : ""
                 }`}
-              aria-label="Sponsorship"
+              aria-label="Live"
             >
-              Sponsorship
+              Live
             </A>
 
             {/* Accommodation */}

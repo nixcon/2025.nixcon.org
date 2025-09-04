@@ -71,15 +71,15 @@ export default function MobileMenu() {
               Schedule
             </A>
 
-            {/* Sponsorship */}
+            {/* Live */}
             <A
-              href="/sponsorship"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/sponsorship") ? "underline" : ""
+              href="/live"
+              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/live") ? "underline" : ""
                 }`}
-              aria-label="Sponsorship"
+              aria-label="Live"
               onClick={closeMenu}
             >
-              Sponsorship
+              Live
             </A>
 
             {/* Accommodation */}

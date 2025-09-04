@@ -109,6 +109,25 @@ export default function App() {
                     </A>
                   </div>
 
+                  {/* Sponsorship & Accommodation */}
+                  <div class="h-4 w-px bg-white/20 hidden md:block"></div>
+                  <div class="flex flex-col items-start gap-4">
+                    <A
+                      href="/sponsorship"
+                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                      aria-label="Sponsorship"
+                    >
+                      Sponsorship
+                    </A>
+                    <A
+                      href="/hotels"
+                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
+                      aria-label="Accommodation"
+                    >
+                      Accommodation
+                    </A>
+                  </div>
+
                   {/* External Links */}
                   <div class="h-4 w-px bg-white/20 hidden md:block"></div>
                   <div class="flex flex-col items-start">

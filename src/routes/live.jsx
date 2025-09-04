@@ -4,9 +4,10 @@ import { onMount } from "solid-js"
 import "video.js/dist/video-js.css"
 
 // URLs - Update these when publishing
-const STREAM_1_URL = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" //'https://live.chaoswest.tv/nix1/main.m3u8'
-const STREAM_2_URL = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" //'https://live.chaoswest.tv/nix2/main.m3u8'
-const YOUTUBE_EMBED_URL = "https://www.youtube-nocookie.com/embed/oAzkHpSWhaI?si=ddv96KCFJsP1wKzy"
+const STREAM_1_URL = 'https://live.chaoswest.tv/nix1/main.m3u8'
+const STREAM_2_URL = 'https://live.chaoswest.tv/nix2/main.m3u8'
+const YOUTUBE_EMBED_URL_AULA = "https://www.youtube-nocookie.com/embed/OXRfLgtKDz8"
+const YOUTUBE_EMBED_URL_LECTURE_HALL = "https://www.youtube-nocookie.com/embed/gdoYNYYB_FY"
 
 export default function LivePage() {
   let videoRef1
@@ -53,22 +54,51 @@ export default function LivePage() {
             </p>
           </div>
           <div class="flex flex-col items-center space-y-8">
-            {/* Main YouTube Stream */}
-            <div class="w-full max-w-4xl">
-              <div class=" mb-4">
-                <h3 class="text-xl font-semibold">Main Stream</h3>
-                <p class="text-sm text-gray-300">YouTube Live</p>
+            {/* YouTube Streams */}
+            <div class="w-full max-w-6xl">
+              <div class=" mb-6">
+                <h3 class="text-xl font-semibold">YouTube Live Streams</h3>
+                <p class="text-sm text-gray-300">Watch live on YouTube</p>
               </div>
-              <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
-                <iframe
-                  class="absolute top-0 left-0 w-full h-full rounded-lg"
-                  src={YOUTUBE_EMBED_URL}
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                />
+
+              <div class="flex flex-col space-y-8">
+                {/* Aula Stream */}
+                <div class="space-y-3">
+                  <div class="">
+                    <h4 class="text-lg font-medium">Aula</h4>
+                    <p class="text-xs text-gray-400">YouTube Live</p>
+                  </div>
+                  <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+                    <iframe
+                      class="absolute top-0 left-0 w-full h-full rounded-lg"
+                      src={YOUTUBE_EMBED_URL_AULA}
+                      title="Aula - YouTube Live Stream"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    />
+                  </div>
+                </div>
+
+                {/* Lecture Hall Stream */}
+                <div class="space-y-3">
+                  <div class="">
+                    <h4 class="text-lg font-medium">Lecture Hall</h4>
+                    <p class="text-xs text-gray-400">YouTube Live</p>
+                  </div>
+                  <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+                    <iframe
+                      class="absolute top-0 left-0 w-full h-full rounded-lg"
+                      src={YOUTUBE_EMBED_URL_LECTURE_HALL}
+                      title="Lecture Hall - YouTube Live Stream"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 

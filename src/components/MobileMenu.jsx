@@ -1,11 +1,6 @@
-import { BiSolidHeartCircle } from "@aminya/solid-icons/bi/BiSolidHeartCircle"
-import { BsFileTextFill } from "@aminya/solid-icons/bs/BsFileTextFill"
-import { BsHouseFill } from "@aminya/solid-icons/bs/BsHouseFill"
 import { BsList } from "@aminya/solid-icons/bs/BsList"
-import { BsPeopleFill } from "@aminya/solid-icons/bs/BsPeopleFill"
 import { BsX } from "@aminya/solid-icons/bs/BsX"
 import { FaSolidCircleQuestion } from "@aminya/solid-icons/fa/FaSolidCircleQuestion"
-import { FaSolidHotel } from "@aminya/solid-icons/fa/FaSolidHotel"
 import { useLocation } from "@solidjs/router"
 import { A } from "@solidjs/router"
 import { LogoMenu } from "./Logo"
@@ -80,17 +75,6 @@ export default function MobileMenu() {
               onClick={closeMenu}
             >
               Live
-            </A>
-
-            {/* Accommodation */}
-            <A
-              href="/hotels"
-              class={`text-white hover:text-white/80 transition-all duration-75 font-bold text-lg flex items-center justify-end gap-2 ${isActive("/hotels") ? "underline" : ""
-                }`}
-              aria-label="Accommodation"
-              onClick={closeMenu}
-            >
-              Accommodation
             </A>
 
             {/* Organizers */}

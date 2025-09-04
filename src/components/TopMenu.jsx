@@ -75,16 +75,6 @@ export default function TopMenu() {
               Live
             </A>
 
-            {/* Accommodation */}
-            <A
-              href="/hotels"
-              class={`text-white hover:underline transition-all duration-75 font-bold text-lg ${isActive("/hotels") ? "underline" : ""
-                }`}
-              aria-label="Accommodation"
-            >
-              Accommodation
-            </A>
-
             {/* FAQ */}
             <A
               href="/faq"

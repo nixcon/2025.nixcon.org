@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
                 <div class="flex justify-between items-center">
                   <span class="font-semibold">Doors Close:</span>
-                  <span>Fri/Sat 20:00, Sun 17:00</span>
+                  <span>Fri/Sat 22:00, Sun 17:00</span>
                 </div>
                 <hr class="border-gray-300" />
                 <div class="flex justify-between items-center">

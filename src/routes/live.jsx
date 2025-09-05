@@ -113,7 +113,7 @@ export default function LivePage() {
                 {/* Stream 1 */}
                 <div class="space-y-3">
                   <div class="">
-                    <h4 class="text-lg font-medium">Direct Stream 1</h4>
+                    <h4 class="text-lg font-medium">Aula</h4>
                     <p class="text-xs text-gray-400">HLS Direct Feed</p>
                   </div>
                   <div class="relative w-full rounded-lg overflow-hidden" style="padding-bottom: 56.25%; height: 0;">
@@ -140,7 +140,7 @@ export default function LivePage() {
                 {/* Stream 2 */}
                 <div class="space-y-3">
                   <div class="">
-                    <h4 class="text-lg font-medium">Direct Stream 2</h4>
+                    <h4 class="text-lg font-medium">Lecture Hall</h4>
                     <p class="text-xs text-gray-400">HLS Direct Feed</p>
                   </div>
                   <div class="relative w-full rounded-lg overflow-hidden" style="padding-bottom: 56.25%; height: 0;">

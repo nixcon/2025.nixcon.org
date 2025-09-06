@@ -67,79 +67,90 @@ export default function App() {
 
               {/* Footer */}
               <footer class="w-full py-6 my-6 relative">
-                <div class="max-w-3xl mx-auto px-6 py-4 rounded-lg flex flex-col md:flex-row items-start justify-between gap-4">
-                  {/* Animation Controls */}
-                  <Show when={!webglNotAvailable()}>
-                    <div class="flex flex-col items-start gap-4">
-                      <ClientAnimationModeToggle />
+                <div class="max-w-5xl mx-auto px-6 py-4 rounded-lg">
+                  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+                    {/* Animation Controls */}
+                    <Show when={!webglNotAvailable()}>
+                      <div class="flex flex-col items-start gap-4 min-w-0">
+                        <ClientAnimationModeToggle />
+                        <A
+                          href="/background"
+                          class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                          aria-label="Background"
+                          target="_blank"
+                        >
+                          Background
+                        </A>
+                      </div>
+                    </Show>
+
+                    {/* Legal Links */}
+                    <div class="flex flex-col items-start gap-4 min-w-0">
                       <A
-                        href="/background"
-                        class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                        aria-label="Background"
-                        target="_blank"
+                        href="/legal"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                        aria-label="Legal disclosure"
                       >
-                        Background
+                        Legal disclosure
+                      </A>
+                      <A
+                        href="/privacy"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                        aria-label="Privacy policy"
+                      >
+                        Privacy Policy
+                      </A>
+                      <A
+                        href="/coc"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                        aria-label="Code of Conduct"
+                      >
+                        Code of Conduct
                       </A>
                     </div>
-                    <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                  </Show>
 
-                  {/* Legal Links */}
-                  <div class="flex flex-col items-start gap-4">
-                    <A
-                      href="/legal"
-                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                      aria-label="Legal disclosure"
-                    >
-                      Legal disclosure
-                    </A>
-                    <A
-                      href="/privacy"
-                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                      aria-label="Privacy policy"
-                    >
-                      Privacy Policy
-                    </A>
-                    <A
-                      href="/coc"
-                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                      aria-label="Code of Conduct"
-                    >
-                      Code of Conduct
-                    </A>
-                  </div>
+                    {/* Sponsorship & Accommodation */}
+                    <div class="flex flex-col items-start gap-4 min-w-0">
+                      <A
+                        href="/sponsorship"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                        aria-label="Sponsorship"
+                      >
+                        Sponsorship
+                      </A>
+                      <A
+                        href="/hotels"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                        aria-label="Accommodation"
+                      >
+                        Accommodation
+                      </A>
+                    </div>
 
-                  {/* Sponsorship & Accommodation */}
-                  <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                  <div class="flex flex-col items-start gap-4">
-                    <A
-                      href="/sponsorship"
-                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                      aria-label="Sponsorship"
-                    >
-                      Sponsorship
-                    </A>
-                    <A
-                      href="/hotels"
-                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                      aria-label="Accommodation"
-                    >
-                      Accommodation
-                    </A>
-                  </div>
-
-                  {/* External Links */}
-                  <div class="h-4 w-px bg-white/20 hidden md:block"></div>
-                  <div class="flex flex-col items-start">
-                    <a
-                      href="https://github.com/nixcon/2025.nixcon.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-white/80 hover:text-white transition-colors text-base font-medium"
-                      aria-label="GitHub Repository"
-                    >
-                      GitHub
-                    </a>
+                    {/* External Links */}
+                    <div class="flex flex-col items-start gap-4 min-w-0">
+                      <a
+                        href="https://github.com/nixcon/2025.nixcon.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-white/80 hover:text-white transition-colors text-base font-medium whitespace-nowrap"
+                        aria-label="GitHub Repository"
+                      >
+                        GitHub
+                      </a>
+                      <div class="flex flex-col items-start">
+                        <p class="text-white/80 text-base font-medium mb-2 whitespace-nowrap">Previous NixCon editions</p>
+                        <div id="prev-editions" class="flex flex-wrap gap-2">
+                          <a href="https://2024.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2024</a>
+                          <a href="https://2023.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2023</a>
+                          <a href="https://2022.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2022</a>
+                          <a href="https://2020.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2020</a>
+                          <a href="https://2019.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2019</a>
+                          <a href="https://2018.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2018</a>
+                          <a href="https://2017.nixcon.org" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors text-sm whitespace-nowrap">2017</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </footer>

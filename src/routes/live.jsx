@@ -6,8 +6,8 @@ import "video.js/dist/video-js.css"
 // URLs - Update these when publishing
 const STREAM_1_URL = 'https://live.chaoswest.tv/nix1/main.m3u8'
 const STREAM_2_URL = 'https://live.chaoswest.tv/nix2/main.m3u8'
-const YOUTUBE_EMBED_URL_AULA = "https://www.youtube-nocookie.com/embed/OXRfLgtKDz8"
-const YOUTUBE_EMBED_URL_LECTURE_HALL = "https://www.youtube-nocookie.com/embed/gdoYNYYB_FY"
+const YOUTUBE_EMBED_URL_AULA = "https://www.youtube-nocookie.com/embed/YQU6oxxat6I"
+const YOUTUBE_EMBED_URL_LECTURE_HALL = "https://www.youtube-nocookie.com/embed/sd9sEyrXf7o"
 
 export default function LivePage() {
   let videoRef1

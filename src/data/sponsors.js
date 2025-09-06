@@ -166,7 +166,7 @@ export const sponsors = [
 },
 {
     name: "Ampere",
-    logoUrl: "/ampere.svg",
+    logoUrl: "/ampere_next.svg",
     websiteUrl: "https://amperecomputing.com/",
     tier: "Bronze",
     invert: false,

@@ -30,7 +30,7 @@ export function Hero() {
         </div>
 
         <div class="flex flex-col">
-          <Countdown />
+          {/* <Countdown /> */}
           <div class="text-[24.5px] sm:text-[33px] md:text-[49px] font-bold -my-2 uppercase">5-7 September 2025</div>
           <Title>SWITZERLAND</Title>
         </div>

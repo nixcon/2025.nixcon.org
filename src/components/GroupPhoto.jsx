@@ -2,16 +2,26 @@
 
 
 export default function GroupPhoto() {
-  return (<div class="p-10">
+  return (<div class="p-10 glass bg-amber-500/40!">
     <div class="flex flex-col gap-8 max-w-3xl mx-auto my-20">
       <h2 class="text-3xl sm:text-6xl uppercase font-bold">That's a Wrap! 🎉</h2>
+      {/* Attendance Count Callout */}
+      <div class="w-full mb-8 border border-white text-gray-100 rounded-2xl p-6 shadow-md">
+        <h3 class="text-2xl font-bold leading-tight tracking-tight mb-2 uppercase">Final Attendance Count</h3>
+        <div class="text-6xl font-mono font-bold mb-2">442</div>
+        <p class="text-base font-mono">Amazing people joined us!</p>
+      </div>
+
+
       <p class="max-w-sm sm:text-lg">
         Thank you to everyone who made NixCon 2025 an incredible experience!
       </p>
       <p class="max-w-sm sm:text-lg">
         From speakers and sponsors to attendees and organizers — this community is what makes it all possible.
       </p>
+
     </div>
+
 
     <div class="rounded-xl overflow-clip">
 

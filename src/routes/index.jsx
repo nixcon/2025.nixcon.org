@@ -1,5 +1,6 @@
 import { A } from "@solidjs/router"
 import { TicketCard } from "~/components/Cards.jsx"
+import GroupPhoto from "~/components/GroupPhoto"
 import { Hero } from "~/components/Hero"
 import PageLayout from "~/components/PageLayout"
 import { Section } from "~/components/Section"
@@ -12,6 +13,10 @@ export default function Home() {
     <div class="relative min-h-svh text-white">
       {/* Hero section */}
       <Hero />
+
+
+
+      <GroupPhoto />
 
       {/* Apply PageLayout to the main content with reduced spacing */}
       <PageLayout reducedSpacing={true}>

@@ -61,7 +61,11 @@ export default function GroupPhoto() {
       </a>
 
       <div class="text-sm text-white opacity-80">
-        NixCon 2025 by Arik Grahl. Licensed under{' '}
+        NixCon 2025 by{' '}
+        <a class="text-white" href="https://www.arik-grahl.de/" target="_blank" rel="noopener noreferrer">
+          Arik Grahl
+        </a>
+        . Licensed under{' '}
         <a class="text-white" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
           CC BY-SA 4.0
         </a>.
